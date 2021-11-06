@@ -1,0 +1,25 @@
+{
+  "name": "csgo-protobuf",
+  "version": "1.0.0",
+  "license": "GPL-2.0",
+  "author": "AkiVer",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --module es2015 --outDir dist/esm && tsc --module commonjs --outDir dist/commonjs --declaration --declarationDir dist/types",
+    "generate": "protoc -I ./protobuf --ts_opt generate_dependencies --ts_out ./src cstrike15_usermessages.proto netmessages.proto"
+  },
+  "dependencies": {
+    "@protobuf-ts/plugin": "2.0.7"
+  },
+  "devDependencies": {
+    "typescript": "4.4.4"
+  },
+  "config": {
+    "protocVersion": "3.19.1"
+  }
+}

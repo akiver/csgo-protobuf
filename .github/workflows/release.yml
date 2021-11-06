@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Once a week
+    - cron: "0 0 * * 0"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    name: Prepare new release
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Clone SteamDatabase/Protobufs
+        uses: actions/checkout@v2
+        with:
+          repository: SteamDatabase/Protobufs
+          path: SteamDatabaseProtobufs
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile protobuf files to TypeScript
+        run: |
+          rm protobuf/*.proto
+          cp SteamDatabaseProtobufs/csgo/*.proto protobuf
+          npm run generate
+          rm -rf SteamDatabaseProtobufs
+
+      - name: Check for modified files
+        id: git-check
+        run: |
+          echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: Publish new version
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@users.noreply.github.com'
+          git add --all
+          git commit -m "feat: regenerate source files"
+          npm run build
+          npm version patch
+          git push --follow-tags
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
