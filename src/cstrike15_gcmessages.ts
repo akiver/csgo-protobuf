@@ -903,6 +903,10 @@ export interface CMsgGCCStrike15_v2_MatchmakingStart {
      * @generated from protobuf field: optional bool prime_only = 6;
      */
     primeOnly?: boolean;
+    /**
+     * @generated from protobuf field: optional uint32 tv_control = 7;
+     */
+    tvControl?: number;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_MatchmakingStop
@@ -1427,6 +1431,18 @@ export interface CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
      * @generated from protobuf field: repeated int32 enemy_2ks = 28 [json_name = "enemy2ks"];
      */
     enemy2Ks: number[];
+    /**
+     * @generated from protobuf field: repeated int32 player_spawned = 29;
+     */
+    playerSpawned: number[];
+    /**
+     * @generated from protobuf field: repeated int32 team_spawn_count = 30;
+     */
+    teamSpawnCount: number[];
+    /**
+     * @generated from protobuf field: optional uint32 max_rounds = 31;
+     */
+    maxRounds?: number;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_MatchmakingServerRoundStats.DropInfo
@@ -2560,6 +2576,19 @@ export interface CMsgGCCStrike15_v2_MatchList {
     tournamentinfo?: CDataGCCStrike15_v2_TournamentInfo;
 }
 /**
+ * @generated from protobuf message CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt
+ */
+export interface CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt {
+    /**
+     * @generated from protobuf field: optional int32 eventid = 1;
+     */
+    eventid?: number;
+    /**
+     * @generated from protobuf field: repeated CDataGCCStrike15_v2_MatchInfo matches = 2;
+     */
+    matches: CDataGCCStrike15_v2_MatchInfo[];
+}
+/**
  * @generated from protobuf message CMsgGCCStrike15_v2_Predictions
  */
 export interface CMsgGCCStrike15_v2_Predictions {
@@ -2723,6 +2752,10 @@ export interface CMsgGCCStrike15_v2_ServerVarValueNotificationInfo {
      * @generated from protobuf field: optional uint32 type = 3;
      */
     type?: number;
+    /**
+     * @generated from protobuf field: repeated uint32 userdata = 4;
+     */
+    userdata: number[];
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_GiftsLeaderboardRequest
@@ -2876,6 +2909,19 @@ export interface CSOAccountSeasonalOperation {
      * @generated from protobuf field: optional uint32 season_pass_time = 7;
      */
     seasonPassTime?: number;
+}
+/**
+ * @generated from protobuf message CSOAccountRecurringSubscription
+ */
+export interface CSOAccountRecurringSubscription {
+    /**
+     * @generated from protobuf field: optional uint32 time_next_cycle = 1;
+     */
+    timeNextCycle?: number;
+    /**
+     * @generated from protobuf field: optional uint32 time_initiated = 2;
+     */
+    timeInitiated?: number;
 }
 /**
  * @generated from protobuf message CSOPersonaDataPublic
@@ -3244,6 +3290,10 @@ export interface CMsgGCCStrike15_v2_Party_SearchResults_Entry {
      * @generated from protobuf field: optional uint32 loc = 6;
      */
     loc?: number;
+    /**
+     * @generated from protobuf field: optional uint32 accountid = 7;
+     */
+    accountid?: number;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_Party_Invite
@@ -3603,6 +3653,14 @@ export interface CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode {
      * @generated from protobuf field: optional bool show_warning_not_trusted = 7;
      */
     showWarningNotTrusted?: boolean;
+    /**
+     * @generated from protobuf field: optional bool show_warning_not_trusted_2 = 8;
+     */
+    showWarningNotTrusted2?: boolean;
+    /**
+     * @generated from protobuf field: optional string files_prevented_trusted = 9;
+     */
+    filesPreventedTrusted?: string;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_GC2ClientRequestValidation
@@ -3616,6 +3674,84 @@ export interface CMsgGCCStrike15_v2_GC2ClientRequestValidation {
      * @generated from protobuf field: optional string module = 2;
      */
     module?: string;
+}
+/**
+ * @generated from protobuf message CMsgGCCStrike15_v2_GC2ClientInitSystem
+ */
+export interface CMsgGCCStrike15_v2_GC2ClientInitSystem {
+    /**
+     * @generated from protobuf field: optional bool load = 1;
+     */
+    load?: boolean;
+    /**
+     * @generated from protobuf field: optional string name = 2;
+     */
+    name?: string;
+    /**
+     * @generated from protobuf field: optional string outputname = 3;
+     */
+    outputname?: string;
+    /**
+     * @generated from protobuf field: optional bytes key_data = 4;
+     */
+    keyData?: Uint8Array;
+    /**
+     * @generated from protobuf field: optional bytes sha_hash = 5;
+     */
+    shaHash?: Uint8Array;
+    /**
+     * @generated from protobuf field: optional int32 cookie = 6;
+     */
+    cookie?: number;
+    /**
+     * @generated from protobuf field: optional string manifest = 7;
+     */
+    manifest?: string;
+}
+/**
+ * @generated from protobuf message CMsgGCCStrike15_v2_GC2ClientInitSystem_Response
+ */
+export interface CMsgGCCStrike15_v2_GC2ClientInitSystem_Response {
+    /**
+     * @generated from protobuf field: optional bool success = 1;
+     */
+    success?: boolean;
+    /**
+     * @generated from protobuf field: optional string diagnostic = 2;
+     */
+    diagnostic?: string;
+    /**
+     * @generated from protobuf field: optional bytes sha_hash = 3;
+     */
+    shaHash?: Uint8Array;
+    /**
+     * @generated from protobuf field: optional int32 response = 4;
+     */
+    response?: number;
+    /**
+     * @generated from protobuf field: optional int32 error_code1 = 5;
+     */
+    errorCode1?: number;
+    /**
+     * @generated from protobuf field: optional int32 error_code2 = 6;
+     */
+    errorCode2?: number;
+    /**
+     * @generated from protobuf field: optional int64 handle = 7;
+     */
+    handle?: bigint;
+    /**
+     * @generated from protobuf field: optional EInitSystemResult einit_result = 8;
+     */
+    einitResult?: EInitSystemResult;
+    /**
+     * @generated from protobuf field: optional int32 aux_system1 = 9;
+     */
+    auxSystem1?: number;
+    /**
+     * @generated from protobuf field: optional int32 aux_system2 = 10;
+     */
+    auxSystem2?: number;
 }
 /**
  * @generated from protobuf enum ECsgoGCMsg
@@ -4004,7 +4140,23 @@ export enum ECsgoGCMsg {
     /**
      * @generated from protobuf enum value: k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211;
      */
-    k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211
+    k_EMsgGCCStrike15_StartAgreementSessionInGame = 9211,
+    /**
+     * @generated from protobuf enum value: k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212;
+     */
+    k_EMsgGCCStrike15_v2_GC2ClientInitSystem = 9212,
+    /**
+     * @generated from protobuf enum value: k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213;
+     */
+    k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response = 9213,
+    /**
+     * @generated from protobuf enum value: k_EMsgGCCStrike15_v2_PrivateQueues = 9214;
+     */
+    k_EMsgGCCStrike15_v2_PrivateQueues = 9214,
+    /**
+     * @generated from protobuf enum value: k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215;
+     */
+    k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215
 }
 /**
  * @generated from protobuf enum ECsgoSteamUserStat
@@ -4043,6 +4195,47 @@ export enum EClientReportingVersion {
      * @generated from protobuf enum value: k_EClientReportingVersion_SupportsTrustedMode = 2;
      */
     k_EClientReportingVersion_SupportsTrustedMode = 2
+}
+/**
+ * @generated from protobuf enum EInitSystemResult
+ */
+export enum EInitSystemResult {
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_Invalid = 0;
+     */
+    k_EInitSystemResult_Invalid = 0,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_Success = 1;
+     */
+    k_EInitSystemResult_Success = 1,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_None = 2;
+     */
+    k_EInitSystemResult_None = 2,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_NotFound = 3;
+     */
+    k_EInitSystemResult_NotFound = 3,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_Existing = 4;
+     */
+    k_EInitSystemResult_Existing = 4,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_FailedOpen = 5;
+     */
+    k_EInitSystemResult_FailedOpen = 5,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_Mismatch = 6;
+     */
+    k_EInitSystemResult_Mismatch = 6,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_FailedInit = 7;
+     */
+    k_EInitSystemResult_FailedInit = 7,
+    /**
+     * @generated from protobuf enum value: k_EInitSystemResult_Max = 8;
+     */
+    k_EInitSystemResult_Max = 8
 }
 // @generated message type with reflection information, may provide speed optimized methods
 class GameServerPing$Type extends MessageType<GameServerPing> {
@@ -6544,7 +6737,8 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
             { no: 3, name: "ticket_data", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
             { no: 4, name: "client_version", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 5, name: "tournament_match", kind: "message", T: () => TournamentMatchSetup },
-            { no: 6, name: "prime_only", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ }
+            { no: 6, name: "prime_only", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 7, name: "tv_control", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingStart>): CMsgGCCStrike15_v2_MatchmakingStart {
@@ -6581,6 +6775,9 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
                 case /* optional bool prime_only */ 6:
                     message.primeOnly = reader.bool();
                     break;
+                case /* optional uint32 tv_control */ 7:
+                    message.tvControl = reader.uint32();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6611,6 +6808,9 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
         /* optional bool prime_only = 6; */
         if (message.primeOnly !== undefined)
             writer.tag(6, WireType.Varint).bool(message.primeOnly);
+        /* optional uint32 tv_control = 7; */
+        if (message.tvControl !== undefined)
+            writer.tag(7, WireType.Varint).uint32(message.tvControl);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -7776,11 +7976,14 @@ class CMsgGCCStrike15_v2_MatchmakingServerRoundStats$Type extends MessageType<CM
             { no: 25, name: "enemy_kills_agg", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 5 /*ScalarType.INT32*/ },
             { no: 26, name: "drop_info", kind: "message", T: () => CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfo },
             { no: 27, name: "b_switched_teams", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
-            { no: 28, name: "enemy_2ks", kind: "scalar", jsonName: "enemy2ks", repeat: 2 /*RepeatType.UNPACKED*/, T: 5 /*ScalarType.INT32*/ }
+            { no: 28, name: "enemy_2ks", kind: "scalar", jsonName: "enemy2ks", repeat: 2 /*RepeatType.UNPACKED*/, T: 5 /*ScalarType.INT32*/ },
+            { no: 29, name: "player_spawned", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 5 /*ScalarType.INT32*/ },
+            { no: 30, name: "team_spawn_count", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 5 /*ScalarType.INT32*/ },
+            { no: 31, name: "max_rounds", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>): CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
-        const message = { kills: [], assists: [], deaths: [], scores: [], pings: [], teamScores: [], enemyKills: [], enemyHeadshots: [], enemy3Ks: [], enemy4Ks: [], enemy5Ks: [], mvps: [], enemyKillsAgg: [], enemy2Ks: [] };
+        const message = { kills: [], assists: [], deaths: [], scores: [], pings: [], teamScores: [], enemyKills: [], enemyHeadshots: [], enemy3Ks: [], enemy4Ks: [], enemy5Ks: [], mvps: [], enemyKillsAgg: [], enemy2Ks: [], playerSpawned: [], teamSpawnCount: [] };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>(this, message, value);
@@ -7931,6 +8134,23 @@ class CMsgGCCStrike15_v2_MatchmakingServerRoundStats$Type extends MessageType<CM
                     else
                         message.enemy2Ks.push(reader.int32());
                     break;
+                case /* repeated int32 player_spawned */ 29:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.playerSpawned.push(reader.int32());
+                    else
+                        message.playerSpawned.push(reader.int32());
+                    break;
+                case /* repeated int32 team_spawn_count */ 30:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.teamSpawnCount.push(reader.int32());
+                    else
+                        message.teamSpawnCount.push(reader.int32());
+                    break;
+                case /* optional uint32 max_rounds */ 31:
+                    message.maxRounds = reader.uint32();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -8027,6 +8247,15 @@ class CMsgGCCStrike15_v2_MatchmakingServerRoundStats$Type extends MessageType<CM
         /* repeated int32 enemy_2ks = 28 [json_name = "enemy2ks"]; */
         for (let i = 0; i < message.enemy2Ks.length; i++)
             writer.tag(28, WireType.Varint).int32(message.enemy2Ks[i]);
+        /* repeated int32 player_spawned = 29; */
+        for (let i = 0; i < message.playerSpawned.length; i++)
+            writer.tag(29, WireType.Varint).int32(message.playerSpawned[i]);
+        /* repeated int32 team_spawn_count = 30; */
+        for (let i = 0; i < message.teamSpawnCount.length; i++)
+            writer.tag(30, WireType.Varint).int32(message.teamSpawnCount[i]);
+        /* optional uint32 max_rounds = 31; */
+        if (message.maxRounds !== undefined)
+            writer.tag(31, WireType.Varint).uint32(message.maxRounds);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -11603,6 +11832,60 @@ class CMsgGCCStrike15_v2_MatchList$Type extends MessageType<CMsgGCCStrike15_v2_M
  */
 export const CMsgGCCStrike15_v2_MatchList = new CMsgGCCStrike15_v2_MatchList$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt$Type extends MessageType<CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt> {
+    constructor() {
+        super("CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt", [
+            { no: 1, name: "eventid", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "matches", kind: "message", repeat: 2 /*RepeatType.UNPACKED*/, T: () => CDataGCCStrike15_v2_MatchInfo }
+        ]);
+    }
+    create(value?: PartialMessage<CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt>): CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt {
+        const message = { matches: [] };
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt): CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional int32 eventid */ 1:
+                    message.eventid = reader.int32();
+                    break;
+                case /* repeated CDataGCCStrike15_v2_MatchInfo matches */ 2:
+                    message.matches.push(CDataGCCStrike15_v2_MatchInfo.internalBinaryRead(reader, reader.uint32(), options));
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional int32 eventid = 1; */
+        if (message.eventid !== undefined)
+            writer.tag(1, WireType.Varint).int32(message.eventid);
+        /* repeated CDataGCCStrike15_v2_MatchInfo matches = 2; */
+        for (let i = 0; i < message.matches.length; i++)
+            CDataGCCStrike15_v2_MatchInfo.internalBinaryWrite(message.matches[i], writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt
+ */
+export const CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = new CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class CMsgGCCStrike15_v2_Predictions$Type extends MessageType<CMsgGCCStrike15_v2_Predictions> {
     constructor() {
         super("CMsgGCCStrike15_v2_Predictions", [
@@ -12117,11 +12400,12 @@ class CMsgGCCStrike15_v2_ServerVarValueNotificationInfo$Type extends MessageType
         super("CMsgGCCStrike15_v2_ServerVarValueNotificationInfo", [
             { no: 1, name: "accountid", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 2, name: "viewangles", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 13 /*ScalarType.UINT32*/ },
-            { no: 3, name: "type", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
+            { no: 3, name: "type", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
+            { no: 4, name: "userdata", kind: "scalar", repeat: 2 /*RepeatType.UNPACKED*/, T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_ServerVarValueNotificationInfo>): CMsgGCCStrike15_v2_ServerVarValueNotificationInfo {
-        const message = { viewangles: [] };
+        const message = { viewangles: [], userdata: [] };
         globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
         if (value !== undefined)
             reflectionMergePartial<CMsgGCCStrike15_v2_ServerVarValueNotificationInfo>(this, message, value);
@@ -12145,6 +12429,13 @@ class CMsgGCCStrike15_v2_ServerVarValueNotificationInfo$Type extends MessageType
                 case /* optional uint32 type */ 3:
                     message.type = reader.uint32();
                     break;
+                case /* repeated uint32 userdata */ 4:
+                    if (wireType === WireType.LengthDelimited)
+                        for (let e = reader.int32() + reader.pos; reader.pos < e;)
+                            message.userdata.push(reader.uint32());
+                    else
+                        message.userdata.push(reader.uint32());
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -12166,6 +12457,9 @@ class CMsgGCCStrike15_v2_ServerVarValueNotificationInfo$Type extends MessageType
         /* optional uint32 type = 3; */
         if (message.type !== undefined)
             writer.tag(3, WireType.Varint).uint32(message.type);
+        /* repeated uint32 userdata = 4; */
+        for (let i = 0; i < message.userdata.length; i++)
+            writer.tag(4, WireType.Varint).uint32(message.userdata[i]);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -12715,6 +13009,60 @@ class CSOAccountSeasonalOperation$Type extends MessageType<CSOAccountSeasonalOpe
  * @generated MessageType for protobuf message CSOAccountSeasonalOperation
  */
 export const CSOAccountSeasonalOperation = new CSOAccountSeasonalOperation$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class CSOAccountRecurringSubscription$Type extends MessageType<CSOAccountRecurringSubscription> {
+    constructor() {
+        super("CSOAccountRecurringSubscription", [
+            { no: 1, name: "time_next_cycle", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
+            { no: 2, name: "time_initiated", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<CSOAccountRecurringSubscription>): CSOAccountRecurringSubscription {
+        const message = {};
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CSOAccountRecurringSubscription>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CSOAccountRecurringSubscription): CSOAccountRecurringSubscription {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional uint32 time_next_cycle */ 1:
+                    message.timeNextCycle = reader.uint32();
+                    break;
+                case /* optional uint32 time_initiated */ 2:
+                    message.timeInitiated = reader.uint32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CSOAccountRecurringSubscription, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional uint32 time_next_cycle = 1; */
+        if (message.timeNextCycle !== undefined)
+            writer.tag(1, WireType.Varint).uint32(message.timeNextCycle);
+        /* optional uint32 time_initiated = 2; */
+        if (message.timeInitiated !== undefined)
+            writer.tag(2, WireType.Varint).uint32(message.timeInitiated);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message CSOAccountRecurringSubscription
+ */
+export const CSOAccountRecurringSubscription = new CSOAccountRecurringSubscription$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class CSOPersonaDataPublic$Type extends MessageType<CSOPersonaDataPublic> {
     constructor() {
@@ -13935,7 +14283,8 @@ class CMsgGCCStrike15_v2_Party_SearchResults_Entry$Type extends MessageType<CMsg
             { no: 3, name: "game_type", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 4, name: "apr", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 5, name: "ark", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
-            { no: 6, name: "loc", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
+            { no: 6, name: "loc", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
+            { no: 7, name: "accountid", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_Party_SearchResults_Entry>): CMsgGCCStrike15_v2_Party_SearchResults_Entry {
@@ -13968,6 +14317,9 @@ class CMsgGCCStrike15_v2_Party_SearchResults_Entry$Type extends MessageType<CMsg
                 case /* optional uint32 loc */ 6:
                     message.loc = reader.uint32();
                     break;
+                case /* optional uint32 accountid */ 7:
+                    message.accountid = reader.uint32();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -13998,6 +14350,9 @@ class CMsgGCCStrike15_v2_Party_SearchResults_Entry$Type extends MessageType<CMsg
         /* optional uint32 loc = 6; */
         if (message.loc !== undefined)
             writer.tag(6, WireType.Varint).uint32(message.loc);
+        /* optional uint32 accountid = 7; */
+        if (message.accountid !== undefined)
+            writer.tag(7, WireType.Varint).uint32(message.accountid);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -15137,7 +15492,9 @@ class CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode$Type extends MessageType<CMsg
             { no: 4, name: "show_unsigned_ui", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
             { no: 5, name: "kick_user", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
             { no: 6, name: "show_trusted_ui", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
-            { no: 7, name: "show_warning_not_trusted", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ }
+            { no: 7, name: "show_warning_not_trusted", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 8, name: "show_warning_not_trusted_2", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 9, name: "files_prevented_trusted", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode>): CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode {
@@ -15173,6 +15530,12 @@ class CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode$Type extends MessageType<CMsg
                 case /* optional bool show_warning_not_trusted */ 7:
                     message.showWarningNotTrusted = reader.bool();
                     break;
+                case /* optional bool show_warning_not_trusted_2 */ 8:
+                    message.showWarningNotTrusted2 = reader.bool();
+                    break;
+                case /* optional string files_prevented_trusted */ 9:
+                    message.filesPreventedTrusted = reader.string();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -15206,6 +15569,12 @@ class CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode$Type extends MessageType<CMsg
         /* optional bool show_warning_not_trusted = 7; */
         if (message.showWarningNotTrusted !== undefined)
             writer.tag(7, WireType.Varint).bool(message.showWarningNotTrusted);
+        /* optional bool show_warning_not_trusted_2 = 8; */
+        if (message.showWarningNotTrusted2 !== undefined)
+            writer.tag(8, WireType.Varint).bool(message.showWarningNotTrusted2);
+        /* optional string files_prevented_trusted = 9; */
+        if (message.filesPreventedTrusted !== undefined)
+            writer.tag(9, WireType.LengthDelimited).string(message.filesPreventedTrusted);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -15270,3 +15639,202 @@ class CMsgGCCStrike15_v2_GC2ClientRequestValidation$Type extends MessageType<CMs
  * @generated MessageType for protobuf message CMsgGCCStrike15_v2_GC2ClientRequestValidation
  */
 export const CMsgGCCStrike15_v2_GC2ClientRequestValidation = new CMsgGCCStrike15_v2_GC2ClientRequestValidation$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class CMsgGCCStrike15_v2_GC2ClientInitSystem$Type extends MessageType<CMsgGCCStrike15_v2_GC2ClientInitSystem> {
+    constructor() {
+        super("CMsgGCCStrike15_v2_GC2ClientInitSystem", [
+            { no: 1, name: "load", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "name", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "outputname", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 4, name: "key_data", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
+            { no: 5, name: "sha_hash", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
+            { no: 6, name: "cookie", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 7, name: "manifest", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<CMsgGCCStrike15_v2_GC2ClientInitSystem>): CMsgGCCStrike15_v2_GC2ClientInitSystem {
+        const message = {};
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CMsgGCCStrike15_v2_GC2ClientInitSystem>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CMsgGCCStrike15_v2_GC2ClientInitSystem): CMsgGCCStrike15_v2_GC2ClientInitSystem {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional bool load */ 1:
+                    message.load = reader.bool();
+                    break;
+                case /* optional string name */ 2:
+                    message.name = reader.string();
+                    break;
+                case /* optional string outputname */ 3:
+                    message.outputname = reader.string();
+                    break;
+                case /* optional bytes key_data */ 4:
+                    message.keyData = reader.bytes();
+                    break;
+                case /* optional bytes sha_hash */ 5:
+                    message.shaHash = reader.bytes();
+                    break;
+                case /* optional int32 cookie */ 6:
+                    message.cookie = reader.int32();
+                    break;
+                case /* optional string manifest */ 7:
+                    message.manifest = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CMsgGCCStrike15_v2_GC2ClientInitSystem, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional bool load = 1; */
+        if (message.load !== undefined)
+            writer.tag(1, WireType.Varint).bool(message.load);
+        /* optional string name = 2; */
+        if (message.name !== undefined)
+            writer.tag(2, WireType.LengthDelimited).string(message.name);
+        /* optional string outputname = 3; */
+        if (message.outputname !== undefined)
+            writer.tag(3, WireType.LengthDelimited).string(message.outputname);
+        /* optional bytes key_data = 4; */
+        if (message.keyData !== undefined)
+            writer.tag(4, WireType.LengthDelimited).bytes(message.keyData);
+        /* optional bytes sha_hash = 5; */
+        if (message.shaHash !== undefined)
+            writer.tag(5, WireType.LengthDelimited).bytes(message.shaHash);
+        /* optional int32 cookie = 6; */
+        if (message.cookie !== undefined)
+            writer.tag(6, WireType.Varint).int32(message.cookie);
+        /* optional string manifest = 7; */
+        if (message.manifest !== undefined)
+            writer.tag(7, WireType.LengthDelimited).string(message.manifest);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message CMsgGCCStrike15_v2_GC2ClientInitSystem
+ */
+export const CMsgGCCStrike15_v2_GC2ClientInitSystem = new CMsgGCCStrike15_v2_GC2ClientInitSystem$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class CMsgGCCStrike15_v2_GC2ClientInitSystem_Response$Type extends MessageType<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response> {
+    constructor() {
+        super("CMsgGCCStrike15_v2_GC2ClientInitSystem_Response", [
+            { no: 1, name: "success", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 2, name: "diagnostic", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 3, name: "sha_hash", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
+            { no: 4, name: "response", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 5, name: "error_code1", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 6, name: "error_code2", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 7, name: "handle", kind: "scalar", opt: true, T: 3 /*ScalarType.INT64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 8, name: "einit_result", kind: "enum", opt: true, T: () => ["EInitSystemResult", EInitSystemResult] },
+            { no: 9, name: "aux_system1", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 10, name: "aux_system2", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response>): CMsgGCCStrike15_v2_GC2ClientInitSystem_Response {
+        const message = {};
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CMsgGCCStrike15_v2_GC2ClientInitSystem_Response): CMsgGCCStrike15_v2_GC2ClientInitSystem_Response {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional bool success */ 1:
+                    message.success = reader.bool();
+                    break;
+                case /* optional string diagnostic */ 2:
+                    message.diagnostic = reader.string();
+                    break;
+                case /* optional bytes sha_hash */ 3:
+                    message.shaHash = reader.bytes();
+                    break;
+                case /* optional int32 response */ 4:
+                    message.response = reader.int32();
+                    break;
+                case /* optional int32 error_code1 */ 5:
+                    message.errorCode1 = reader.int32();
+                    break;
+                case /* optional int32 error_code2 */ 6:
+                    message.errorCode2 = reader.int32();
+                    break;
+                case /* optional int64 handle */ 7:
+                    message.handle = reader.int64().toBigInt();
+                    break;
+                case /* optional EInitSystemResult einit_result */ 8:
+                    message.einitResult = reader.int32();
+                    break;
+                case /* optional int32 aux_system1 */ 9:
+                    message.auxSystem1 = reader.int32();
+                    break;
+                case /* optional int32 aux_system2 */ 10:
+                    message.auxSystem2 = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CMsgGCCStrike15_v2_GC2ClientInitSystem_Response, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional bool success = 1; */
+        if (message.success !== undefined)
+            writer.tag(1, WireType.Varint).bool(message.success);
+        /* optional string diagnostic = 2; */
+        if (message.diagnostic !== undefined)
+            writer.tag(2, WireType.LengthDelimited).string(message.diagnostic);
+        /* optional bytes sha_hash = 3; */
+        if (message.shaHash !== undefined)
+            writer.tag(3, WireType.LengthDelimited).bytes(message.shaHash);
+        /* optional int32 response = 4; */
+        if (message.response !== undefined)
+            writer.tag(4, WireType.Varint).int32(message.response);
+        /* optional int32 error_code1 = 5; */
+        if (message.errorCode1 !== undefined)
+            writer.tag(5, WireType.Varint).int32(message.errorCode1);
+        /* optional int32 error_code2 = 6; */
+        if (message.errorCode2 !== undefined)
+            writer.tag(6, WireType.Varint).int32(message.errorCode2);
+        /* optional int64 handle = 7; */
+        if (message.handle !== undefined)
+            writer.tag(7, WireType.Varint).int64(message.handle);
+        /* optional EInitSystemResult einit_result = 8; */
+        if (message.einitResult !== undefined)
+            writer.tag(8, WireType.Varint).int32(message.einitResult);
+        /* optional int32 aux_system1 = 9; */
+        if (message.auxSystem1 !== undefined)
+            writer.tag(9, WireType.Varint).int32(message.auxSystem1);
+        /* optional int32 aux_system2 = 10; */
+        if (message.auxSystem2 !== undefined)
+            writer.tag(10, WireType.Varint).int32(message.auxSystem2);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message CMsgGCCStrike15_v2_GC2ClientInitSystem_Response
+ */
+export const CMsgGCCStrike15_v2_GC2ClientInitSystem_Response = new CMsgGCCStrike15_v2_GC2ClientInitSystem_Response$Type();

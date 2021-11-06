@@ -1030,6 +1030,14 @@ export interface CGCSystemMsg_GetAccountDetails_Response {
      * @generated from protobuf field: optional string txn_country_code = 37;
      */
     txnCountryCode?: string;
+    /**
+     * @generated from protobuf field: optional bool has_accepted_china_ssa = 38;
+     */
+    hasAcceptedChinaSsa?: boolean;
+    /**
+     * @generated from protobuf field: optional bool is_banned_steam_china = 39;
+     */
+    isBannedSteamChina?: boolean;
 }
 /**
  * @generated from protobuf message CMsgGCGetPersonaNames
@@ -1138,6 +1146,10 @@ export interface CMsgGCMsgMasterSetDirectory_Response {
      * @generated from protobuf field: optional int32 eresult = 1;
      */
     eresult?: number;
+    /**
+     * @generated from protobuf field: optional string message = 2;
+     */
+    message?: string;
 }
 /**
  * @generated from protobuf message CMsgGCMsgWebAPIJobRequestForwardResponse
@@ -1681,6 +1693,10 @@ export interface CChinaAgreementSessions_StartAgreementSessionInGame_Request {
      * @generated from protobuf field: optional fixed64 steamid = 2;
      */
     steamid?: bigint;
+    /**
+     * @generated from protobuf field: optional string client_ipaddress = 3;
+     */
+    clientIpaddress?: string;
 }
 /**
  * @generated from protobuf message CChinaAgreementSessions_StartAgreementSessionInGame_Response
@@ -4744,7 +4760,9 @@ class CGCSystemMsg_GetAccountDetails_Response$Type extends MessageType<CGCSystem
             { no: 34, name: "is_phone_identifying", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
             { no: 35, name: "rt_identity_linked", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 36, name: "rt_birth_date", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
-            { no: 37, name: "txn_country_code", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
+            { no: 37, name: "txn_country_code", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 38, name: "has_accepted_china_ssa", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
+            { no: 39, name: "is_banned_steam_china", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ }
         ], { msgpool_soft_limit: 128, msgpool_hard_limit: 512 });
     }
     create(value?: PartialMessage<CGCSystemMsg_GetAccountDetails_Response>): CGCSystemMsg_GetAccountDetails_Response {
@@ -4861,6 +4879,12 @@ class CGCSystemMsg_GetAccountDetails_Response$Type extends MessageType<CGCSystem
                 case /* optional string txn_country_code */ 37:
                     message.txnCountryCode = reader.string();
                     break;
+                case /* optional bool has_accepted_china_ssa */ 38:
+                    message.hasAcceptedChinaSsa = reader.bool();
+                    break;
+                case /* optional bool is_banned_steam_china */ 39:
+                    message.isBannedSteamChina = reader.bool();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -4975,6 +4999,12 @@ class CGCSystemMsg_GetAccountDetails_Response$Type extends MessageType<CGCSystem
         /* optional string txn_country_code = 37; */
         if (message.txnCountryCode !== undefined)
             writer.tag(37, WireType.LengthDelimited).string(message.txnCountryCode);
+        /* optional bool has_accepted_china_ssa = 38; */
+        if (message.hasAcceptedChinaSsa !== undefined)
+            writer.tag(38, WireType.Varint).bool(message.hasAcceptedChinaSsa);
+        /* optional bool is_banned_steam_china = 39; */
+        if (message.isBannedSteamChina !== undefined)
+            writer.tag(39, WireType.Varint).bool(message.isBannedSteamChina);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -5389,7 +5419,8 @@ export const CMsgGCMsgMasterSetDirectory_SubGC = new CMsgGCMsgMasterSetDirectory
 class CMsgGCMsgMasterSetDirectory_Response$Type extends MessageType<CMsgGCMsgMasterSetDirectory_Response> {
     constructor() {
         super("CMsgGCMsgMasterSetDirectory_Response", [
-            { no: 1, name: "eresult", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ }
+            { no: 1, name: "eresult", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 2, name: "message", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCMsgMasterSetDirectory_Response>): CMsgGCMsgMasterSetDirectory_Response {
@@ -5407,6 +5438,9 @@ class CMsgGCMsgMasterSetDirectory_Response$Type extends MessageType<CMsgGCMsgMas
                 case /* optional int32 eresult */ 1:
                     message.eresult = reader.int32();
                     break;
+                case /* optional string message */ 2:
+                    message.message = reader.string();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -5422,6 +5456,9 @@ class CMsgGCMsgMasterSetDirectory_Response$Type extends MessageType<CMsgGCMsgMas
         /* optional int32 eresult = 1; */
         if (message.eresult !== undefined)
             writer.tag(1, WireType.Varint).int32(message.eresult);
+        /* optional string message = 2; */
+        if (message.message !== undefined)
+            writer.tag(2, WireType.LengthDelimited).string(message.message);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -6947,7 +6984,8 @@ class CChinaAgreementSessions_StartAgreementSessionInGame_Request$Type extends M
     constructor() {
         super("CChinaAgreementSessions_StartAgreementSessionInGame_Request", [
             { no: 1, name: "appid", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
-            { no: 2, name: "steamid", kind: "scalar", opt: true, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ }
+            { no: 2, name: "steamid", kind: "scalar", opt: true, T: 6 /*ScalarType.FIXED64*/, L: 0 /*LongType.BIGINT*/ },
+            { no: 3, name: "client_ipaddress", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
         ]);
     }
     create(value?: PartialMessage<CChinaAgreementSessions_StartAgreementSessionInGame_Request>): CChinaAgreementSessions_StartAgreementSessionInGame_Request {
@@ -6968,6 +7006,9 @@ class CChinaAgreementSessions_StartAgreementSessionInGame_Request$Type extends M
                 case /* optional fixed64 steamid */ 2:
                     message.steamid = reader.fixed64().toBigInt();
                     break;
+                case /* optional string client_ipaddress */ 3:
+                    message.clientIpaddress = reader.string();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6986,6 +7027,9 @@ class CChinaAgreementSessions_StartAgreementSessionInGame_Request$Type extends M
         /* optional fixed64 steamid = 2; */
         if (message.steamid !== undefined)
             writer.tag(2, WireType.Bit64).fixed64(message.steamid);
+        /* optional string client_ipaddress = 3; */
+        if (message.clientIpaddress !== undefined)
+            writer.tag(3, WireType.LengthDelimited).string(message.clientIpaddress);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
