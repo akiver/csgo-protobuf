@@ -3707,6 +3707,14 @@ export interface CMsgGCCStrike15_v2_GC2ClientInitSystem {
      * @generated from protobuf field: optional string manifest = 7;
      */
     manifest?: string;
+    /**
+     * @generated from protobuf field: optional bytes system_package = 8;
+     */
+    systemPackage?: Uint8Array;
+    /**
+     * @generated from protobuf field: optional bool load_system = 9;
+     */
+    loadSystem?: boolean;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_GC2ClientInitSystem_Response
@@ -15649,7 +15657,9 @@ class CMsgGCCStrike15_v2_GC2ClientInitSystem$Type extends MessageType<CMsgGCCStr
             { no: 4, name: "key_data", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
             { no: 5, name: "sha_hash", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
             { no: 6, name: "cookie", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
-            { no: 7, name: "manifest", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ }
+            { no: 7, name: "manifest", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 8, name: "system_package", kind: "scalar", opt: true, T: 12 /*ScalarType.BYTES*/ },
+            { no: 9, name: "load_system", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_GC2ClientInitSystem>): CMsgGCCStrike15_v2_GC2ClientInitSystem {
@@ -15685,6 +15695,12 @@ class CMsgGCCStrike15_v2_GC2ClientInitSystem$Type extends MessageType<CMsgGCCStr
                 case /* optional string manifest */ 7:
                     message.manifest = reader.string();
                     break;
+                case /* optional bytes system_package */ 8:
+                    message.systemPackage = reader.bytes();
+                    break;
+                case /* optional bool load_system */ 9:
+                    message.loadSystem = reader.bool();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -15718,6 +15734,12 @@ class CMsgGCCStrike15_v2_GC2ClientInitSystem$Type extends MessageType<CMsgGCCStr
         /* optional string manifest = 7; */
         if (message.manifest !== undefined)
             writer.tag(7, WireType.LengthDelimited).string(message.manifest);
+        /* optional bytes system_package = 8; */
+        if (message.systemPackage !== undefined)
+            writer.tag(8, WireType.LengthDelimited).bytes(message.systemPackage);
+        /* optional bool load_system = 9; */
+        if (message.loadSystem !== undefined)
+            writer.tag(9, WireType.Varint).bool(message.loadSystem);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
