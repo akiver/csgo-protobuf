@@ -907,6 +907,10 @@ export interface CMsgGCCStrike15_v2_MatchmakingStart {
      * @generated from protobuf field: optional uint32 tv_control = 7;
      */
     tvControl?: number;
+    /**
+     * @generated from protobuf field: optional uint64 lobby_id = 8;
+     */
+    lobbyId?: bigint;
 }
 /**
  * @generated from protobuf message CMsgGCCStrike15_v2_MatchmakingStop
@@ -6746,7 +6750,8 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
             { no: 4, name: "client_version", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
             { no: 5, name: "tournament_match", kind: "message", T: () => TournamentMatchSetup },
             { no: 6, name: "prime_only", kind: "scalar", opt: true, T: 8 /*ScalarType.BOOL*/ },
-            { no: 7, name: "tv_control", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ }
+            { no: 7, name: "tv_control", kind: "scalar", opt: true, T: 13 /*ScalarType.UINT32*/ },
+            { no: 8, name: "lobby_id", kind: "scalar", opt: true, T: 4 /*ScalarType.UINT64*/, L: 0 /*LongType.BIGINT*/ }
         ]);
     }
     create(value?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingStart>): CMsgGCCStrike15_v2_MatchmakingStart {
@@ -6786,6 +6791,9 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
                 case /* optional uint32 tv_control */ 7:
                     message.tvControl = reader.uint32();
                     break;
+                case /* optional uint64 lobby_id */ 8:
+                    message.lobbyId = reader.uint64().toBigInt();
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -6819,6 +6827,9 @@ class CMsgGCCStrike15_v2_MatchmakingStart$Type extends MessageType<CMsgGCCStrike
         /* optional uint32 tv_control = 7; */
         if (message.tvControl !== undefined)
             writer.tag(7, WireType.Varint).uint32(message.tvControl);
+        /* optional uint64 lobby_id = 8; */
+        if (message.lobbyId !== undefined)
+            writer.tag(8, WireType.Varint).uint64(message.lobbyId);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
