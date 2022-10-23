@@ -1448,6 +1448,35 @@ export interface CCSUsrMsg_ServerRankRevealAll {
     reservation?: CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve;
 }
 /**
+ * @generated from protobuf message CCSUsrMsg_UtilMsg
+ */
+export interface CCSUsrMsg_UtilMsg {
+    /**
+     * @generated from protobuf field: optional string util_action = 1;
+     */
+    utilAction?: string;
+    /**
+     * @generated from protobuf field: optional int32 util1 = 2;
+     */
+    util1?: number;
+    /**
+     * @generated from protobuf field: optional int32 util2 = 3;
+     */
+    util2?: number;
+    /**
+     * @generated from protobuf field: optional int32 util3 = 4;
+     */
+    util3?: number;
+    /**
+     * @generated from protobuf field: optional int32 util4 = 5;
+     */
+    util4?: number;
+    /**
+     * @generated from protobuf field: optional int32 util5 = 6;
+     */
+    util5?: number;
+}
+/**
  * @generated from protobuf enum ECstrike15UserMessages
  */
 export enum ECstrike15UserMessages {
@@ -1750,7 +1779,11 @@ export enum ECstrike15UserMessages {
     /**
      * @generated from protobuf enum value: CS_UM_DeepStats = 81;
      */
-    CS_UM_DeepStats = 81
+    CS_UM_DeepStats = 81,
+    /**
+     * @generated from protobuf enum value: CS_UM_UtilMsg = 82;
+     */
+    CS_UM_UtilMsg = 82
 }
 /**
  * @generated from protobuf enum ECSUsrMsg_DisconnectToLobby_Action
@@ -6981,3 +7014,85 @@ class CCSUsrMsg_ServerRankRevealAll$Type extends MessageType<CCSUsrMsg_ServerRan
  * @generated MessageType for protobuf message CCSUsrMsg_ServerRankRevealAll
  */
 export const CCSUsrMsg_ServerRankRevealAll = new CCSUsrMsg_ServerRankRevealAll$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class CCSUsrMsg_UtilMsg$Type extends MessageType<CCSUsrMsg_UtilMsg> {
+    constructor() {
+        super("CCSUsrMsg_UtilMsg", [
+            { no: 1, name: "util_action", kind: "scalar", opt: true, T: 9 /*ScalarType.STRING*/ },
+            { no: 2, name: "util1", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 3, name: "util2", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 4, name: "util3", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 5, name: "util4", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ },
+            { no: 6, name: "util5", kind: "scalar", opt: true, T: 5 /*ScalarType.INT32*/ }
+        ]);
+    }
+    create(value?: PartialMessage<CCSUsrMsg_UtilMsg>): CCSUsrMsg_UtilMsg {
+        const message = {};
+        globalThis.Object.defineProperty(message, MESSAGE_TYPE, { enumerable: false, value: this });
+        if (value !== undefined)
+            reflectionMergePartial<CCSUsrMsg_UtilMsg>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: CCSUsrMsg_UtilMsg): CCSUsrMsg_UtilMsg {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* optional string util_action */ 1:
+                    message.utilAction = reader.string();
+                    break;
+                case /* optional int32 util1 */ 2:
+                    message.util1 = reader.int32();
+                    break;
+                case /* optional int32 util2 */ 3:
+                    message.util2 = reader.int32();
+                    break;
+                case /* optional int32 util3 */ 4:
+                    message.util3 = reader.int32();
+                    break;
+                case /* optional int32 util4 */ 5:
+                    message.util4 = reader.int32();
+                    break;
+                case /* optional int32 util5 */ 6:
+                    message.util5 = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: CCSUsrMsg_UtilMsg, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* optional string util_action = 1; */
+        if (message.utilAction !== undefined)
+            writer.tag(1, WireType.LengthDelimited).string(message.utilAction);
+        /* optional int32 util1 = 2; */
+        if (message.util1 !== undefined)
+            writer.tag(2, WireType.Varint).int32(message.util1);
+        /* optional int32 util2 = 3; */
+        if (message.util2 !== undefined)
+            writer.tag(3, WireType.Varint).int32(message.util2);
+        /* optional int32 util3 = 4; */
+        if (message.util3 !== undefined)
+            writer.tag(4, WireType.Varint).int32(message.util3);
+        /* optional int32 util4 = 5; */
+        if (message.util4 !== undefined)
+            writer.tag(5, WireType.Varint).int32(message.util4);
+        /* optional int32 util5 = 6; */
+        if (message.util5 !== undefined)
+            writer.tag(6, WireType.Varint).int32(message.util5);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message CCSUsrMsg_UtilMsg
+ */
+export const CCSUsrMsg_UtilMsg = new CCSUsrMsg_UtilMsg$Type();
