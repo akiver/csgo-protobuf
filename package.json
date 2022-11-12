@@ -11,15 +11,17 @@
   ],
   "scripts": {
     "build": "tsc --module es2015 --outDir dist/esm && tsc --module commonjs --outDir dist/commonjs --declaration --declarationDir dist/types",
-    "generate": "protoc -I ./protobuf --ts_opt generate_dependencies --ts_out ./src cstrike15_usermessages.proto netmessages.proto"
+    "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts google/protobuf/descriptor.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto engine_gcmessages.proto netmessages.proto steammessages.proto"
   },
   "dependencies": {
-    "@protobuf-ts/plugin": "2.0.7"
+    "@bufbuild/protobuf": "0.2.1"
   },
   "devDependencies": {
-    "typescript": "4.4.4"
+    "@bufbuild/protoc-gen-es": "0.2.1",
+    "@protobuf-ts/protoc": "2.8.1",
+    "typescript": "4.8.4"
   },
   "config": {
-    "protocVersion": "3.19.1"
+    "protocVersion": "3.20.3"
   }
 }
