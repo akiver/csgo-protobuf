@@ -386,6 +386,11 @@ export enum ECstrike15UserMessages {
    * @generated from enum value: CS_UM_UtilMsg = 82;
    */
   CS_UM_UtilMsg = 82,
+
+  /**
+   * @generated from enum value: CS_UM_UtilMsg_Response = 83;
+   */
+  CS_UM_UtilMsg_Response = 83,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ECstrike15UserMessages)
 proto2.util.setEnumType(ECstrike15UserMessages, "ECstrike15UserMessages", [
@@ -464,6 +469,7 @@ proto2.util.setEnumType(ECstrike15UserMessages, "ECstrike15UserMessages", [
   { no: 80, name: "CS_UM_CurrentRoundOdds" },
   { no: 81, name: "CS_UM_DeepStats" },
   { no: 82, name: "CS_UM_UtilMsg" },
+  { no: 83, name: "CS_UM_UtilMsg_Response" },
 ]);
 
 /**
@@ -4735,6 +4741,152 @@ export class CCSUsrMsg_UtilMsg extends Message<CCSUsrMsg_UtilMsg> {
 
   static equals(a: CCSUsrMsg_UtilMsg | PlainMessage<CCSUsrMsg_UtilMsg> | undefined, b: CCSUsrMsg_UtilMsg | PlainMessage<CCSUsrMsg_UtilMsg> | undefined): boolean {
     return proto2.util.equals(CCSUsrMsg_UtilMsg, a, b);
+  }
+}
+
+/**
+ * @generated from message CCSUsrMsg_UtilMsg_Response
+ */
+export class CCSUsrMsg_UtilMsg_Response extends Message<CCSUsrMsg_UtilMsg_Response> {
+  /**
+   * @generated from field: optional fixed32 crc = 1;
+   */
+  crc?: number;
+
+  /**
+   * @generated from field: optional int32 item_count = 2;
+   */
+  itemCount?: number;
+
+  /**
+   * @generated from field: optional fixed32 crc2 = 3;
+   */
+  crc2?: number;
+
+  /**
+   * @generated from field: optional int32 item_count2 = 4;
+   */
+  itemCount2?: number;
+
+  /**
+   * @generated from field: repeated int32 crc_part = 5;
+   */
+  crcPart: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 crc_part2 = 6;
+   */
+  crcPart2: number[] = [];
+
+  /**
+   * @generated from field: optional int32 client_timestamp = 7;
+   */
+  clientTimestamp?: number;
+
+  /**
+   * @generated from field: optional int32 platform = 8;
+   */
+  platform?: number;
+
+  /**
+   * @generated from field: repeated CCSUsrMsg_UtilMsg_Response.ItemDetail itemdetails = 9;
+   */
+  itemdetails: CCSUsrMsg_UtilMsg_Response_ItemDetail[] = [];
+
+  /**
+   * @generated from field: optional int32 itemgroup = 10;
+   */
+  itemgroup?: number;
+
+  constructor(data?: PartialMessage<CCSUsrMsg_UtilMsg_Response>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime = proto2;
+  static readonly typeName = "CCSUsrMsg_UtilMsg_Response";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "crc", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
+    { no: 2, name: "item_count", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "crc2", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
+    { no: 4, name: "item_count2", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 5, name: "crc_part", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 6, name: "crc_part2", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 7, name: "client_timestamp", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 8, name: "platform", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 9, name: "itemdetails", kind: "message", T: CCSUsrMsg_UtilMsg_Response_ItemDetail, repeated: true },
+    { no: 10, name: "itemgroup", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCSUsrMsg_UtilMsg_Response {
+    return new CCSUsrMsg_UtilMsg_Response().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCSUsrMsg_UtilMsg_Response {
+    return new CCSUsrMsg_UtilMsg_Response().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCSUsrMsg_UtilMsg_Response {
+    return new CCSUsrMsg_UtilMsg_Response().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CCSUsrMsg_UtilMsg_Response | PlainMessage<CCSUsrMsg_UtilMsg_Response> | undefined, b: CCSUsrMsg_UtilMsg_Response | PlainMessage<CCSUsrMsg_UtilMsg_Response> | undefined): boolean {
+    return proto2.util.equals(CCSUsrMsg_UtilMsg_Response, a, b);
+  }
+}
+
+/**
+ * @generated from message CCSUsrMsg_UtilMsg_Response.ItemDetail
+ */
+export class CCSUsrMsg_UtilMsg_Response_ItemDetail extends Message<CCSUsrMsg_UtilMsg_Response_ItemDetail> {
+  /**
+   * @generated from field: optional int32 index = 1;
+   */
+  index?: number;
+
+  /**
+   * @generated from field: optional int32 hash = 2;
+   */
+  hash?: number;
+
+  /**
+   * @generated from field: optional int32 crc = 3;
+   */
+  crc?: number;
+
+  /**
+   * @generated from field: optional string name = 4;
+   */
+  name?: string;
+
+  constructor(data?: PartialMessage<CCSUsrMsg_UtilMsg_Response_ItemDetail>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime = proto2;
+  static readonly typeName = "CCSUsrMsg_UtilMsg_Response.ItemDetail";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "index", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "hash", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "crc", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCSUsrMsg_UtilMsg_Response_ItemDetail {
+    return new CCSUsrMsg_UtilMsg_Response_ItemDetail().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCSUsrMsg_UtilMsg_Response_ItemDetail {
+    return new CCSUsrMsg_UtilMsg_Response_ItemDetail().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCSUsrMsg_UtilMsg_Response_ItemDetail {
+    return new CCSUsrMsg_UtilMsg_Response_ItemDetail().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CCSUsrMsg_UtilMsg_Response_ItemDetail | PlainMessage<CCSUsrMsg_UtilMsg_Response_ItemDetail> | undefined, b: CCSUsrMsg_UtilMsg_Response_ItemDetail | PlainMessage<CCSUsrMsg_UtilMsg_Response_ItemDetail> | undefined): boolean {
+    return proto2.util.equals(CCSUsrMsg_UtilMsg_Response_ItemDetail, a, b);
   }
 }
 
