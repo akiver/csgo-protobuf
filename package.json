@@ -2,6 +2,7 @@
   "name": "csgo-protobuf",
   "version": "2.0.1",
   "license": "GPL-2.0",
+  "repository": "https://github.com/akiver/csgo-protobuf",
   "author": "AkiVer",
   "main": "./dist/commonjs/index.js",
   "module": "./dist/esm/index.js",
@@ -11,15 +12,15 @@
   ],
   "scripts": {
     "build": "tsc --module es2015 --outDir dist/esm && tsc --module commonjs --outDir dist/commonjs --declaration --declarationDir dist/types",
-    "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts google/protobuf/descriptor.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto engine_gcmessages.proto netmessages.proto steammessages.proto"
+    "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts google/protobuf/descriptor.proto usermessages.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto gcsdk_gcmessages.proto demo.proto networkbasetypes.proto network_connection.proto engine_gcmessages.proto gameevents.proto netmessages.proto steammessages.proto"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "0.2.1"
+    "@bufbuild/protobuf": "1.2.0"
   },
   "devDependencies": {
-    "@bufbuild/protoc-gen-es": "0.2.1",
-    "@protobuf-ts/protoc": "2.8.1",
-    "typescript": "4.8.4"
+    "@bufbuild/protoc-gen-es": "1.2.0",
+    "@protobuf-ts/protoc": "2.8.3",
+    "typescript": "5.0.2"
   },
   "config": {
     "protocVersion": "3.20.3"

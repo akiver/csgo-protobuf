@@ -2,8 +2,8 @@
   "compilerOptions": {
     "moduleResolution": "Node",
     "outDir": "dist",
-    "target": "ES2017",
-    "lib": ["es2017", "dom"]
+    "target": "ES2018",
+    "lib": ["es2018", "dom"]
   },
   "include": ["src"]
 }

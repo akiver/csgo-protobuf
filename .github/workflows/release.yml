@@ -13,18 +13,18 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Clone SteamDatabase/Protobufs
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: SteamDatabase/Protobufs
           path: SteamDatabaseProtobufs
 
       - name: Setup NodeJS
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version-file: ".node-version"
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
@@ -34,6 +34,7 @@ jobs:
         run: |
           rm protobuf/*.proto
           cp SteamDatabaseProtobufs/csgo/*.proto protobuf
+          chmod -x protobuf/**/*.proto
           npm run generate
           rm -rf SteamDatabaseProtobufs
 
