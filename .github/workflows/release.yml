@@ -34,7 +34,7 @@ jobs:
         run: |
           rm protobuf/*.proto
           cp SteamDatabaseProtobufs/csgo/*.proto protobuf
-          chmod -x protobuf/**/*.proto
+          chmod -R a-x protobuf/*.proto
           npm run generate
           rm -rf SteamDatabaseProtobufs
 
