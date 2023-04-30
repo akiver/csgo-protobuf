@@ -4585,6 +4585,16 @@ export class CUserMessage_UtilMsg_Response extends Message<CUserMessage_UtilMsg_
    */
   itemgroup?: number;
 
+  /**
+   * @generated from field: optional int32 total_count = 11;
+   */
+  totalCount?: number;
+
+  /**
+   * @generated from field: optional int32 total_count2 = 12;
+   */
+  totalCount2?: number;
+
   constructor(data?: PartialMessage<CUserMessage_UtilMsg_Response>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4603,6 +4613,8 @@ export class CUserMessage_UtilMsg_Response extends Message<CUserMessage_UtilMsg_
     { no: 8, name: "platform", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 9, name: "itemdetails", kind: "message", T: CUserMessage_UtilMsg_Response_ItemDetail, repeated: true },
     { no: 10, name: "itemgroup", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 11, name: "total_count", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 12, name: "total_count2", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_UtilMsg_Response {
