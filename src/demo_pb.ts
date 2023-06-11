@@ -96,9 +96,14 @@ export enum EDemoCommands {
   DEM_SpawnGroups = 15,
 
   /**
-   * @generated from enum value: DEM_Max = 16;
+   * @generated from enum value: DEM_AnimationData = 16;
    */
-  DEM_Max = 16,
+  DEM_AnimationData = 16,
+
+  /**
+   * @generated from enum value: DEM_Max = 17;
+   */
+  DEM_Max = 17,
 
   /**
    * @generated from enum value: DEM_IsCompressed = 64;
@@ -124,7 +129,8 @@ proto2.util.setEnumType(EDemoCommands, "EDemoCommands", [
   { no: 13, name: "DEM_FullPacket" },
   { no: 14, name: "DEM_SaveGame" },
   { no: 15, name: "DEM_SpawnGroups" },
-  { no: 16, name: "DEM_Max" },
+  { no: 16, name: "DEM_AnimationData" },
+  { no: 17, name: "DEM_Max" },
   { no: 64, name: "DEM_IsCompressed" },
 ]);
 
@@ -945,6 +951,61 @@ export class CDemoCustomDataCallbacks extends Message<CDemoCustomDataCallbacks> 
 
   static equals(a: CDemoCustomDataCallbacks | PlainMessage<CDemoCustomDataCallbacks> | undefined, b: CDemoCustomDataCallbacks | PlainMessage<CDemoCustomDataCallbacks> | undefined): boolean {
     return proto2.util.equals(CDemoCustomDataCallbacks, a, b);
+  }
+}
+
+/**
+ * @generated from message CDemoAnimationData
+ */
+export class CDemoAnimationData extends Message<CDemoAnimationData> {
+  /**
+   * @generated from field: optional sint32 entity_id = 1;
+   */
+  entityId?: number;
+
+  /**
+   * @generated from field: optional int32 start_tick = 2;
+   */
+  startTick?: number;
+
+  /**
+   * @generated from field: optional int32 end_tick = 3;
+   */
+  endTick?: number;
+
+  /**
+   * @generated from field: optional bytes data = 4;
+   */
+  data?: Uint8Array;
+
+  constructor(data?: PartialMessage<CDemoAnimationData>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CDemoAnimationData";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "entity_id", kind: "scalar", T: 17 /* ScalarType.SINT32 */, opt: true },
+    { no: 2, name: "start_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "end_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 4, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CDemoAnimationData {
+    return new CDemoAnimationData().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CDemoAnimationData {
+    return new CDemoAnimationData().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CDemoAnimationData {
+    return new CDemoAnimationData().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CDemoAnimationData | PlainMessage<CDemoAnimationData> | undefined, b: CDemoAnimationData | PlainMessage<CDemoAnimationData> | undefined): boolean {
+    return proto2.util.equals(CDemoAnimationData, a, b);
   }
 }
 

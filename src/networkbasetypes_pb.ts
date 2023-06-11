@@ -894,6 +894,11 @@ export class CNETMsg_StringCmd extends Message<CNETMsg_StringCmd> {
    */
   command?: string;
 
+  /**
+   * @generated from field: optional uint32 prediction_sync = 2;
+   */
+  predictionSync?: number;
+
   constructor(data?: PartialMessage<CNETMsg_StringCmd>) {
     super();
     proto2.util.initPartial(data, this);
@@ -903,6 +908,7 @@ export class CNETMsg_StringCmd extends Message<CNETMsg_StringCmd> {
   static readonly typeName = "CNETMsg_StringCmd";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "command", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "prediction_sync", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CNETMsg_StringCmd {

@@ -1704,9 +1704,9 @@ export class CCSUsrMsg_WeaponSound extends Message<CCSUsrMsg_WeaponSound> {
   sound?: string;
 
   /**
-   * @generated from field: optional float timestamp = 6;
+   * @generated from field: optional float game_timestamp = 6;
    */
-  timestamp?: number;
+  gameTimestamp?: number;
 
   /**
    * @generated from field: optional fixed32 source_soundscapeid = 7;
@@ -1726,7 +1726,7 @@ export class CCSUsrMsg_WeaponSound extends Message<CCSUsrMsg_WeaponSound> {
     { no: 3, name: "origin_y", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 4, name: "origin_z", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 5, name: "sound", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 6, name: "timestamp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 6, name: "game_timestamp", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 7, name: "source_soundscapeid", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
   ]);
 

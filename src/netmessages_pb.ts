@@ -1494,11 +1494,6 @@ export class CSVCMsg_ClassInfo_class_t extends Message<CSVCMsg_ClassInfo_class_t
   classId?: number;
 
   /**
-   * @generated from field: optional string data_table_name = 2;
-   */
-  dataTableName?: string;
-
-  /**
    * @generated from field: optional string class_name = 3;
    */
   className?: string;
@@ -1512,7 +1507,6 @@ export class CSVCMsg_ClassInfo_class_t extends Message<CSVCMsg_ClassInfo_class_t
   static readonly typeName = "CSVCMsg_ClassInfo.class_t";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "class_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 2, name: "data_table_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 3, name: "class_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
@@ -2847,6 +2841,11 @@ export class CSVCMsg_CreateStringTable extends Message<CSVCMsg_CreateStringTable
    */
   dataCompressed?: boolean;
 
+  /**
+   * @generated from field: optional bool using_varint_bitcounts = 10;
+   */
+  usingVarintBitcounts?: boolean;
+
   constructor(data?: PartialMessage<CSVCMsg_CreateStringTable>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2864,6 +2863,7 @@ export class CSVCMsg_CreateStringTable extends Message<CSVCMsg_CreateStringTable
     { no: 7, name: "string_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 8, name: "uncompressed_size", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 9, name: "data_compressed", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 10, name: "using_varint_bitcounts", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_CreateStringTable {
@@ -3513,6 +3513,11 @@ export class ProtoFlattenedSerializerField_t extends Message<ProtoFlattenedSeria
    */
   varEncoderSym?: number;
 
+  /**
+   * @generated from field: repeated ProtoFlattenedSerializerField_t.polymorphic_field_t polymorphic_types = 11;
+   */
+  polymorphicTypes: ProtoFlattenedSerializerField_t_polymorphic_field_t[] = [];
+
   constructor(data?: PartialMessage<ProtoFlattenedSerializerField_t>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3531,6 +3536,7 @@ export class ProtoFlattenedSerializerField_t extends Message<ProtoFlattenedSeria
     { no: 8, name: "field_serializer_version", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 9, name: "send_node_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 10, name: "var_encoder_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 11, name: "polymorphic_types", kind: "message", T: ProtoFlattenedSerializerField_t_polymorphic_field_t, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProtoFlattenedSerializerField_t {
@@ -3547,6 +3553,49 @@ export class ProtoFlattenedSerializerField_t extends Message<ProtoFlattenedSeria
 
   static equals(a: ProtoFlattenedSerializerField_t | PlainMessage<ProtoFlattenedSerializerField_t> | undefined, b: ProtoFlattenedSerializerField_t | PlainMessage<ProtoFlattenedSerializerField_t> | undefined): boolean {
     return proto2.util.equals(ProtoFlattenedSerializerField_t, a, b);
+  }
+}
+
+/**
+ * @generated from message ProtoFlattenedSerializerField_t.polymorphic_field_t
+ */
+export class ProtoFlattenedSerializerField_t_polymorphic_field_t extends Message<ProtoFlattenedSerializerField_t_polymorphic_field_t> {
+  /**
+   * @generated from field: optional int32 polymorphic_field_serializer_name_sym = 1;
+   */
+  polymorphicFieldSerializerNameSym?: number;
+
+  /**
+   * @generated from field: optional int32 polymorphic_field_serializer_version = 2;
+   */
+  polymorphicFieldSerializerVersion?: number;
+
+  constructor(data?: PartialMessage<ProtoFlattenedSerializerField_t_polymorphic_field_t>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "ProtoFlattenedSerializerField_t.polymorphic_field_t";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "polymorphic_field_serializer_name_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "polymorphic_field_serializer_version", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProtoFlattenedSerializerField_t_polymorphic_field_t {
+    return new ProtoFlattenedSerializerField_t_polymorphic_field_t().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProtoFlattenedSerializerField_t_polymorphic_field_t {
+    return new ProtoFlattenedSerializerField_t_polymorphic_field_t().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProtoFlattenedSerializerField_t_polymorphic_field_t {
+    return new ProtoFlattenedSerializerField_t_polymorphic_field_t().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ProtoFlattenedSerializerField_t_polymorphic_field_t | PlainMessage<ProtoFlattenedSerializerField_t_polymorphic_field_t> | undefined, b: ProtoFlattenedSerializerField_t_polymorphic_field_t | PlainMessage<ProtoFlattenedSerializerField_t_polymorphic_field_t> | undefined): boolean {
+    return proto2.util.equals(ProtoFlattenedSerializerField_t_polymorphic_field_t, a, b);
   }
 }
 

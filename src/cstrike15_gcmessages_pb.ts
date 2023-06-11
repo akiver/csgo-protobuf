@@ -63,11 +63,6 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon = 9112,
 
   /**
-   * @generated from enum value: k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats = 9115;
-   */
-  k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats = 9115,
-
-  /**
    * @generated from enum value: k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = 9117;
    */
   k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate = 9117,
@@ -519,7 +514,6 @@ proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
   { no: 9109, name: "k_EMsgGCCStrike15_v2_MatchmakingClient2GCHello" },
   { no: 9110, name: "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientHello" },
   { no: 9112, name: "k_EMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon" },
-  { no: 9115, name: "k_EMsgGCCStrike15_v2_MatchmakingGCOperationalStats" },
   { no: 9117, name: "k_EMsgGCCStrike15_v2_MatchmakingOperator2GCBlogUpdate" },
   { no: 9118, name: "k_EMsgGCCStrike15_v2_ServerNotificationForUserPenalty" },
   { no: 9119, name: "k_EMsgGCCStrike15_v2_ClientReportPlayer" },
@@ -2609,55 +2603,6 @@ export class CMsgGC_ServerQuestUpdateData extends Message<CMsgGC_ServerQuestUpda
 
   static equals(a: CMsgGC_ServerQuestUpdateData | PlainMessage<CMsgGC_ServerQuestUpdateData> | undefined, b: CMsgGC_ServerQuestUpdateData | PlainMessage<CMsgGC_ServerQuestUpdateData> | undefined): boolean {
     return proto2.util.equals(CMsgGC_ServerQuestUpdateData, a, b);
-  }
-}
-
-/**
- * @generated from message CMsgGCCStrike15_v2_MatchmakingGCOperationalStats
- */
-export class CMsgGCCStrike15_v2_MatchmakingGCOperationalStats extends Message<CMsgGCCStrike15_v2_MatchmakingGCOperationalStats> {
-  /**
-   * @generated from field: optional int32 packetid = 1;
-   */
-  packetid?: number;
-
-  /**
-   * @generated from field: repeated OperationalStatisticDescription namekeys = 2;
-   */
-  namekeys: OperationalStatisticDescription[] = [];
-
-  /**
-   * @generated from field: repeated OperationalStatisticsPacket packets = 3;
-   */
-  packets: OperationalStatisticsPacket[] = [];
-
-  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGCOperationalStats>) {
-    super();
-    proto2.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CMsgGCCStrike15_v2_MatchmakingGCOperationalStats";
-  static readonly fields: FieldList = proto2.util.newFieldList(() => [
-    { no: 1, name: "packetid", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 2, name: "namekeys", kind: "message", T: OperationalStatisticDescription, repeated: true },
-    { no: 3, name: "packets", kind: "message", T: OperationalStatisticsPacket, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
-    return new CMsgGCCStrike15_v2_MatchmakingGCOperationalStats().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
-    return new CMsgGCCStrike15_v2_MatchmakingGCOperationalStats().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGCOperationalStats {
-    return new CMsgGCCStrike15_v2_MatchmakingGCOperationalStats().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: CMsgGCCStrike15_v2_MatchmakingGCOperationalStats | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGCOperationalStats> | undefined, b: CMsgGCCStrike15_v2_MatchmakingGCOperationalStats | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGCOperationalStats> | undefined): boolean {
-    return proto2.util.equals(CMsgGCCStrike15_v2_MatchmakingGCOperationalStats, a, b);
   }
 }
 
@@ -6790,6 +6735,11 @@ export class CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt extends Message<
    */
   matches: CDataGCCStrike15_v2_MatchInfo[] = [];
 
+  /**
+   * @generated from field: optional uint32 accountid = 3;
+   */
+  accountid?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt>) {
     super();
     proto2.util.initPartial(data, this);
@@ -6800,6 +6750,7 @@ export class CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt extends Message<
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "eventid", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "matches", kind: "message", T: CDataGCCStrike15_v2_MatchInfo, repeated: true },
+    { no: 3, name: "accountid", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt {
