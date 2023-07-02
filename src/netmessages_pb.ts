@@ -2966,6 +2966,11 @@ export class CSVCMsg_VoiceData extends Message<CSVCMsg_VoiceData> {
    */
   tick?: number;
 
+  /**
+   * @generated from field: optional int32 passthrough = 7;
+   */
+  passthrough?: number;
+
   constructor(data?: PartialMessage<CSVCMsg_VoiceData>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2980,6 +2985,7 @@ export class CSVCMsg_VoiceData extends Message<CSVCMsg_VoiceData> {
     { no: 4, name: "xuid", kind: "scalar", T: 6 /* ScalarType.FIXED64 */, opt: true },
     { no: 5, name: "audible_mask", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 6, name: "tick", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "passthrough", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_VoiceData {

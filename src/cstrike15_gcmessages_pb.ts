@@ -3117,6 +3117,56 @@ export class CDataGCCStrike15_v2_TournamentMatchDraft extends Message<CDataGCCSt
    */
   drafts: CDataGCCStrike15_v2_TournamentMatchDraft_Entry[] = [];
 
+  /**
+   * @generated from field: repeated int32 vote_mapid_0 = 11;
+   */
+  voteMapid0: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_mapid_1 = 12;
+   */
+  voteMapid1: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_mapid_2 = 13;
+   */
+  voteMapid2: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_mapid_3 = 14;
+   */
+  voteMapid3: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_mapid_4 = 15;
+   */
+  voteMapid4: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_mapid_5 = 16;
+   */
+  voteMapid5: number[] = [];
+
+  /**
+   * @generated from field: repeated int32 vote_starting_side = 17;
+   */
+  voteStartingSide: number[] = [];
+
+  /**
+   * @generated from field: optional int32 vote_phase = 18;
+   */
+  votePhase?: number;
+
+  /**
+   * @generated from field: optional float vote_phase_start = 19;
+   */
+  votePhaseStart?: number;
+
+  /**
+   * @generated from field: optional float vote_phase_length = 20;
+   */
+  votePhaseLength?: number;
+
   constructor(data?: PartialMessage<CDataGCCStrike15_v2_TournamentMatchDraft>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3135,6 +3185,16 @@ export class CDataGCCStrike15_v2_TournamentMatchDraft extends Message<CDataGCCSt
     { no: 8, name: "team_id_veto1", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 9, name: "team_id_pickn", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 10, name: "drafts", kind: "message", T: CDataGCCStrike15_v2_TournamentMatchDraft_Entry, repeated: true },
+    { no: 11, name: "vote_mapid_0", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 12, name: "vote_mapid_1", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 13, name: "vote_mapid_2", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 14, name: "vote_mapid_3", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 15, name: "vote_mapid_4", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 16, name: "vote_mapid_5", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 17, name: "vote_starting_side", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 18, name: "vote_phase", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 19, name: "vote_phase_start", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 20, name: "vote_phase_length", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CDataGCCStrike15_v2_TournamentMatchDraft {
