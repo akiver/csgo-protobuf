@@ -4621,3 +4621,52 @@ export class CCSUsrMsg_ServerRankRevealAll extends Message<CCSUsrMsg_ServerRankR
   }
 }
 
+/**
+ * @generated from message CCSUsrMsgPreMatchSayText
+ */
+export class CCSUsrMsgPreMatchSayText extends Message<CCSUsrMsgPreMatchSayText> {
+  /**
+   * @generated from field: optional uint32 account_id = 1;
+   */
+  accountId?: number;
+
+  /**
+   * @generated from field: optional string text = 2;
+   */
+  text?: string;
+
+  /**
+   * @generated from field: optional bool all_chat = 3;
+   */
+  allChat?: boolean;
+
+  constructor(data?: PartialMessage<CCSUsrMsgPreMatchSayText>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CCSUsrMsgPreMatchSayText";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "account_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "all_chat", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCSUsrMsgPreMatchSayText {
+    return new CCSUsrMsgPreMatchSayText().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCSUsrMsgPreMatchSayText {
+    return new CCSUsrMsgPreMatchSayText().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCSUsrMsgPreMatchSayText {
+    return new CCSUsrMsgPreMatchSayText().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CCSUsrMsgPreMatchSayText | PlainMessage<CCSUsrMsgPreMatchSayText> | undefined, b: CCSUsrMsgPreMatchSayText | PlainMessage<CCSUsrMsgPreMatchSayText> | undefined): boolean {
+    return proto2.util.equals(CCSUsrMsgPreMatchSayText, a, b);
+  }
+}
+

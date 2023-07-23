@@ -5163,6 +5163,16 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
    */
   type?: number;
 
+  /**
+   * @generated from field: optional int64 base = 6;
+   */
+  base?: bigint;
+
+  /**
+   * @generated from field: optional int64 range = 7;
+   */
+  range?: bigint;
+
   constructor(data?: PartialMessage<CUserMessageRequestDiagnostic_Diagnostic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5176,6 +5186,8 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
     { no: 3, name: "param", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 4, name: "length", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 5, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 6, name: "base", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 7, name: "range", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessageRequestDiagnostic_Diagnostic {
