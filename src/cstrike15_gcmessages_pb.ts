@@ -1374,6 +1374,11 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
    */
   tvControl?: number;
 
+  /**
+   * @generated from field: optional uint64 rank_window_stats = 8;
+   */
+  rankWindowStats?: bigint;
+
   constructor(data?: PartialMessage<PlayerRankingInfo>) {
     super();
     proto2.util.initPartial(data, this);
@@ -1388,6 +1393,7 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
     { no: 4, name: "rank_change", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 6, name: "rank_type_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 7, name: "tv_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 8, name: "rank_window_stats", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlayerRankingInfo {
@@ -2625,6 +2631,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm extends Message<CMsg
    */
   exchange?: bigint;
 
+  /**
+   * @generated from field: optional uint32 retry = 4;
+   */
+  retry?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2636,6 +2647,7 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm extends Message<CMsg
     { no: 1, name: "token", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 2, name: "stamp", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 3, name: "exchange", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
+    { no: 4, name: "retry", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm {
