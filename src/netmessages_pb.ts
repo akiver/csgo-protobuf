@@ -3437,6 +3437,11 @@ export class CSVCMsg_ClearAllStringTables extends Message<CSVCMsg_ClearAllString
    */
   mapname?: string;
 
+  /**
+   * @generated from field: optional bool create_tables_skipped = 3;
+   */
+  createTablesSkipped?: boolean;
+
   constructor(data?: PartialMessage<CSVCMsg_ClearAllStringTables>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3446,6 +3451,7 @@ export class CSVCMsg_ClearAllStringTables extends Message<CSVCMsg_ClearAllString
   static readonly typeName = "CSVCMsg_ClearAllStringTables";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "mapname", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "create_tables_skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_ClearAllStringTables {

@@ -533,6 +533,11 @@ export enum PARTICLE_MESSAGE {
    * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE = 28;
    */
   GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE = 28,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING = 29;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING = 29,
 }
 // Retrieve enum metadata with: proto2.getEnumType(PARTICLE_MESSAGE)
 proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
@@ -565,6 +570,7 @@ proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
   { no: 26, name: "GAME_PARTICLE_MANAGER_EVENT_SET_NAMED_VALUE_CONTEXT" },
   { no: 27, name: "GAME_PARTICLE_MANAGER_EVENT_UPDATE_TRANSFORM" },
   { no: 28, name: "GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE" },
+  { no: 29, name: "GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING" },
 ]);
 
 /**
@@ -2499,6 +2505,11 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
    */
   particleFreezeTransitionOverride?: CUserMsg_ParticleManager_ParticleFreezeTransitionOverride;
 
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.FreezeParticleInvolving freeze_particle_involving = 32;
+   */
+  freezeParticleInvolving?: CUserMsg_ParticleManager_FreezeParticleInvolving;
+
   constructor(data?: PartialMessage<CUserMsg_ParticleManager>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2537,6 +2548,7 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
     { no: 29, name: "set_named_value_context", kind: "message", T: CUserMsg_ParticleManager_SetParticleNamedValueContext, opt: true },
     { no: 30, name: "update_particle_transform", kind: "message", T: CUserMsg_ParticleManager_UpdateParticleTransform, opt: true },
     { no: 31, name: "particle_freeze_transition_override", kind: "message", T: CUserMsg_ParticleManager_ParticleFreezeTransitionOverride, opt: true },
+    { no: 32, name: "freeze_particle_involving", kind: "message", T: CUserMsg_ParticleManager_FreezeParticleInvolving, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager {
@@ -3780,6 +3792,55 @@ export class CUserMsg_ParticleManager_ParticleFreezeTransitionOverride extends M
 
   static equals(a: CUserMsg_ParticleManager_ParticleFreezeTransitionOverride | PlainMessage<CUserMsg_ParticleManager_ParticleFreezeTransitionOverride> | undefined, b: CUserMsg_ParticleManager_ParticleFreezeTransitionOverride | PlainMessage<CUserMsg_ParticleManager_ParticleFreezeTransitionOverride> | undefined): boolean {
     return proto2.util.equals(CUserMsg_ParticleManager_ParticleFreezeTransitionOverride, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMsg_ParticleManager.FreezeParticleInvolving
+ */
+export class CUserMsg_ParticleManager_FreezeParticleInvolving extends Message<CUserMsg_ParticleManager_FreezeParticleInvolving> {
+  /**
+   * @generated from field: optional bool set_frozen = 1;
+   */
+  setFrozen?: boolean;
+
+  /**
+   * @generated from field: optional float transition_duration = 2;
+   */
+  transitionDuration?: number;
+
+  /**
+   * @generated from field: optional uint32 entity_handle = 3 [default = 16777215];
+   */
+  entityHandle?: number;
+
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_FreezeParticleInvolving>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.FreezeParticleInvolving";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "set_frozen", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 2, name: "transition_duration", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "entity_handle", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true, default: 16777215 },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_FreezeParticleInvolving {
+    return new CUserMsg_ParticleManager_FreezeParticleInvolving().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_FreezeParticleInvolving {
+    return new CUserMsg_ParticleManager_FreezeParticleInvolving().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_FreezeParticleInvolving {
+    return new CUserMsg_ParticleManager_FreezeParticleInvolving().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_FreezeParticleInvolving | PlainMessage<CUserMsg_ParticleManager_FreezeParticleInvolving> | undefined, b: CUserMsg_ParticleManager_FreezeParticleInvolving | PlainMessage<CUserMsg_ParticleManager_FreezeParticleInvolving> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_FreezeParticleInvolving, a, b);
   }
 }
 

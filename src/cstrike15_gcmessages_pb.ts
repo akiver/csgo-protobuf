@@ -501,6 +501,11 @@ export enum ECsgoGCMsg {
    * @generated from enum value: k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215;
    */
   k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215,
+
+  /**
+   * @generated from enum value: k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218;
+   */
+  k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ECsgoGCMsg)
 proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
@@ -602,6 +607,7 @@ proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
   { no: 9213, name: "k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response" },
   { no: 9214, name: "k_EMsgGCCStrike15_v2_PrivateQueues" },
   { no: 9215, name: "k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt" },
+  { no: 9218, name: "k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName" },
 ]);
 
 /**
@@ -1379,6 +1385,26 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
    */
   rankWindowStats?: bigint;
 
+  /**
+   * @generated from field: optional string leaderboard_name = 9;
+   */
+  leaderboardName?: string;
+
+  /**
+   * @generated from field: optional uint32 rank_if_win = 10;
+   */
+  rankIfWin?: number;
+
+  /**
+   * @generated from field: optional uint32 rank_if_lose = 11;
+   */
+  rankIfLose?: number;
+
+  /**
+   * @generated from field: optional uint32 rank_if_tie = 12;
+   */
+  rankIfTie?: number;
+
   constructor(data?: PartialMessage<PlayerRankingInfo>) {
     super();
     proto2.util.initPartial(data, this);
@@ -1394,6 +1420,10 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
     { no: 6, name: "rank_type_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 7, name: "tv_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 8, name: "rank_window_stats", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
+    { no: 9, name: "leaderboard_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 10, name: "rank_if_win", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 11, name: "rank_if_lose", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 12, name: "rank_if_tie", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlayerRankingInfo {
@@ -1998,6 +2028,11 @@ export class ScoreLeaderboardData extends Message<ScoreLeaderboardData> {
    */
   matchentries: ScoreLeaderboardData_Entry[] = [];
 
+  /**
+   * @generated from field: optional string leaderboard_name = 6;
+   */
+  leaderboardName?: string;
+
   constructor(data?: PartialMessage<ScoreLeaderboardData>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2010,6 +2045,7 @@ export class ScoreLeaderboardData extends Message<ScoreLeaderboardData> {
     { no: 2, name: "score", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 3, name: "accountentries", kind: "message", T: ScoreLeaderboardData_AccountEntries, repeated: true },
     { no: 5, name: "matchentries", kind: "message", T: ScoreLeaderboardData_Entry, repeated: true },
+    { no: 6, name: "leaderboard_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScoreLeaderboardData {
@@ -10141,6 +10177,43 @@ export class CMsgGCCStrike15_v2_GC2ClientInitSystem_Response extends Message<CMs
 
   static equals(a: CMsgGCCStrike15_v2_GC2ClientInitSystem_Response | PlainMessage<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response> | undefined, b: CMsgGCCStrike15_v2_GC2ClientInitSystem_Response | PlainMessage<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response> | undefined): boolean {
     return proto2.util.equals(CMsgGCCStrike15_v2_GC2ClientInitSystem_Response, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName
+ */
+export class CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName extends Message<CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName> {
+  /**
+   * @generated from field: optional string leaderboard_safe_name = 1;
+   */
+  leaderboardSafeName?: string;
+
+  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "leaderboard_safe_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName {
+    return new CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName {
+    return new CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName {
+    return new CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName | PlainMessage<CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName> | undefined, b: CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName | PlainMessage<CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName> | undefined): boolean {
+    return proto2.util.equals(CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName, a, b);
   }
 }
 
