@@ -1405,6 +1405,11 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
    */
   rankIfTie?: number;
 
+  /**
+   * @generated from field: optional uint32 leaderboard_name_status = 14;
+   */
+  leaderboardNameStatus?: number;
+
   constructor(data?: PartialMessage<PlayerRankingInfo>) {
     super();
     proto2.util.initPartial(data, this);
@@ -1424,6 +1429,7 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
     { no: 10, name: "rank_if_win", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 11, name: "rank_if_lose", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 12, name: "rank_if_tie", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 14, name: "leaderboard_name_status", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlayerRankingInfo {

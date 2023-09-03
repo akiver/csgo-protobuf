@@ -978,6 +978,11 @@ export class CDemoAnimationData extends Message<CDemoAnimationData> {
    */
   data?: Uint8Array;
 
+  /**
+   * @generated from field: optional int64 data_checksum = 5;
+   */
+  dataChecksum?: bigint;
+
   constructor(data?: PartialMessage<CDemoAnimationData>) {
     super();
     proto2.util.initPartial(data, this);
@@ -990,6 +995,7 @@ export class CDemoAnimationData extends Message<CDemoAnimationData> {
     { no: 2, name: "start_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 3, name: "end_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 4, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 5, name: "data_checksum", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CDemoAnimationData {
