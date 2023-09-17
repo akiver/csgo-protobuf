@@ -1347,6 +1347,61 @@ export class OperationalStatisticsPacket extends Message<OperationalStatisticsPa
 }
 
 /**
+ * @generated from message OperationalVarValue
+ */
+export class OperationalVarValue extends Message<OperationalVarValue> {
+  /**
+   * @generated from field: optional string name = 1;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional int32 ivalue = 2;
+   */
+  ivalue?: number;
+
+  /**
+   * @generated from field: optional float fvalue = 3;
+   */
+  fvalue?: number;
+
+  /**
+   * @generated from field: optional bytes svalue = 4;
+   */
+  svalue?: Uint8Array;
+
+  constructor(data?: PartialMessage<OperationalVarValue>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "OperationalVarValue";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "ivalue", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "fvalue", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "svalue", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OperationalVarValue {
+    return new OperationalVarValue().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OperationalVarValue {
+    return new OperationalVarValue().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OperationalVarValue {
+    return new OperationalVarValue().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: OperationalVarValue | PlainMessage<OperationalVarValue> | undefined, b: OperationalVarValue | PlainMessage<OperationalVarValue> | undefined): boolean {
+    return proto2.util.equals(OperationalVarValue, a, b);
+  }
+}
+
+/**
  * @generated from message PlayerRankingInfo
  */
 export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
@@ -1406,6 +1461,11 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
   rankIfTie?: number;
 
   /**
+   * @generated from field: repeated PlayerRankingInfo.PerMapRank per_map_rank = 13;
+   */
+  perMapRank: PlayerRankingInfo_PerMapRank[] = [];
+
+  /**
    * @generated from field: optional uint32 leaderboard_name_status = 14;
    */
   leaderboardNameStatus?: number;
@@ -1429,6 +1489,7 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
     { no: 10, name: "rank_if_win", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 11, name: "rank_if_lose", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 12, name: "rank_if_tie", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 13, name: "per_map_rank", kind: "message", T: PlayerRankingInfo_PerMapRank, repeated: true },
     { no: 14, name: "leaderboard_name_status", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
@@ -1446,6 +1507,55 @@ export class PlayerRankingInfo extends Message<PlayerRankingInfo> {
 
   static equals(a: PlayerRankingInfo | PlainMessage<PlayerRankingInfo> | undefined, b: PlayerRankingInfo | PlainMessage<PlayerRankingInfo> | undefined): boolean {
     return proto2.util.equals(PlayerRankingInfo, a, b);
+  }
+}
+
+/**
+ * @generated from message PlayerRankingInfo.PerMapRank
+ */
+export class PlayerRankingInfo_PerMapRank extends Message<PlayerRankingInfo_PerMapRank> {
+  /**
+   * @generated from field: optional uint32 map_id = 1;
+   */
+  mapId?: number;
+
+  /**
+   * @generated from field: optional uint32 rank_id = 2;
+   */
+  rankId?: number;
+
+  /**
+   * @generated from field: optional uint32 wins = 3;
+   */
+  wins?: number;
+
+  constructor(data?: PartialMessage<PlayerRankingInfo_PerMapRank>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "PlayerRankingInfo.PerMapRank";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "map_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "rank_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 3, name: "wins", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PlayerRankingInfo_PerMapRank {
+    return new PlayerRankingInfo_PerMapRank().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PlayerRankingInfo_PerMapRank {
+    return new PlayerRankingInfo_PerMapRank().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PlayerRankingInfo_PerMapRank {
+    return new PlayerRankingInfo_PerMapRank().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: PlayerRankingInfo_PerMapRank | PlainMessage<PlayerRankingInfo_PerMapRank> | undefined, b: PlayerRankingInfo_PerMapRank | PlainMessage<PlayerRankingInfo_PerMapRank> | undefined): boolean {
+    return proto2.util.equals(PlayerRankingInfo_PerMapRank, a, b);
   }
 }
 
@@ -3509,6 +3619,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve extends Message<CMsg
    */
   tvControl?: number;
 
+  /**
+   * @generated from field: repeated OperationalVarValue op_var_values = 19;
+   */
+  opVarValues: OperationalVarValue[] = [];
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3535,6 +3650,7 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve extends Message<CMsg
     { no: 15, name: "pre_match_data", kind: "message", T: CPreMatchInfoData, opt: true },
     { no: 16, name: "rtime32_event_start", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 17, name: "tv_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 19, name: "op_var_values", kind: "message", T: OperationalVarValue, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve {

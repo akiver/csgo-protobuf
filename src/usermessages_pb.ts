@@ -247,6 +247,11 @@ export enum EBaseUserMessages {
   UM_DiagnosticResponse = 163,
 
   /**
+   * @generated from enum value: UM_ExtraUserData = 164;
+   */
+  UM_ExtraUserData = 164,
+
+  /**
    * @generated from enum value: UM_MAX_BASE = 200;
    */
   UM_MAX_BASE = 200,
@@ -300,6 +305,7 @@ proto2.util.setEnumType(EBaseUserMessages, "EBaseUserMessages", [
   { no: 161, name: "UM_InventoryResponse" },
   { no: 162, name: "UM_RequestDiagnostic" },
   { no: 163, name: "UM_DiagnosticResponse" },
+  { no: 164, name: "UM_ExtraUserData" },
   { no: 200, name: "UM_MAX_BASE" },
 ]);
 
@@ -5234,6 +5240,16 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
    */
   range?: bigint;
 
+  /**
+   * @generated from field: optional int64 extent = 8;
+   */
+  extent?: bigint;
+
+  /**
+   * @generated from field: optional int64 detail = 9;
+   */
+  detail?: bigint;
+
   constructor(data?: PartialMessage<CUserMessageRequestDiagnostic_Diagnostic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5249,6 +5265,8 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
     { no: 5, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 6, name: "base", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 7, name: "range", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 8, name: "extent", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 9, name: "detail", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessageRequestDiagnostic_Diagnostic {
@@ -5393,6 +5411,67 @@ export class CUserMessage_Diagnostic_Response_Diagnostic extends Message<CUserMe
 
   static equals(a: CUserMessage_Diagnostic_Response_Diagnostic | PlainMessage<CUserMessage_Diagnostic_Response_Diagnostic> | undefined, b: CUserMessage_Diagnostic_Response_Diagnostic | PlainMessage<CUserMessage_Diagnostic_Response_Diagnostic> | undefined): boolean {
     return proto2.util.equals(CUserMessage_Diagnostic_Response_Diagnostic, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessage_ExtraUserData
+ */
+export class CUserMessage_ExtraUserData extends Message<CUserMessage_ExtraUserData> {
+  /**
+   * @generated from field: optional int32 item = 1;
+   */
+  item?: number;
+
+  /**
+   * @generated from field: optional int64 value1 = 2;
+   */
+  value1?: bigint;
+
+  /**
+   * @generated from field: optional int64 value2 = 3;
+   */
+  value2?: bigint;
+
+  /**
+   * @generated from field: repeated bytes detail1 = 4;
+   */
+  detail1: Uint8Array[] = [];
+
+  /**
+   * @generated from field: repeated bytes detail2 = 5;
+   */
+  detail2: Uint8Array[] = [];
+
+  constructor(data?: PartialMessage<CUserMessage_ExtraUserData>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessage_ExtraUserData";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "item", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "value1", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 3, name: "value2", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 4, name: "detail1", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
+    { no: 5, name: "detail2", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_ExtraUserData {
+    return new CUserMessage_ExtraUserData().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessage_ExtraUserData {
+    return new CUserMessage_ExtraUserData().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessage_ExtraUserData {
+    return new CUserMessage_ExtraUserData().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessage_ExtraUserData | PlainMessage<CUserMessage_ExtraUserData> | undefined, b: CUserMessage_ExtraUserData | PlainMessage<CUserMessage_ExtraUserData> | undefined): boolean {
+    return proto2.util.equals(CUserMessage_ExtraUserData, a, b);
   }
 }
 
