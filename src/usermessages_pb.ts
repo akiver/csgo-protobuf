@@ -5250,6 +5250,16 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
    */
   detail?: bigint;
 
+  /**
+   * @generated from field: optional string name = 10;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional string alias = 11;
+   */
+  alias?: string;
+
   constructor(data?: PartialMessage<CUserMessageRequestDiagnostic_Diagnostic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5267,6 +5277,8 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
     { no: 7, name: "range", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 8, name: "extent", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 9, name: "detail", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
+    { no: 10, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 11, name: "alias", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessageRequestDiagnostic_Diagnostic {
@@ -5360,9 +5372,9 @@ export class CUserMessage_Diagnostic_Response_Diagnostic extends Message<CUserMe
   length?: number;
 
   /**
-   * @generated from field: repeated bytes detail = 5;
+   * @generated from field: optional bytes detail = 5;
    */
-  detail: Uint8Array[] = [];
+  detail?: Uint8Array;
 
   /**
    * @generated from field: optional int64 base = 6;
@@ -5391,7 +5403,7 @@ export class CUserMessage_Diagnostic_Response_Diagnostic extends Message<CUserMe
     { no: 2, name: "offset", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 3, name: "param", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 4, name: "length", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 5, name: "detail", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
+    { no: 5, name: "detail", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 6, name: "base", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 7, name: "range", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 8, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },

@@ -506,6 +506,11 @@ export enum ECsgoGCMsg {
    * @generated from enum value: k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218;
    */
   k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218,
+
+  /**
+   * @generated from enum value: k_EMsgGCCStrike15_v2_ClientRedeemFreeReward = 9219;
+   */
+  k_EMsgGCCStrike15_v2_ClientRedeemFreeReward = 9219,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ECsgoGCMsg)
 proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
@@ -608,6 +613,7 @@ proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
   { no: 9214, name: "k_EMsgGCCStrike15_v2_PrivateQueues" },
   { no: 9215, name: "k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt" },
   { no: 9218, name: "k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName" },
+  { no: 9219, name: "k_EMsgGCCStrike15_v2_ClientRedeemFreeReward" },
 ]);
 
 /**
@@ -3012,6 +3018,11 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing extends Message<CMs
    */
   testToken?: number;
 
+  /**
+   * @generated from field: optional bytes search_key = 7;
+   */
+  searchKey?: Uint8Array;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3026,6 +3037,7 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing extends Message<CMs
     { no: 4, name: "data_center_pings", kind: "message", T: DataCenterPing, repeated: true },
     { no: 5, name: "max_ping", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "test_token", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
+    { no: 7, name: "search_key", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingClient2ServerPing {
@@ -5259,6 +5271,55 @@ export class CMsgGCCstrike15_v2_ClientRedeemMissionReward extends Message<CMsgGC
 }
 
 /**
+ * @generated from message CMsgGCCstrike15_v2_ClientRedeemFreeReward
+ */
+export class CMsgGCCstrike15_v2_ClientRedeemFreeReward extends Message<CMsgGCCstrike15_v2_ClientRedeemFreeReward> {
+  /**
+   * @generated from field: optional uint32 generation_time = 1;
+   */
+  generationTime?: number;
+
+  /**
+   * @generated from field: optional uint32 redeemable_balance = 2;
+   */
+  redeemableBalance?: number;
+
+  /**
+   * @generated from field: repeated uint64 items = 3;
+   */
+  items: bigint[] = [];
+
+  constructor(data?: PartialMessage<CMsgGCCstrike15_v2_ClientRedeemFreeReward>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCCstrike15_v2_ClientRedeemFreeReward";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "generation_time", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "redeemable_balance", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 3, name: "items", kind: "scalar", T: 4 /* ScalarType.UINT64 */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCstrike15_v2_ClientRedeemFreeReward {
+    return new CMsgGCCstrike15_v2_ClientRedeemFreeReward().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCstrike15_v2_ClientRedeemFreeReward {
+    return new CMsgGCCstrike15_v2_ClientRedeemFreeReward().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCstrike15_v2_ClientRedeemFreeReward {
+    return new CMsgGCCstrike15_v2_ClientRedeemFreeReward().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCCstrike15_v2_ClientRedeemFreeReward | PlainMessage<CMsgGCCstrike15_v2_ClientRedeemFreeReward> | undefined, b: CMsgGCCstrike15_v2_ClientRedeemFreeReward | PlainMessage<CMsgGCCstrike15_v2_ClientRedeemFreeReward> | undefined): boolean {
+    return proto2.util.equals(CMsgGCCstrike15_v2_ClientRedeemFreeReward, a, b);
+  }
+}
+
+/**
  * @generated from message CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
  */
 export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded> {
@@ -5292,6 +5353,11 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGC
    */
   operationPointsAwarded?: number;
 
+  /**
+   * @generated from field: optional uint32 free_rewards = 7;
+   */
+  freeRewards?: number;
+
   constructor(data?: PartialMessage<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5306,6 +5372,7 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGC
     { no: 4, name: "current_level", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 5, name: "upgraded_defidx", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "operation_points_awarded", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "free_rewards", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded {
@@ -7890,6 +7957,55 @@ export class CSOEconCoupon extends Message<CSOEconCoupon> {
 
   static equals(a: CSOEconCoupon | PlainMessage<CSOEconCoupon> | undefined, b: CSOEconCoupon | PlainMessage<CSOEconCoupon> | undefined): boolean {
     return proto2.util.equals(CSOEconCoupon, a, b);
+  }
+}
+
+/**
+ * @generated from message CSOAccountItemPersonalStore
+ */
+export class CSOAccountItemPersonalStore extends Message<CSOAccountItemPersonalStore> {
+  /**
+   * @generated from field: optional uint32 generation_time = 1;
+   */
+  generationTime?: number;
+
+  /**
+   * @generated from field: optional uint32 redeemable_balance = 2;
+   */
+  redeemableBalance?: number;
+
+  /**
+   * @generated from field: repeated uint64 items = 3;
+   */
+  items: bigint[] = [];
+
+  constructor(data?: PartialMessage<CSOAccountItemPersonalStore>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CSOAccountItemPersonalStore";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "generation_time", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "redeemable_balance", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 3, name: "items", kind: "scalar", T: 4 /* ScalarType.UINT64 */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSOAccountItemPersonalStore {
+    return new CSOAccountItemPersonalStore().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSOAccountItemPersonalStore {
+    return new CSOAccountItemPersonalStore().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSOAccountItemPersonalStore {
+    return new CSOAccountItemPersonalStore().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CSOAccountItemPersonalStore | PlainMessage<CSOAccountItemPersonalStore> | undefined, b: CSOAccountItemPersonalStore | PlainMessage<CSOAccountItemPersonalStore> | undefined): boolean {
+    return proto2.util.equals(CSOAccountItemPersonalStore, a, b);
   }
 }
 
