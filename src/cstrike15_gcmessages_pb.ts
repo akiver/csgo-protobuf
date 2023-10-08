@@ -2985,6 +2985,61 @@ export class CMsgGCCStrike15_v2_MatchmakingStop extends Message<CMsgGCCStrike15_
 }
 
 /**
+ * @generated from message CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note
+ */
+export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note extends Message<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> {
+  /**
+   * @generated from field: optional int32 type = 1;
+   */
+  type?: number;
+
+  /**
+   * @generated from field: optional int32 region_id = 2;
+   */
+  regionId?: number;
+
+  /**
+   * @generated from field: optional float region_r = 3;
+   */
+  regionR?: number;
+
+  /**
+   * @generated from field: optional float distance = 4;
+   */
+  distance?: number;
+
+  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "region_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "region_r", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "distance", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
+    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
+    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
+    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> | undefined, b: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> | undefined): boolean {
+    return proto2.util.equals(CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note, a, b);
+  }
+}
+
+/**
  * @generated from message CMsgGCCStrike15_v2_MatchmakingClient2ServerPing
  */
 export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing extends Message<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing> {
@@ -3023,6 +3078,16 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing extends Message<CMs
    */
   searchKey?: Uint8Array;
 
+  /**
+   * @generated from field: repeated CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note notes = 8;
+   */
+  notes: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note[] = [];
+
+  /**
+   * @generated from field: optional string debug_message = 9;
+   */
+  debugMessage?: string;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3038,6 +3103,8 @@ export class CMsgGCCStrike15_v2_MatchmakingClient2ServerPing extends Message<CMs
     { no: 5, name: "max_ping", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "test_token", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
     { no: 7, name: "search_key", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 8, name: "notes", kind: "message", T: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note, repeated: true },
+    { no: 9, name: "debug_message", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingClient2ServerPing {
@@ -3112,7 +3179,7 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate extends Message<CMsgG
   serverIpaddressMask?: IpAddressMask;
 
   /**
-   * @generated from field: repeated CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note notes = 13;
+   * @generated from field: repeated CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note notes = 13;
    */
   notes: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note[] = [];
 
@@ -3181,61 +3248,6 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate extends Message<CMsgG
 
   static equals(a: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate> | undefined, b: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate> | undefined): boolean {
     return proto2.util.equals(CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate, a, b);
-  }
-}
-
-/**
- * @generated from message CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note
- */
-export class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note extends Message<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> {
-  /**
-   * @generated from field: optional int32 type = 1;
-   */
-  type?: number;
-
-  /**
-   * @generated from field: optional int32 region_id = 2;
-   */
-  regionId?: number;
-
-  /**
-   * @generated from field: optional float region_r = 3;
-   */
-  regionR?: number;
-
-  /**
-   * @generated from field: optional float distance = 4;
-   */
-  distance?: number;
-
-  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note>) {
-    super();
-    proto2.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate.Note";
-  static readonly fields: FieldList = proto2.util.newFieldList(() => [
-    { no: 1, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 2, name: "region_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 3, name: "region_r", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 4, name: "distance", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
-    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
-    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note {
-    return new CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> | undefined, b: CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note | PlainMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> | undefined): boolean {
-    return proto2.util.equals(CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note, a, b);
   }
 }
 
