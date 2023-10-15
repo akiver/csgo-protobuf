@@ -4832,6 +4832,11 @@ export class CUserMessage_DllStatus extends Message<CUserMessage_DllStatus> {
    */
   diagnostics: CUserMessage_DllStatus_CVDiagnostic[] = [];
 
+  /**
+   * @generated from field: repeated CUserMessage_DllStatus.CModule modules = 8;
+   */
+  modules: CUserMessage_DllStatus_CModule[] = [];
+
   constructor(data?: PartialMessage<CUserMessage_DllStatus>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4847,6 +4852,7 @@ export class CUserMessage_DllStatus extends Message<CUserMessage_DllStatus> {
     { no: 5, name: "osversion", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 6, name: "client_time", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
     { no: 7, name: "diagnostics", kind: "message", T: CUserMessage_DllStatus_CVDiagnostic, repeated: true },
+    { no: 8, name: "modules", kind: "message", T: CUserMessage_DllStatus_CModule, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_DllStatus {
@@ -4918,6 +4924,61 @@ export class CUserMessage_DllStatus_CVDiagnostic extends Message<CUserMessage_Dl
 
   static equals(a: CUserMessage_DllStatus_CVDiagnostic | PlainMessage<CUserMessage_DllStatus_CVDiagnostic> | undefined, b: CUserMessage_DllStatus_CVDiagnostic | PlainMessage<CUserMessage_DllStatus_CVDiagnostic> | undefined): boolean {
     return proto2.util.equals(CUserMessage_DllStatus_CVDiagnostic, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessage_DllStatus.CModule
+ */
+export class CUserMessage_DllStatus_CModule extends Message<CUserMessage_DllStatus_CModule> {
+  /**
+   * @generated from field: optional uint64 base_addr = 1;
+   */
+  baseAddr?: bigint;
+
+  /**
+   * @generated from field: optional string name = 2;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional uint32 size = 3;
+   */
+  size?: number;
+
+  /**
+   * @generated from field: optional uint32 timestamp = 4;
+   */
+  timestamp?: number;
+
+  constructor(data?: PartialMessage<CUserMessage_DllStatus_CModule>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessage_DllStatus.CModule";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "base_addr", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "size", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 4, name: "timestamp", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_DllStatus_CModule {
+    return new CUserMessage_DllStatus_CModule().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessage_DllStatus_CModule {
+    return new CUserMessage_DllStatus_CModule().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessage_DllStatus_CModule {
+    return new CUserMessage_DllStatus_CModule().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessage_DllStatus_CModule | PlainMessage<CUserMessage_DllStatus_CModule> | undefined, b: CUserMessage_DllStatus_CModule | PlainMessage<CUserMessage_DllStatus_CModule> | undefined): boolean {
+    return proto2.util.equals(CUserMessage_DllStatus_CModule, a, b);
   }
 }
 
@@ -5391,6 +5452,16 @@ export class CUserMessage_Diagnostic_Response_Diagnostic extends Message<CUserMe
    */
   type?: number;
 
+  /**
+   * @generated from field: optional string name = 10;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional string alias = 11;
+   */
+  alias?: string;
+
   constructor(data?: PartialMessage<CUserMessage_Diagnostic_Response_Diagnostic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5407,6 +5478,8 @@ export class CUserMessage_Diagnostic_Response_Diagnostic extends Message<CUserMe
     { no: 6, name: "base", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 7, name: "range", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 8, name: "type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 10, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 11, name: "alias", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_Diagnostic_Response_Diagnostic {

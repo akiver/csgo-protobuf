@@ -3866,6 +3866,16 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve extends Message<CMsg
    */
   serverAddress?: string;
 
+  /**
+   * @generated from field: optional DataCenterPing gs_ping = 8;
+   */
+  gsPing?: DataCenterPing;
+
+  /**
+   * @generated from field: optional uint32 gs_location_id = 9;
+   */
+  gsLocationId?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3881,6 +3891,8 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve extends Message<CMsg
     { no: 5, name: "reservation", kind: "message", T: CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve, opt: true },
     { no: 6, name: "map", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 7, name: "server_address", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: "gs_ping", kind: "message", T: DataCenterPing, opt: true },
+    { no: 9, name: "gs_location_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve {
