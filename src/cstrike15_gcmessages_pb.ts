@@ -511,6 +511,11 @@ export enum ECsgoGCMsg {
    * @generated from enum value: k_EMsgGCCStrike15_v2_ClientRedeemFreeReward = 9219;
    */
   k_EMsgGCCStrike15_v2_ClientRedeemFreeReward = 9219,
+
+  /**
+   * @generated from enum value: k_EMsgGCCStrike15_v2_ClientNetworkConfig = 9220;
+   */
+  k_EMsgGCCStrike15_v2_ClientNetworkConfig = 9220,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ECsgoGCMsg)
 proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
@@ -614,6 +619,7 @@ proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
   { no: 9215, name: "k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt" },
   { no: 9218, name: "k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName" },
   { no: 9219, name: "k_EMsgGCCStrike15_v2_ClientRedeemFreeReward" },
+  { no: 9220, name: "k_EMsgGCCStrike15_v2_ClientNetworkConfig" },
 ]);
 
 /**
@@ -5413,6 +5419,43 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGC
 
   static equals(a: CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded | PlainMessage<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded> | undefined, b: CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded | PlainMessage<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded> | undefined): boolean {
     return proto2.util.equals(CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgGCCStrike15_v2_ClientNetworkConfig
+ */
+export class CMsgGCCStrike15_v2_ClientNetworkConfig extends Message<CMsgGCCStrike15_v2_ClientNetworkConfig> {
+  /**
+   * @generated from field: optional bytes data = 1;
+   */
+  data?: Uint8Array;
+
+  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_ClientNetworkConfig>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCCStrike15_v2_ClientNetworkConfig";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_ClientNetworkConfig {
+    return new CMsgGCCStrike15_v2_ClientNetworkConfig().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_ClientNetworkConfig {
+    return new CMsgGCCStrike15_v2_ClientNetworkConfig().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_ClientNetworkConfig {
+    return new CMsgGCCStrike15_v2_ClientNetworkConfig().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCCStrike15_v2_ClientNetworkConfig | PlainMessage<CMsgGCCStrike15_v2_ClientNetworkConfig> | undefined, b: CMsgGCCStrike15_v2_ClientNetworkConfig | PlainMessage<CMsgGCCStrike15_v2_ClientNetworkConfig> | undefined): boolean {
+    return proto2.util.equals(CMsgGCCStrike15_v2_ClientNetworkConfig, a, b);
   }
 }
 
