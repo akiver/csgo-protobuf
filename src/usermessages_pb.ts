@@ -5327,6 +5327,11 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
    */
   alias?: string;
 
+  /**
+   * @generated from field: optional bytes vardetail = 12;
+   */
+  vardetail?: Uint8Array;
+
   constructor(data?: PartialMessage<CUserMessageRequestDiagnostic_Diagnostic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5346,6 +5351,7 @@ export class CUserMessageRequestDiagnostic_Diagnostic extends Message<CUserMessa
     { no: 9, name: "detail", kind: "scalar", T: 3 /* ScalarType.INT64 */, opt: true },
     { no: 10, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 11, name: "alias", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 12, name: "vardetail", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessageRequestDiagnostic_Diagnostic {
