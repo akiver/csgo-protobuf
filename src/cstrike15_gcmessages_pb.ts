@@ -6394,6 +6394,43 @@ export class CMsgGCCStrike15_v2_MatchEndRewardDropsNotification extends Message<
 }
 
 /**
+ * @generated from message CMsgItemAcknowledged
+ */
+export class CMsgItemAcknowledged extends Message<CMsgItemAcknowledged> {
+  /**
+   * @generated from field: optional CEconItemPreviewDataBlock iteminfo = 1;
+   */
+  iteminfo?: CEconItemPreviewDataBlock;
+
+  constructor(data?: PartialMessage<CMsgItemAcknowledged>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgItemAcknowledged";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "iteminfo", kind: "message", T: CEconItemPreviewDataBlock, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgItemAcknowledged {
+    return new CMsgItemAcknowledged().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgItemAcknowledged {
+    return new CMsgItemAcknowledged().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgItemAcknowledged {
+    return new CMsgItemAcknowledged().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgItemAcknowledged | PlainMessage<CMsgItemAcknowledged> | undefined, b: CMsgItemAcknowledged | PlainMessage<CMsgItemAcknowledged> | undefined): boolean {
+    return proto2.util.equals(CMsgItemAcknowledged, a, b);
+  }
+}
+
+/**
  * @generated from message CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
  */
 export class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest extends Message<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest> {
