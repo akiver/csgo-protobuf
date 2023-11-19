@@ -1167,37 +1167,6 @@ export class CCLCMsg_ServerStatus extends Message<CCLCMsg_ServerStatus> {
 }
 
 /**
- * @generated from message CCLCMsg_ServerPing
- */
-export class CCLCMsg_ServerPing extends Message<CCLCMsg_ServerPing> {
-  constructor(data?: PartialMessage<CCLCMsg_ServerPing>) {
-    super();
-    proto2.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CCLCMsg_ServerPing";
-  static readonly fields: FieldList = proto2.util.newFieldList(() => [
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCLCMsg_ServerPing {
-    return new CCLCMsg_ServerPing().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCLCMsg_ServerPing {
-    return new CCLCMsg_ServerPing().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCLCMsg_ServerPing {
-    return new CCLCMsg_ServerPing().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: CCLCMsg_ServerPing | PlainMessage<CCLCMsg_ServerPing> | undefined, b: CCLCMsg_ServerPing | PlainMessage<CCLCMsg_ServerPing> | undefined): boolean {
-    return proto2.util.equals(CCLCMsg_ServerPing, a, b);
-  }
-}
-
-/**
  * @generated from message CCLCMsg_RequestPause
  */
 export class CCLCMsg_RequestPause extends Message<CCLCMsg_RequestPause> {
@@ -3903,14 +3872,14 @@ export class CMsgServerNetworkStats extends Message<CMsgServerNetworkStats> {
   ports: CMsgServerNetworkStats_Port[] = [];
 
   /**
-   * @generated from field: optional float avg_latency_out = 18;
+   * @generated from field: optional float avg_ping_ms = 18;
    */
-  avgLatencyOut?: number;
+  avgPingMs?: number;
 
   /**
-   * @generated from field: optional float avg_latency_in = 19;
+   * @generated from field: optional float avg_engine_latency_out = 19;
    */
-  avgLatencyIn?: number;
+  avgEngineLatencyOut?: number;
 
   /**
    * @generated from field: optional float avg_packets_out = 20;
@@ -3987,8 +3956,8 @@ export class CMsgServerNetworkStats extends Message<CMsgServerNetworkStats> {
     { no: 11, name: "num_tv_relays", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 12, name: "fps", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 17, name: "ports", kind: "message", T: CMsgServerNetworkStats_Port, repeated: true },
-    { no: 18, name: "avg_latency_out", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 19, name: "avg_latency_in", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 18, name: "avg_ping_ms", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 19, name: "avg_engine_latency_out", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 20, name: "avg_packets_out", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 21, name: "avg_packets_in", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 22, name: "avg_loss_out", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
@@ -4077,11 +4046,6 @@ export class CMsgServerNetworkStats_Player extends Message<CMsgServerNetworkStat
   remoteAddr?: string;
 
   /**
-   * @generated from field: optional int32 ping_stddev_ms = 3;
-   */
-  pingStddevMs?: number;
-
-  /**
    * @generated from field: optional int32 ping_avg_ms = 4;
    */
   pingAvgMs?: number;
@@ -4096,6 +4060,21 @@ export class CMsgServerNetworkStats_Player extends Message<CMsgServerNetworkStat
    */
   isBot?: boolean;
 
+  /**
+   * @generated from field: optional float loss_in = 7;
+   */
+  lossIn?: number;
+
+  /**
+   * @generated from field: optional float loss_out = 8;
+   */
+  lossOut?: number;
+
+  /**
+   * @generated from field: optional int32 engine_latency_ms = 9;
+   */
+  engineLatencyMs?: number;
+
   constructor(data?: PartialMessage<CMsgServerNetworkStats_Player>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4106,10 +4085,12 @@ export class CMsgServerNetworkStats_Player extends Message<CMsgServerNetworkStat
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "steamid", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
     { no: 2, name: "remote_addr", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
-    { no: 3, name: "ping_stddev_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 4, name: "ping_avg_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 5, name: "packet_loss_pct", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 6, name: "is_bot", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 7, name: "loss_in", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 8, name: "loss_out", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 9, name: "engine_latency_ms", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgServerNetworkStats_Player {
