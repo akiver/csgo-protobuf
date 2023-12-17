@@ -318,11 +318,17 @@ export enum VoiceDataFormat_t {
    * @generated from enum value: VOICEDATA_FORMAT_ENGINE = 1;
    */
   VOICEDATA_FORMAT_ENGINE = 1,
+
+  /**
+   * @generated from enum value: VOICEDATA_FORMAT_OPUS = 2;
+   */
+  VOICEDATA_FORMAT_OPUS = 2,
 }
 // Retrieve enum metadata with: proto2.getEnumType(VoiceDataFormat_t)
 proto2.util.setEnumType(VoiceDataFormat_t, "VoiceDataFormat_t", [
   { no: 0, name: "VOICEDATA_FORMAT_STEAM" },
   { no: 1, name: "VOICEDATA_FORMAT_ENGINE" },
+  { no: 2, name: "VOICEDATA_FORMAT_OPUS" },
 ]);
 
 /**
@@ -697,6 +703,21 @@ export class CMsgVoiceAudio extends Message<CMsgVoiceAudio> {
    */
   uncompressedSampleOffset?: number;
 
+  /**
+   * @generated from field: optional uint32 num_packets = 7;
+   */
+  numPackets?: number;
+
+  /**
+   * @generated from field: repeated uint32 packet_offsets = 8 [packed = true];
+   */
+  packetOffsets: number[] = [];
+
+  /**
+   * @generated from field: optional float voice_level = 9;
+   */
+  voiceLevel?: number;
+
   constructor(data?: PartialMessage<CMsgVoiceAudio>) {
     super();
     proto2.util.initPartial(data, this);
@@ -711,6 +732,9 @@ export class CMsgVoiceAudio extends Message<CMsgVoiceAudio> {
     { no: 4, name: "section_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 5, name: "sample_rate", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "uncompressed_sample_offset", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "num_packets", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 8, name: "packet_offsets", kind: "scalar", T: 13 /* ScalarType.UINT32 */, repeated: true, packed: true },
+    { no: 9, name: "voice_level", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgVoiceAudio {
