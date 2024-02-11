@@ -2526,9 +2526,9 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
   updatedEntries?: number;
 
   /**
-   * @generated from field: optional bool is_delta = 3;
+   * @generated from field: optional bool legacy_is_delta = 3;
    */
-  isDelta?: boolean;
+  legacyIsDelta?: boolean;
 
   /**
    * @generated from field: optional bool update_baseline = 4;
@@ -2566,9 +2566,14 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
   maxSpawngroupCreationsequence?: number;
 
   /**
-   * @generated from field: optional uint32 last_cmd_number = 11;
+   * @generated from field: optional uint32 last_cmd_number_executed = 11;
    */
-  lastCmdNumber?: number;
+  lastCmdNumberExecuted?: number;
+
+  /**
+   * @generated from field: optional sint32 last_cmd_number_recv_delta = 17;
+   */
+  lastCmdNumberRecvDelta?: number;
 
   /**
    * @generated from field: optional uint32 server_tick = 12;
@@ -2590,6 +2595,26 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
    */
   alternateBaselines: CSVCMsg_PacketEntities_alternate_baseline_t[] = [];
 
+  /**
+   * @generated from field: optional uint32 has_pvs_vis_bits = 16;
+   */
+  hasPvsVisBits?: number;
+
+  /**
+   * @generated from field: optional uint32 last_cmd_recv_margin = 18;
+   */
+  lastCmdRecvMargin?: number;
+
+  /**
+   * @generated from field: optional CSVCMsg_PacketEntities.non_transmitted_entities_t non_transmitted_entities = 19;
+   */
+  nonTransmittedEntities?: CSVCMsg_PacketEntities_non_transmitted_entities_t;
+
+  /**
+   * @generated from field: optional bytes dev_padding = 999;
+   */
+  devPadding?: Uint8Array;
+
   constructor(data?: PartialMessage<CSVCMsg_PacketEntities>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2600,7 +2625,7 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "max_entries", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "updated_entries", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 3, name: "is_delta", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 3, name: "legacy_is_delta", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 4, name: "update_baseline", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 5, name: "baseline", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 6, name: "delta_from", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
@@ -2608,11 +2633,16 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
     { no: 8, name: "pending_full_frame", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 9, name: "active_spawngroup_handle", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 10, name: "max_spawngroup_creationsequence", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 11, name: "last_cmd_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 11, name: "last_cmd_number_executed", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 17, name: "last_cmd_number_recv_delta", kind: "scalar", T: 17 /* ScalarType.SINT32 */, opt: true },
     { no: 12, name: "server_tick", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 13, name: "serialized_entities", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 14, name: "command_queue_info", kind: "message", T: CSVCMsg_PacketEntities_command_queue_info_t, opt: true },
     { no: 15, name: "alternate_baselines", kind: "message", T: CSVCMsg_PacketEntities_alternate_baseline_t, repeated: true },
+    { no: 16, name: "has_pvs_vis_bits", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 18, name: "last_cmd_recv_margin", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 19, name: "non_transmitted_entities", kind: "message", T: CSVCMsg_PacketEntities_non_transmitted_entities_t, opt: true },
+    { no: 999, name: "dev_padding", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_PacketEntities {
@@ -2733,6 +2763,49 @@ export class CSVCMsg_PacketEntities_alternate_baseline_t extends Message<CSVCMsg
 
   static equals(a: CSVCMsg_PacketEntities_alternate_baseline_t | PlainMessage<CSVCMsg_PacketEntities_alternate_baseline_t> | undefined, b: CSVCMsg_PacketEntities_alternate_baseline_t | PlainMessage<CSVCMsg_PacketEntities_alternate_baseline_t> | undefined): boolean {
     return proto2.util.equals(CSVCMsg_PacketEntities_alternate_baseline_t, a, b);
+  }
+}
+
+/**
+ * @generated from message CSVCMsg_PacketEntities.non_transmitted_entities_t
+ */
+export class CSVCMsg_PacketEntities_non_transmitted_entities_t extends Message<CSVCMsg_PacketEntities_non_transmitted_entities_t> {
+  /**
+   * @generated from field: optional int32 header_count = 1;
+   */
+  headerCount?: number;
+
+  /**
+   * @generated from field: optional bytes data = 2;
+   */
+  data?: Uint8Array;
+
+  constructor(data?: PartialMessage<CSVCMsg_PacketEntities_non_transmitted_entities_t>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CSVCMsg_PacketEntities.non_transmitted_entities_t";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "header_count", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_PacketEntities_non_transmitted_entities_t {
+    return new CSVCMsg_PacketEntities_non_transmitted_entities_t().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSVCMsg_PacketEntities_non_transmitted_entities_t {
+    return new CSVCMsg_PacketEntities_non_transmitted_entities_t().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSVCMsg_PacketEntities_non_transmitted_entities_t {
+    return new CSVCMsg_PacketEntities_non_transmitted_entities_t().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CSVCMsg_PacketEntities_non_transmitted_entities_t | PlainMessage<CSVCMsg_PacketEntities_non_transmitted_entities_t> | undefined, b: CSVCMsg_PacketEntities_non_transmitted_entities_t | PlainMessage<CSVCMsg_PacketEntities_non_transmitted_entities_t> | undefined): boolean {
+    return proto2.util.equals(CSVCMsg_PacketEntities_non_transmitted_entities_t, a, b);
   }
 }
 
@@ -3523,6 +3596,11 @@ export class ProtoFlattenedSerializerField_t extends Message<ProtoFlattenedSeria
    */
   polymorphicTypes: ProtoFlattenedSerializerField_t_polymorphic_field_t[] = [];
 
+  /**
+   * @generated from field: optional int32 var_serializer_sym = 12;
+   */
+  varSerializerSym?: number;
+
   constructor(data?: PartialMessage<ProtoFlattenedSerializerField_t>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3542,6 +3620,7 @@ export class ProtoFlattenedSerializerField_t extends Message<ProtoFlattenedSeria
     { no: 9, name: "send_node_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 10, name: "var_encoder_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 11, name: "polymorphic_types", kind: "message", T: ProtoFlattenedSerializerField_t_polymorphic_field_t, repeated: true },
+    { no: 12, name: "var_serializer_sym", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProtoFlattenedSerializerField_t {

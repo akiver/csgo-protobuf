@@ -503,6 +503,11 @@ export enum ECsgoGCMsg {
   k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt = 9215,
 
   /**
+   * @generated from enum value: k_EMsgGCCStrike15_v2_BetaEnrollment = 9217;
+   */
+  k_EMsgGCCStrike15_v2_BetaEnrollment = 9217,
+
+  /**
    * @generated from enum value: k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218;
    */
   k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName = 9218,
@@ -617,6 +622,7 @@ proto2.util.setEnumType(ECsgoGCMsg, "ECsgoGCMsg", [
   { no: 9213, name: "k_EMsgGCCStrike15_v2_GC2ClientInitSystem_Response" },
   { no: 9214, name: "k_EMsgGCCStrike15_v2_PrivateQueues" },
   { no: 9215, name: "k_EMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt" },
+  { no: 9217, name: "k_EMsgGCCStrike15_v2_BetaEnrollment" },
   { no: 9218, name: "k_EMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName" },
   { no: 9219, name: "k_EMsgGCCStrike15_v2_ClientRedeemFreeReward" },
   { no: 9220, name: "k_EMsgGCCStrike15_v2_ClientNetworkConfig" },
@@ -3654,6 +3660,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve extends Message<CMsg
    */
   opVarValues: OperationalVarValue[] = [];
 
+  /**
+   * @generated from field: optional uint32 socache_control = 20;
+   */
+  socacheControl?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3681,6 +3692,7 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve extends Message<CMsg
     { no: 16, name: "rtime32_event_start", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 17, name: "tv_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 19, name: "op_var_values", kind: "message", T: OperationalVarValue, repeated: true },
+    { no: 20, name: "socache_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve {
@@ -3789,6 +3801,16 @@ export class CMsgGCCStrike15_v2_MatchmakingServerReservationResponse extends Mes
    */
   flags?: number;
 
+  /**
+   * @generated from field: optional uint32 system_load = 18;
+   */
+  systemLoad?: number;
+
+  /**
+   * @generated from field: optional uint32 cpus_online = 19;
+   */
+  cpusOnline?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingServerReservationResponse>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3814,6 +3836,8 @@ export class CMsgGCCStrike15_v2_MatchmakingServerReservationResponse extends Mes
     { no: 17, name: "steamdatagram_routing", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 15, name: "test_token", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
     { no: 16, name: "flags", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 18, name: "system_load", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 19, name: "cpus_online", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingServerReservationResponse {
@@ -5388,6 +5412,21 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGC
    */
   freeRewards?: number;
 
+  /**
+   * @generated from field: optional uint32 xp_trail_remaining = 8;
+   */
+  xpTrailRemaining?: number;
+
+  /**
+   * @generated from field: optional int32 xp_trail_xp_needed = 9;
+   */
+  xpTrailXpNeeded?: number;
+
+  /**
+   * @generated from field: optional uint32 xp_trail_level = 10;
+   */
+  xpTrailLevel?: number;
+
   constructor(data?: PartialMessage<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>) {
     super();
     proto2.util.initPartial(data, this);
@@ -5403,6 +5442,9 @@ export class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded extends Message<CMsgGC
     { no: 5, name: "upgraded_defidx", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 6, name: "operation_points_awarded", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 7, name: "free_rewards", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 8, name: "xp_trail_remaining", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 9, name: "xp_trail_xp_needed", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 10, name: "xp_trail_level", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded {
@@ -6323,6 +6365,16 @@ export class CEconItemPreviewDataBlock_Sticker extends Message<CEconItemPreviewD
    */
   tintId?: number;
 
+  /**
+   * @generated from field: optional float offset_x = 7;
+   */
+  offsetX?: number;
+
+  /**
+   * @generated from field: optional float offset_y = 8;
+   */
+  offsetY?: number;
+
   constructor(data?: PartialMessage<CEconItemPreviewDataBlock_Sticker>) {
     super();
     proto2.util.initPartial(data, this);
@@ -6337,6 +6389,8 @@ export class CEconItemPreviewDataBlock_Sticker extends Message<CEconItemPreviewD
     { no: 4, name: "scale", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 5, name: "rotation", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
     { no: 6, name: "tint_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 7, name: "offset_x", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 8, name: "offset_y", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CEconItemPreviewDataBlock_Sticker {
@@ -7411,6 +7465,43 @@ export class CMsgGCCStrike15_v2_Fantasy_FantasyTeam extends Message<CMsgGCCStrik
 }
 
 /**
+ * @generated from message CAttribute_String
+ */
+export class CAttribute_String extends Message<CAttribute_String> {
+  /**
+   * @generated from field: optional string value = 1;
+   */
+  value?: string;
+
+  constructor(data?: PartialMessage<CAttribute_String>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CAttribute_String";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CAttribute_String {
+    return new CAttribute_String().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CAttribute_String {
+    return new CAttribute_String().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CAttribute_String {
+    return new CAttribute_String().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CAttribute_String | PlainMessage<CAttribute_String> | undefined, b: CAttribute_String | PlainMessage<CAttribute_String> | undefined): boolean {
+    return proto2.util.equals(CAttribute_String, a, b);
+  }
+}
+
+/**
  * @generated from message CMsgLegacySource1ClientWelcome
  */
 export class CMsgLegacySource1ClientWelcome extends Message<CMsgLegacySource1ClientWelcome> {
@@ -8297,6 +8388,16 @@ export class CSOPersonaDataPublic extends Message<CSOPersonaDataPublic> {
    */
   elevatedState?: boolean;
 
+  /**
+   * @generated from field: optional uint32 xp_trail_timestamp_refresh = 4;
+   */
+  xpTrailTimestampRefresh?: number;
+
+  /**
+   * @generated from field: optional uint32 xp_trail_level = 5;
+   */
+  xpTrailLevel?: number;
+
   constructor(data?: PartialMessage<CSOPersonaDataPublic>) {
     super();
     proto2.util.initPartial(data, this);
@@ -8308,6 +8409,8 @@ export class CSOPersonaDataPublic extends Message<CSOPersonaDataPublic> {
     { no: 1, name: "player_level", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 2, name: "commendation", kind: "message", T: PlayerCommendationInfo, opt: true },
     { no: 3, name: "elevated_state", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 4, name: "xp_trail_timestamp_refresh", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 5, name: "xp_trail_level", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSOPersonaDataPublic {
@@ -8943,6 +9046,43 @@ export class CMsgGCCStrike15_v2_ClientPlayerDecalSign extends Message<CMsgGCCStr
 
   static equals(a: CMsgGCCStrike15_v2_ClientPlayerDecalSign | PlainMessage<CMsgGCCStrike15_v2_ClientPlayerDecalSign> | undefined, b: CMsgGCCStrike15_v2_ClientPlayerDecalSign | PlainMessage<CMsgGCCStrike15_v2_ClientPlayerDecalSign> | undefined): boolean {
     return proto2.util.equals(CMsgGCCStrike15_v2_ClientPlayerDecalSign, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgGCCStrike15_v2_BetaEnrollment
+ */
+export class CMsgGCCStrike15_v2_BetaEnrollment extends Message<CMsgGCCStrike15_v2_BetaEnrollment> {
+  /**
+   * @generated from field: optional uint32 eresult = 1;
+   */
+  eresult?: number;
+
+  constructor(data?: PartialMessage<CMsgGCCStrike15_v2_BetaEnrollment>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCCStrike15_v2_BetaEnrollment";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "eresult", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_BetaEnrollment {
+    return new CMsgGCCStrike15_v2_BetaEnrollment().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_BetaEnrollment {
+    return new CMsgGCCStrike15_v2_BetaEnrollment().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCCStrike15_v2_BetaEnrollment {
+    return new CMsgGCCStrike15_v2_BetaEnrollment().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCCStrike15_v2_BetaEnrollment | PlainMessage<CMsgGCCStrike15_v2_BetaEnrollment> | undefined, b: CMsgGCCStrike15_v2_BetaEnrollment | PlainMessage<CMsgGCCStrike15_v2_BetaEnrollment> | undefined): boolean {
+    return proto2.util.equals(CMsgGCCStrike15_v2_BetaEnrollment, a, b);
   }
 }
 

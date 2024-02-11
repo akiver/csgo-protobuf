@@ -383,11 +383,6 @@ export enum ECstrike15UserMessages {
   CS_UM_DeepStats = 381,
 
   /**
-   * @generated from enum value: CS_UM_UtilMsg = 382;
-   */
-  CS_UM_UtilMsg = 382,
-
-  /**
    * @generated from enum value: CS_UM_ShootInfo = 383;
    */
   CS_UM_ShootInfo = 383,
@@ -468,7 +463,6 @@ proto2.util.setEnumType(ECstrike15UserMessages, "ECstrike15UserMessages", [
   { no: 379, name: "CS_UM_RoundEndReportData" },
   { no: 380, name: "CS_UM_CurrentRoundOdds" },
   { no: 381, name: "CS_UM_DeepStats" },
-  { no: 382, name: "CS_UM_UtilMsg" },
   { no: 383, name: "CS_UM_ShootInfo" },
 ]);
 

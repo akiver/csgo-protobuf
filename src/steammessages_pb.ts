@@ -3353,6 +3353,86 @@ export class CMsgGCGetPartnerAccountLink_Response extends Message<CMsgGCGetPartn
 }
 
 /**
+ * @generated from message CMsgGCAddressMask
+ */
+export class CMsgGCAddressMask extends Message<CMsgGCAddressMask> {
+  /**
+   * @generated from field: optional fixed32 ipv4 = 1;
+   */
+  ipv4?: number;
+
+  /**
+   * @generated from field: optional uint32 maskbits = 2 [default = 32];
+   */
+  maskbits?: number;
+
+  constructor(data?: PartialMessage<CMsgGCAddressMask>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCAddressMask";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "ipv4", kind: "scalar", T: 7 /* ScalarType.FIXED32 */, opt: true },
+    { no: 2, name: "maskbits", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true, default: 32 },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCAddressMask {
+    return new CMsgGCAddressMask().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCAddressMask {
+    return new CMsgGCAddressMask().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCAddressMask {
+    return new CMsgGCAddressMask().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCAddressMask | PlainMessage<CMsgGCAddressMask> | undefined, b: CMsgGCAddressMask | PlainMessage<CMsgGCAddressMask> | undefined): boolean {
+    return proto2.util.equals(CMsgGCAddressMask, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgGCAddressMaskGroup
+ */
+export class CMsgGCAddressMaskGroup extends Message<CMsgGCAddressMaskGroup> {
+  /**
+   * @generated from field: repeated CMsgGCAddressMask addrs = 1;
+   */
+  addrs: CMsgGCAddressMask[] = [];
+
+  constructor(data?: PartialMessage<CMsgGCAddressMaskGroup>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCAddressMaskGroup";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "addrs", kind: "message", T: CMsgGCAddressMask, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCAddressMaskGroup {
+    return new CMsgGCAddressMaskGroup().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCAddressMaskGroup {
+    return new CMsgGCAddressMaskGroup().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCAddressMaskGroup {
+    return new CMsgGCAddressMaskGroup().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCAddressMaskGroup | PlainMessage<CMsgGCAddressMaskGroup> | undefined, b: CMsgGCAddressMaskGroup | PlainMessage<CMsgGCAddressMaskGroup> | undefined): boolean {
+    return proto2.util.equals(CMsgGCAddressMaskGroup, a, b);
+  }
+}
+
+/**
  * @generated from message CMsgGCRoutingInfo
  */
 export class CMsgGCRoutingInfo extends Message<CMsgGCRoutingInfo> {
@@ -3381,6 +3461,11 @@ export class CMsgGCRoutingInfo extends Message<CMsgGCRoutingInfo> {
    */
   webapiParam?: string;
 
+  /**
+   * @generated from field: repeated CMsgGCRoutingInfo.PolicyRule policy_rules = 6;
+   */
+  policyRules: CMsgGCRoutingInfo_PolicyRule[] = [];
+
   constructor(data?: PartialMessage<CMsgGCRoutingInfo>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3394,6 +3479,7 @@ export class CMsgGCRoutingInfo extends Message<CMsgGCRoutingInfo> {
     { no: 3, name: "fallback", kind: "enum", T: proto2.getEnumType(CMsgGCRoutingInfo_RoutingMethod), opt: true, default: CMsgGCRoutingInfo_RoutingMethod.DISCARD },
     { no: 4, name: "protobuf_field", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 5, name: "webapi_param", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 6, name: "policy_rules", kind: "message", T: CMsgGCRoutingInfo_PolicyRule, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCRoutingInfo {
@@ -3450,6 +3536,104 @@ proto2.util.setEnumType(CMsgGCRoutingInfo_RoutingMethod, "CMsgGCRoutingInfo.Rout
   { no: 3, name: "PROTOBUF_FIELD_UINT64" },
   { no: 4, name: "WEBAPI_PARAM_UINT64" },
 ]);
+
+/**
+ * @generated from message CMsgGCRoutingInfo.TokenBucketConfiguration
+ */
+export class CMsgGCRoutingInfo_TokenBucketConfiguration extends Message<CMsgGCRoutingInfo_TokenBucketConfiguration> {
+  /**
+   * @generated from field: optional int32 tokens_start = 1;
+   */
+  tokensStart?: number;
+
+  /**
+   * @generated from field: optional int32 tokens_grant = 2;
+   */
+  tokensGrant?: number;
+
+  /**
+   * @generated from field: optional int32 grant_seconds = 3;
+   */
+  grantSeconds?: number;
+
+  constructor(data?: PartialMessage<CMsgGCRoutingInfo_TokenBucketConfiguration>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCRoutingInfo.TokenBucketConfiguration";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "tokens_start", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "tokens_grant", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "grant_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCRoutingInfo_TokenBucketConfiguration {
+    return new CMsgGCRoutingInfo_TokenBucketConfiguration().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCRoutingInfo_TokenBucketConfiguration {
+    return new CMsgGCRoutingInfo_TokenBucketConfiguration().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCRoutingInfo_TokenBucketConfiguration {
+    return new CMsgGCRoutingInfo_TokenBucketConfiguration().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCRoutingInfo_TokenBucketConfiguration | PlainMessage<CMsgGCRoutingInfo_TokenBucketConfiguration> | undefined, b: CMsgGCRoutingInfo_TokenBucketConfiguration | PlainMessage<CMsgGCRoutingInfo_TokenBucketConfiguration> | undefined): boolean {
+    return proto2.util.equals(CMsgGCRoutingInfo_TokenBucketConfiguration, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgGCRoutingInfo.PolicyRule
+ */
+export class CMsgGCRoutingInfo_PolicyRule extends Message<CMsgGCRoutingInfo_PolicyRule> {
+  /**
+   * @generated from field: optional int32 account_type = 1;
+   */
+  accountType?: number;
+
+  /**
+   * @generated from field: optional int32 address_mask_group_id = 2;
+   */
+  addressMaskGroupId?: number;
+
+  /**
+   * @generated from field: optional CMsgGCRoutingInfo.TokenBucketConfiguration token_bucket = 3;
+   */
+  tokenBucket?: CMsgGCRoutingInfo_TokenBucketConfiguration;
+
+  constructor(data?: PartialMessage<CMsgGCRoutingInfo_PolicyRule>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgGCRoutingInfo.PolicyRule";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "account_type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 2, name: "address_mask_group_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "token_bucket", kind: "message", T: CMsgGCRoutingInfo_TokenBucketConfiguration, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCRoutingInfo_PolicyRule {
+    return new CMsgGCRoutingInfo_PolicyRule().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgGCRoutingInfo_PolicyRule {
+    return new CMsgGCRoutingInfo_PolicyRule().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgGCRoutingInfo_PolicyRule {
+    return new CMsgGCRoutingInfo_PolicyRule().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgGCRoutingInfo_PolicyRule | PlainMessage<CMsgGCRoutingInfo_PolicyRule> | undefined, b: CMsgGCRoutingInfo_PolicyRule | PlainMessage<CMsgGCRoutingInfo_PolicyRule> | undefined): boolean {
+    return proto2.util.equals(CMsgGCRoutingInfo_PolicyRule, a, b);
+  }
+}
 
 /**
  * @generated from message CMsgGCMsgMasterSetWebAPIRouting
@@ -3546,6 +3730,11 @@ export class CMsgGCMsgMasterSetClientMsgRouting extends Message<CMsgGCMsgMasterS
    */
   entries: CMsgGCMsgMasterSetClientMsgRouting_Entry[] = [];
 
+  /**
+   * @generated from field: repeated CMsgGCAddressMaskGroup address_mask_groups = 2;
+   */
+  addressMaskGroups: CMsgGCAddressMaskGroup[] = [];
+
   constructor(data?: PartialMessage<CMsgGCMsgMasterSetClientMsgRouting>) {
     super();
     proto2.util.initPartial(data, this);
@@ -3555,6 +3744,7 @@ export class CMsgGCMsgMasterSetClientMsgRouting extends Message<CMsgGCMsgMasterS
   static readonly typeName = "CMsgGCMsgMasterSetClientMsgRouting";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 1, name: "entries", kind: "message", T: CMsgGCMsgMasterSetClientMsgRouting_Entry, repeated: true },
+    { no: 2, name: "address_mask_groups", kind: "message", T: CMsgGCAddressMaskGroup, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCMsgMasterSetClientMsgRouting {

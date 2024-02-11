@@ -258,6 +258,11 @@ export class CGameInfo extends Message<CGameInfo> {
    */
   dota?: CGameInfo_CDotaGameInfo;
 
+  /**
+   * @generated from field: optional CGameInfo.CCSGameInfo cs = 5;
+   */
+  cs?: CGameInfo_CCSGameInfo;
+
   constructor(data?: PartialMessage<CGameInfo>) {
     super();
     proto2.util.initPartial(data, this);
@@ -267,6 +272,7 @@ export class CGameInfo extends Message<CGameInfo> {
   static readonly typeName = "CGameInfo";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 4, name: "dota", kind: "message", T: CGameInfo_CDotaGameInfo, opt: true },
+    { no: 5, name: "cs", kind: "message", T: CGameInfo_CCSGameInfo, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CGameInfo {
@@ -490,6 +496,43 @@ export class CGameInfo_CDotaGameInfo_CHeroSelectEvent extends Message<CGameInfo_
 
   static equals(a: CGameInfo_CDotaGameInfo_CHeroSelectEvent | PlainMessage<CGameInfo_CDotaGameInfo_CHeroSelectEvent> | undefined, b: CGameInfo_CDotaGameInfo_CHeroSelectEvent | PlainMessage<CGameInfo_CDotaGameInfo_CHeroSelectEvent> | undefined): boolean {
     return proto2.util.equals(CGameInfo_CDotaGameInfo_CHeroSelectEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message CGameInfo.CCSGameInfo
+ */
+export class CGameInfo_CCSGameInfo extends Message<CGameInfo_CCSGameInfo> {
+  /**
+   * @generated from field: repeated int32 round_start_ticks = 1;
+   */
+  roundStartTicks: number[] = [];
+
+  constructor(data?: PartialMessage<CGameInfo_CCSGameInfo>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CGameInfo.CCSGameInfo";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "round_start_ticks", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CGameInfo_CCSGameInfo {
+    return new CGameInfo_CCSGameInfo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CGameInfo_CCSGameInfo {
+    return new CGameInfo_CCSGameInfo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CGameInfo_CCSGameInfo {
+    return new CGameInfo_CCSGameInfo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CGameInfo_CCSGameInfo | PlainMessage<CGameInfo_CCSGameInfo> | undefined, b: CGameInfo_CCSGameInfo | PlainMessage<CGameInfo_CCSGameInfo> | undefined): boolean {
+    return proto2.util.equals(CGameInfo_CCSGameInfo, a, b);
   }
 }
 

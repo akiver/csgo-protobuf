@@ -24,12 +24,18 @@ export enum GCClientLauncherType {
    * @generated from enum value: GCClientLauncherType_STEAMCHINA = 2;
    */
   GCClientLauncherType_STEAMCHINA = 2,
+
+  /**
+   * @generated from enum value: GCClientLauncherType_SOURCE2 = 3;
+   */
+  GCClientLauncherType_SOURCE2 = 3,
 }
 // Retrieve enum metadata with: proto2.getEnumType(GCClientLauncherType)
 proto2.util.setEnumType(GCClientLauncherType, "GCClientLauncherType", [
   { no: 0, name: "GCClientLauncherType_DEFAULT" },
   { no: 1, name: "GCClientLauncherType_PERFECTWORLD" },
   { no: 2, name: "GCClientLauncherType_STEAMCHINA" },
+  { no: 3, name: "GCClientLauncherType_SOURCE2" },
 ]);
 
 /**
@@ -1230,6 +1236,11 @@ export class CMsgServerHello extends Message<CMsgServerHello> {
    */
   steamdatagramLogin?: Uint8Array;
 
+  /**
+   * @generated from field: optional uint32 socache_control = 9;
+   */
+  socacheControl?: number;
+
   constructor(data?: PartialMessage<CMsgServerHello>) {
     super();
     proto2.util.initPartial(data, this);
@@ -1245,6 +1256,7 @@ export class CMsgServerHello extends Message<CMsgServerHello> {
     { no: 6, name: "legacy_steamdatagram_routing", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 7, name: "required_internal_addr", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 8, name: "steamdatagram_login", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 9, name: "socache_control", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgServerHello {

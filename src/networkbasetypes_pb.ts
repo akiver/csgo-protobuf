@@ -849,6 +849,16 @@ export class CNETMsg_Tick extends Message<CNETMsg_Tick> {
    */
   hltvReplayFlags?: number;
 
+  /**
+   * @generated from field: optional uint32 expected_long_tick = 10;
+   */
+  expectedLongTick?: number;
+
+  /**
+   * @generated from field: optional string expected_long_tick_reason = 11;
+   */
+  expectedLongTickReason?: string;
+
   constructor(data?: PartialMessage<CNETMsg_Tick>) {
     super();
     proto2.util.initPartial(data, this);
@@ -866,6 +876,8 @@ export class CNETMsg_Tick extends Message<CNETMsg_Tick> {
     { no: 7, name: "host_loss", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 8, name: "host_unfiltered_frametime", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 9, name: "hltv_replay_flags", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 10, name: "expected_long_tick", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 11, name: "expected_long_tick_reason", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CNETMsg_Tick {

@@ -102,6 +102,11 @@ export enum EBaseUserMessages {
   UM_ShakeDir = 121,
 
   /**
+   * @generated from enum value: UM_WaterShake = 122;
+   */
+  UM_WaterShake = 122,
+
+  /**
    * @generated from enum value: UM_TextMsg = 124;
    */
   UM_TextMsg = 124,
@@ -276,6 +281,7 @@ proto2.util.setEnumType(EBaseUserMessages, "EBaseUserMessages", [
   { no: 119, name: "UM_SayTextChannel" },
   { no: 120, name: "UM_Shake" },
   { no: 121, name: "UM_ShakeDir" },
+  { no: 122, name: "UM_WaterShake" },
   { no: 124, name: "UM_TextMsg" },
   { no: 125, name: "UM_ScreenTilt" },
   { no: 128, name: "UM_VoiceMask" },
@@ -1049,6 +1055,61 @@ export class CUserMessageShakeDir extends Message<CUserMessageShakeDir> {
 
   static equals(a: CUserMessageShakeDir | PlainMessage<CUserMessageShakeDir> | undefined, b: CUserMessageShakeDir | PlainMessage<CUserMessageShakeDir> | undefined): boolean {
     return proto2.util.equals(CUserMessageShakeDir, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessageWaterShake
+ */
+export class CUserMessageWaterShake extends Message<CUserMessageWaterShake> {
+  /**
+   * @generated from field: optional uint32 command = 1;
+   */
+  command?: number;
+
+  /**
+   * @generated from field: optional float amplitude = 2;
+   */
+  amplitude?: number;
+
+  /**
+   * @generated from field: optional float frequency = 3;
+   */
+  frequency?: number;
+
+  /**
+   * @generated from field: optional float duration = 4;
+   */
+  duration?: number;
+
+  constructor(data?: PartialMessage<CUserMessageWaterShake>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessageWaterShake";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "command", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "amplitude", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "frequency", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 4, name: "duration", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessageWaterShake {
+    return new CUserMessageWaterShake().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessageWaterShake {
+    return new CUserMessageWaterShake().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessageWaterShake {
+    return new CUserMessageWaterShake().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessageWaterShake | PlainMessage<CUserMessageWaterShake> | undefined, b: CUserMessageWaterShake | PlainMessage<CUserMessageWaterShake> | undefined): boolean {
+    return proto2.util.equals(CUserMessageWaterShake, a, b);
   }
 }
 
@@ -2644,6 +2705,16 @@ export class CUserMsg_ParticleManager_CreateParticle extends Message<CUserMsg_Pa
    */
   controlPointConfiguration?: string;
 
+  /**
+   * @generated from field: optional bool cluster = 8;
+   */
+  cluster?: boolean;
+
+  /**
+   * @generated from field: optional float endcap_time = 9;
+   */
+  endcapTime?: number;
+
   constructor(data?: PartialMessage<CUserMsg_ParticleManager_CreateParticle>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2659,6 +2730,8 @@ export class CUserMsg_ParticleManager_CreateParticle extends Message<CUserMsg_Pa
     { no: 5, name: "apply_voice_ban_rules", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
     { no: 6, name: "team_behavior", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 7, name: "control_point_configuration", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 8, name: "cluster", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
+    { no: 9, name: "endcap_time", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_CreateParticle {
