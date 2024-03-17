@@ -4101,6 +4101,11 @@ export class CMsgGCCStrike15_v2_MatchmakingServerRoundStats extends Message<CMsg
    */
   maxRounds?: number;
 
+  /**
+   * @generated from field: optional int32 map_id = 32;
+   */
+  mapId?: number;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4140,6 +4145,7 @@ export class CMsgGCCStrike15_v2_MatchmakingServerRoundStats extends Message<CMsg
     { no: 29, name: "player_spawned", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 30, name: "team_spawn_count", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 31, name: "max_rounds", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 32, name: "map_id", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingServerRoundStats {
