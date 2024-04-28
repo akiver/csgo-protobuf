@@ -4332,6 +4332,11 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientHello extends Message<CMsgGC
    */
   rankings: PlayerRankingInfo[] = [];
 
+  /**
+   * @generated from field: optional uint64 owcaseid = 21;
+   */
+  owcaseid?: bigint;
+
   constructor(data?: PartialMessage<CMsgGCCStrike15_v2_MatchmakingGC2ClientHello>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4359,6 +4364,7 @@ export class CMsgGCCStrike15_v2_MatchmakingGC2ClientHello extends Message<CMsgGC
     { no: 18, name: "player_cur_xp", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 19, name: "player_xp_bonus_flags", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 20, name: "rankings", kind: "message", T: PlayerRankingInfo, repeated: true },
+    { no: 21, name: "owcaseid", kind: "scalar", T: 4 /* ScalarType.UINT64 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGCCStrike15_v2_MatchmakingGC2ClientHello {

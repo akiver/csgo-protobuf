@@ -101,9 +101,14 @@ export enum EDemoCommands {
   DEM_AnimationData = 16,
 
   /**
-   * @generated from enum value: DEM_Max = 17;
+   * @generated from enum value: DEM_AnimationHeader = 17;
    */
-  DEM_Max = 17,
+  DEM_AnimationHeader = 17,
+
+  /**
+   * @generated from enum value: DEM_Max = 18;
+   */
+  DEM_Max = 18,
 
   /**
    * @generated from enum value: DEM_IsCompressed = 64;
@@ -130,7 +135,8 @@ proto2.util.setEnumType(EDemoCommands, "EDemoCommands", [
   { no: 14, name: "DEM_SaveGame" },
   { no: 15, name: "DEM_SpawnGroups" },
   { no: 16, name: "DEM_AnimationData" },
-  { no: 17, name: "DEM_Max" },
+  { no: 17, name: "DEM_AnimationHeader" },
+  { no: 18, name: "DEM_Max" },
   { no: 64, name: "DEM_IsCompressed" },
 ]);
 
@@ -208,6 +214,11 @@ export class CDemoFileHeader extends Message<CDemoFileHeader> {
    */
   game?: string;
 
+  /**
+   * @generated from field: optional int32 server_start_tick = 15;
+   */
+  serverStartTick?: number;
+
   constructor(data?: PartialMessage<CDemoFileHeader>) {
     super();
     proto2.util.initPartial(data, this);
@@ -230,6 +241,7 @@ export class CDemoFileHeader extends Message<CDemoFileHeader> {
     { no: 12, name: "demo_version_guid", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
     { no: 13, name: "build_num", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 14, name: "game", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 15, name: "server_start_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CDemoFileHeader {
@@ -994,6 +1006,55 @@ export class CDemoCustomDataCallbacks extends Message<CDemoCustomDataCallbacks> 
 
   static equals(a: CDemoCustomDataCallbacks | PlainMessage<CDemoCustomDataCallbacks> | undefined, b: CDemoCustomDataCallbacks | PlainMessage<CDemoCustomDataCallbacks> | undefined): boolean {
     return proto2.util.equals(CDemoCustomDataCallbacks, a, b);
+  }
+}
+
+/**
+ * @generated from message CDemoAnimationHeader
+ */
+export class CDemoAnimationHeader extends Message<CDemoAnimationHeader> {
+  /**
+   * @generated from field: optional sint32 entity_id = 1;
+   */
+  entityId?: number;
+
+  /**
+   * @generated from field: optional int32 tick = 2;
+   */
+  tick?: number;
+
+  /**
+   * @generated from field: optional bytes data = 3;
+   */
+  data?: Uint8Array;
+
+  constructor(data?: PartialMessage<CDemoAnimationHeader>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CDemoAnimationHeader";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "entity_id", kind: "scalar", T: 17 /* ScalarType.SINT32 */, opt: true },
+    { no: 2, name: "tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CDemoAnimationHeader {
+    return new CDemoAnimationHeader().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CDemoAnimationHeader {
+    return new CDemoAnimationHeader().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CDemoAnimationHeader {
+    return new CDemoAnimationHeader().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CDemoAnimationHeader | PlainMessage<CDemoAnimationHeader> | undefined, b: CDemoAnimationHeader | PlainMessage<CDemoAnimationHeader> | undefined): boolean {
+    return proto2.util.equals(CDemoAnimationHeader, a, b);
   }
 }
 
