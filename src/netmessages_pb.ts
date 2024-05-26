@@ -2586,11 +2586,6 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
   serializedEntities?: Uint8Array;
 
   /**
-   * @generated from field: optional CSVCMsg_PacketEntities.command_queue_info_t command_queue_info = 14;
-   */
-  commandQueueInfo?: CSVCMsg_PacketEntities_command_queue_info_t;
-
-  /**
    * @generated from field: repeated CSVCMsg_PacketEntities.alternate_baseline_t alternate_baselines = 15;
    */
   alternateBaselines: CSVCMsg_PacketEntities_alternate_baseline_t[] = [];
@@ -2609,6 +2604,16 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
    * @generated from field: optional CSVCMsg_PacketEntities.non_transmitted_entities_t non_transmitted_entities = 19;
    */
   nonTransmittedEntities?: CSVCMsg_PacketEntities_non_transmitted_entities_t;
+
+  /**
+   * @generated from field: optional uint32 cq_starved_command_ticks = 20;
+   */
+  cqStarvedCommandTicks?: number;
+
+  /**
+   * @generated from field: optional uint32 cq_discarded_command_ticks = 21;
+   */
+  cqDiscardedCommandTicks?: number;
 
   /**
    * @generated from field: optional bytes dev_padding = 999;
@@ -2637,11 +2642,12 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
     { no: 17, name: "last_cmd_number_recv_delta", kind: "scalar", T: 17 /* ScalarType.SINT32 */, opt: true },
     { no: 12, name: "server_tick", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 13, name: "serialized_entities", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-    { no: 14, name: "command_queue_info", kind: "message", T: CSVCMsg_PacketEntities_command_queue_info_t, opt: true },
     { no: 15, name: "alternate_baselines", kind: "message", T: CSVCMsg_PacketEntities_alternate_baseline_t, repeated: true },
     { no: 16, name: "has_pvs_vis_bits", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 18, name: "last_cmd_recv_margin", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 19, name: "non_transmitted_entities", kind: "message", T: CSVCMsg_PacketEntities_non_transmitted_entities_t, opt: true },
+    { no: 20, name: "cq_starved_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 21, name: "cq_discarded_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 999, name: "dev_padding", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
   ]);
 
@@ -2659,67 +2665,6 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
 
   static equals(a: CSVCMsg_PacketEntities | PlainMessage<CSVCMsg_PacketEntities> | undefined, b: CSVCMsg_PacketEntities | PlainMessage<CSVCMsg_PacketEntities> | undefined): boolean {
     return proto2.util.equals(CSVCMsg_PacketEntities, a, b);
-  }
-}
-
-/**
- * @generated from message CSVCMsg_PacketEntities.command_queue_info_t
- */
-export class CSVCMsg_PacketEntities_command_queue_info_t extends Message<CSVCMsg_PacketEntities_command_queue_info_t> {
-  /**
-   * @generated from field: optional uint32 commands_queued = 1;
-   */
-  commandsQueued?: number;
-
-  /**
-   * @generated from field: optional uint32 command_queue_desired_size = 2;
-   */
-  commandQueueDesiredSize?: number;
-
-  /**
-   * @generated from field: optional uint32 starved_command_ticks = 3;
-   */
-  starvedCommandTicks?: number;
-
-  /**
-   * @generated from field: optional float time_dilation_percent = 4;
-   */
-  timeDilationPercent?: number;
-
-  /**
-   * @generated from field: optional uint32 discarded_command_ticks = 5;
-   */
-  discardedCommandTicks?: number;
-
-  constructor(data?: PartialMessage<CSVCMsg_PacketEntities_command_queue_info_t>) {
-    super();
-    proto2.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CSVCMsg_PacketEntities.command_queue_info_t";
-  static readonly fields: FieldList = proto2.util.newFieldList(() => [
-    { no: 1, name: "commands_queued", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 2, name: "command_queue_desired_size", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 3, name: "starved_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 4, name: "time_dilation_percent", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
-    { no: 5, name: "discarded_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_PacketEntities_command_queue_info_t {
-    return new CSVCMsg_PacketEntities_command_queue_info_t().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSVCMsg_PacketEntities_command_queue_info_t {
-    return new CSVCMsg_PacketEntities_command_queue_info_t().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSVCMsg_PacketEntities_command_queue_info_t {
-    return new CSVCMsg_PacketEntities_command_queue_info_t().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: CSVCMsg_PacketEntities_command_queue_info_t | PlainMessage<CSVCMsg_PacketEntities_command_queue_info_t> | undefined, b: CSVCMsg_PacketEntities_command_queue_info_t | PlainMessage<CSVCMsg_PacketEntities_command_queue_info_t> | undefined): boolean {
-    return proto2.util.equals(CSVCMsg_PacketEntities_command_queue_info_t, a, b);
   }
 }
 

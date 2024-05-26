@@ -257,6 +257,16 @@ export enum EBaseUserMessages {
   UM_ExtraUserData = 164,
 
   /**
+   * @generated from enum value: UM_NotifyResponseFound = 165;
+   */
+  UM_NotifyResponseFound = 165,
+
+  /**
+   * @generated from enum value: UM_PlayResponseConditional = 166;
+   */
+  UM_PlayResponseConditional = 166,
+
+  /**
    * @generated from enum value: UM_MAX_BASE = 200;
    */
   UM_MAX_BASE = 200,
@@ -312,6 +322,8 @@ proto2.util.setEnumType(EBaseUserMessages, "EBaseUserMessages", [
   { no: 162, name: "UM_RequestDiagnostic" },
   { no: 163, name: "UM_DiagnosticResponse" },
   { no: 164, name: "UM_ExtraUserData" },
+  { no: 165, name: "UM_NotifyResponseFound" },
+  { no: 166, name: "UM_PlayResponseConditional" },
   { no: 200, name: "UM_MAX_BASE" },
 ]);
 
@@ -550,6 +562,26 @@ export enum PARTICLE_MESSAGE {
    * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING = 29;
    */
   GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING = 29,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT = 30;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT = 30,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_CLEAR_MODELLIST_OVERRIDE = 31;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_CLEAR_MODELLIST_OVERRIDE = 31,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_CREATE_PHYSICS_SIM = 32;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_CREATE_PHYSICS_SIM = 32,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM = 33;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM = 33,
 }
 // Retrieve enum metadata with: proto2.getEnumType(PARTICLE_MESSAGE)
 proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
@@ -583,6 +615,10 @@ proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
   { no: 27, name: "GAME_PARTICLE_MANAGER_EVENT_UPDATE_TRANSFORM" },
   { no: 28, name: "GAME_PARTICLE_MANAGER_EVENT_FREEZE_TRANSITION_OVERRIDE" },
   { no: 29, name: "GAME_PARTICLE_MANAGER_EVENT_FREEZE_INVOLVING" },
+  { no: 30, name: "GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT" },
+  { no: 31, name: "GAME_PARTICLE_MANAGER_EVENT_CLEAR_MODELLIST_OVERRIDE" },
+  { no: 32, name: "GAME_PARTICLE_MANAGER_EVENT_CREATE_PHYSICS_SIM" },
+  { no: 33, name: "GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM" },
 ]);
 
 /**
@@ -2577,6 +2613,26 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
    */
   freezeParticleInvolving?: CUserMsg_ParticleManager_FreezeParticleInvolving;
 
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.AddModellistOverrideElement add_modellist_override_element = 33;
+   */
+  addModellistOverrideElement?: CUserMsg_ParticleManager_AddModellistOverrideElement;
+
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.ClearModellistOverride clear_modellist_override = 34;
+   */
+  clearModellistOverride?: CUserMsg_ParticleManager_ClearModellistOverride;
+
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.CreatePhysicsSim create_physics_sim = 35;
+   */
+  createPhysicsSim?: CUserMsg_ParticleManager_CreatePhysicsSim;
+
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.DestroyPhysicsSim destroy_physics_sim = 36;
+   */
+  destroyPhysicsSim?: CUserMsg_ParticleManager_DestroyPhysicsSim;
+
   constructor(data?: PartialMessage<CUserMsg_ParticleManager>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2616,6 +2672,10 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
     { no: 30, name: "update_particle_transform", kind: "message", T: CUserMsg_ParticleManager_UpdateParticleTransform, opt: true },
     { no: 31, name: "particle_freeze_transition_override", kind: "message", T: CUserMsg_ParticleManager_ParticleFreezeTransitionOverride, opt: true },
     { no: 32, name: "freeze_particle_involving", kind: "message", T: CUserMsg_ParticleManager_FreezeParticleInvolving, opt: true },
+    { no: 33, name: "add_modellist_override_element", kind: "message", T: CUserMsg_ParticleManager_AddModellistOverrideElement, opt: true },
+    { no: 34, name: "clear_modellist_override", kind: "message", T: CUserMsg_ParticleManager_ClearModellistOverride, opt: true },
+    { no: 35, name: "create_physics_sim", kind: "message", T: CUserMsg_ParticleManager_CreatePhysicsSim, opt: true },
+    { no: 36, name: "destroy_physics_sim", kind: "message", T: CUserMsg_ParticleManager_DestroyPhysicsSim, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager {
@@ -3924,6 +3984,92 @@ export class CUserMsg_ParticleManager_FreezeParticleInvolving extends Message<CU
 }
 
 /**
+ * @generated from message CUserMsg_ParticleManager.AddModellistOverrideElement
+ */
+export class CUserMsg_ParticleManager_AddModellistOverrideElement extends Message<CUserMsg_ParticleManager_AddModellistOverrideElement> {
+  /**
+   * @generated from field: optional string model_name = 1;
+   */
+  modelName?: string;
+
+  /**
+   * @generated from field: optional float spawn_probability = 2;
+   */
+  spawnProbability?: number;
+
+  /**
+   * @generated from field: optional uint32 groupid = 3;
+   */
+  groupid?: number;
+
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_AddModellistOverrideElement>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.AddModellistOverrideElement";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "model_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "spawn_probability", kind: "scalar", T: 2 /* ScalarType.FLOAT */, opt: true },
+    { no: 3, name: "groupid", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_AddModellistOverrideElement {
+    return new CUserMsg_ParticleManager_AddModellistOverrideElement().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_AddModellistOverrideElement {
+    return new CUserMsg_ParticleManager_AddModellistOverrideElement().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_AddModellistOverrideElement {
+    return new CUserMsg_ParticleManager_AddModellistOverrideElement().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_AddModellistOverrideElement | PlainMessage<CUserMsg_ParticleManager_AddModellistOverrideElement> | undefined, b: CUserMsg_ParticleManager_AddModellistOverrideElement | PlainMessage<CUserMsg_ParticleManager_AddModellistOverrideElement> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_AddModellistOverrideElement, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMsg_ParticleManager.ClearModellistOverride
+ */
+export class CUserMsg_ParticleManager_ClearModellistOverride extends Message<CUserMsg_ParticleManager_ClearModellistOverride> {
+  /**
+   * @generated from field: optional uint32 groupid = 1;
+   */
+  groupid?: number;
+
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_ClearModellistOverride>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.ClearModellistOverride";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "groupid", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_ClearModellistOverride {
+    return new CUserMsg_ParticleManager_ClearModellistOverride().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_ClearModellistOverride {
+    return new CUserMsg_ParticleManager_ClearModellistOverride().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_ClearModellistOverride {
+    return new CUserMsg_ParticleManager_ClearModellistOverride().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_ClearModellistOverride | PlainMessage<CUserMsg_ParticleManager_ClearModellistOverride> | undefined, b: CUserMsg_ParticleManager_ClearModellistOverride | PlainMessage<CUserMsg_ParticleManager_ClearModellistOverride> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_ClearModellistOverride, a, b);
+  }
+}
+
+/**
  * @generated from message CUserMsg_ParticleManager.SetParticleNamedValueContext
  */
 export class CUserMsg_ParticleManager_SetParticleNamedValueContext extends Message<CUserMsg_ParticleManager_SetParticleNamedValueContext> {
@@ -4153,6 +4299,74 @@ export class CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContex
 
   static equals(a: CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext | PlainMessage<CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext> | undefined, b: CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext | PlainMessage<CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext> | undefined): boolean {
     return proto2.util.equals(CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMsg_ParticleManager.CreatePhysicsSim
+ */
+export class CUserMsg_ParticleManager_CreatePhysicsSim extends Message<CUserMsg_ParticleManager_CreatePhysicsSim> {
+  /**
+   * @generated from field: optional string prop_group_name = 1;
+   */
+  propGroupName?: string;
+
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_CreatePhysicsSim>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.CreatePhysicsSim";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "prop_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_CreatePhysicsSim {
+    return new CUserMsg_ParticleManager_CreatePhysicsSim().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_CreatePhysicsSim {
+    return new CUserMsg_ParticleManager_CreatePhysicsSim().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_CreatePhysicsSim {
+    return new CUserMsg_ParticleManager_CreatePhysicsSim().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_CreatePhysicsSim | PlainMessage<CUserMsg_ParticleManager_CreatePhysicsSim> | undefined, b: CUserMsg_ParticleManager_CreatePhysicsSim | PlainMessage<CUserMsg_ParticleManager_CreatePhysicsSim> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_CreatePhysicsSim, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMsg_ParticleManager.DestroyPhysicsSim
+ */
+export class CUserMsg_ParticleManager_DestroyPhysicsSim extends Message<CUserMsg_ParticleManager_DestroyPhysicsSim> {
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_DestroyPhysicsSim>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.DestroyPhysicsSim";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_DestroyPhysicsSim {
+    return new CUserMsg_ParticleManager_DestroyPhysicsSim().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_DestroyPhysicsSim {
+    return new CUserMsg_ParticleManager_DestroyPhysicsSim().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_DestroyPhysicsSim {
+    return new CUserMsg_ParticleManager_DestroyPhysicsSim().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_DestroyPhysicsSim | PlainMessage<CUserMsg_ParticleManager_DestroyPhysicsSim> | undefined, b: CUserMsg_ParticleManager_DestroyPhysicsSim | PlainMessage<CUserMsg_ParticleManager_DestroyPhysicsSim> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_DestroyPhysicsSim, a, b);
   }
 }
 
@@ -5598,6 +5812,165 @@ export class CUserMessage_ExtraUserData extends Message<CUserMessage_ExtraUserDa
 
   static equals(a: CUserMessage_ExtraUserData | PlainMessage<CUserMessage_ExtraUserData> | undefined, b: CUserMessage_ExtraUserData | PlainMessage<CUserMessage_ExtraUserData> | undefined): boolean {
     return proto2.util.equals(CUserMessage_ExtraUserData, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessage_NotifyResponseFound
+ */
+export class CUserMessage_NotifyResponseFound extends Message<CUserMessage_NotifyResponseFound> {
+  /**
+   * @generated from field: optional int32 ent_index = 1 [default = -1];
+   */
+  entIndex?: number;
+
+  /**
+   * @generated from field: optional string rule_name = 2;
+   */
+  ruleName?: string;
+
+  /**
+   * @generated from field: optional string response_value = 3;
+   */
+  responseValue?: string;
+
+  /**
+   * @generated from field: optional string response_concept = 4;
+   */
+  responseConcept?: string;
+
+  /**
+   * @generated from field: repeated CUserMessage_NotifyResponseFound.Criteria criteria = 5;
+   */
+  criteria: CUserMessage_NotifyResponseFound_Criteria[] = [];
+
+  constructor(data?: PartialMessage<CUserMessage_NotifyResponseFound>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessage_NotifyResponseFound";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "ent_index", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true, default: -1 },
+    { no: 2, name: "rule_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "response_value", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: "response_concept", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 5, name: "criteria", kind: "message", T: CUserMessage_NotifyResponseFound_Criteria, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_NotifyResponseFound {
+    return new CUserMessage_NotifyResponseFound().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessage_NotifyResponseFound {
+    return new CUserMessage_NotifyResponseFound().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessage_NotifyResponseFound {
+    return new CUserMessage_NotifyResponseFound().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessage_NotifyResponseFound | PlainMessage<CUserMessage_NotifyResponseFound> | undefined, b: CUserMessage_NotifyResponseFound | PlainMessage<CUserMessage_NotifyResponseFound> | undefined): boolean {
+    return proto2.util.equals(CUserMessage_NotifyResponseFound, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessage_NotifyResponseFound.Criteria
+ */
+export class CUserMessage_NotifyResponseFound_Criteria extends Message<CUserMessage_NotifyResponseFound_Criteria> {
+  /**
+   * @generated from field: optional uint32 name_symbol = 1;
+   */
+  nameSymbol?: number;
+
+  /**
+   * @generated from field: optional string value = 2;
+   */
+  value?: string;
+
+  constructor(data?: PartialMessage<CUserMessage_NotifyResponseFound_Criteria>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessage_NotifyResponseFound.Criteria";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "name_symbol", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_NotifyResponseFound_Criteria {
+    return new CUserMessage_NotifyResponseFound_Criteria().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessage_NotifyResponseFound_Criteria {
+    return new CUserMessage_NotifyResponseFound_Criteria().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessage_NotifyResponseFound_Criteria {
+    return new CUserMessage_NotifyResponseFound_Criteria().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessage_NotifyResponseFound_Criteria | PlainMessage<CUserMessage_NotifyResponseFound_Criteria> | undefined, b: CUserMessage_NotifyResponseFound_Criteria | PlainMessage<CUserMessage_NotifyResponseFound_Criteria> | undefined): boolean {
+    return proto2.util.equals(CUserMessage_NotifyResponseFound_Criteria, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMessage_PlayResponseConditional
+ */
+export class CUserMessage_PlayResponseConditional extends Message<CUserMessage_PlayResponseConditional> {
+  /**
+   * @generated from field: optional int32 ent_index = 1 [default = -1];
+   */
+  entIndex?: number;
+
+  /**
+   * @generated from field: repeated int32 player_slots = 2;
+   */
+  playerSlots: number[] = [];
+
+  /**
+   * @generated from field: optional string response = 3;
+   */
+  response?: string;
+
+  /**
+   * @generated from field: optional CMsgVector ent_origin = 4;
+   */
+  entOrigin?: CMsgVector;
+
+  constructor(data?: PartialMessage<CUserMessage_PlayResponseConditional>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMessage_PlayResponseConditional";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "ent_index", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true, default: -1 },
+    { no: 2, name: "player_slots", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
+    { no: 3, name: "response", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 4, name: "ent_origin", kind: "message", T: CMsgVector, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMessage_PlayResponseConditional {
+    return new CUserMessage_PlayResponseConditional().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMessage_PlayResponseConditional {
+    return new CUserMessage_PlayResponseConditional().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMessage_PlayResponseConditional {
+    return new CUserMessage_PlayResponseConditional().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMessage_PlayResponseConditional | PlainMessage<CUserMessage_PlayResponseConditional> | undefined, b: CUserMessage_PlayResponseConditional | PlainMessage<CUserMessage_PlayResponseConditional> | undefined): boolean {
+    return proto2.util.equals(CUserMessage_PlayResponseConditional, a, b);
   }
 }
 

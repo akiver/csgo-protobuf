@@ -73,9 +73,9 @@ export enum NET_Messages {
   net_NOP = 0,
 
   /**
-   * @generated from enum value: net_Disconnect = 1;
+   * @generated from enum value: net_Disconnect_Legacy = 1;
    */
-  net_Disconnect = 1,
+  net_Disconnect_Legacy = 1,
 
   /**
    * @generated from enum value: net_SplitScreenUser = 3;
@@ -135,7 +135,7 @@ export enum NET_Messages {
 // Retrieve enum metadata with: proto2.getEnumType(NET_Messages)
 proto2.util.setEnumType(NET_Messages, "NET_Messages", [
   { no: 0, name: "net_NOP" },
-  { no: 1, name: "net_Disconnect" },
+  { no: 1, name: "net_Disconnect_Legacy" },
   { no: 3, name: "net_SplitScreenUser" },
   { no: 4, name: "net_Tick" },
   { no: 5, name: "net_StringCmd" },
@@ -764,39 +764,39 @@ export class CNETMsg_SplitScreenUser extends Message<CNETMsg_SplitScreenUser> {
 }
 
 /**
- * @generated from message CNETMsg_Disconnect
+ * @generated from message CNETMsg_Disconnect_Legacy
  */
-export class CNETMsg_Disconnect extends Message<CNETMsg_Disconnect> {
+export class CNETMsg_Disconnect_Legacy extends Message<CNETMsg_Disconnect_Legacy> {
   /**
    * @generated from field: optional ENetworkDisconnectionReason reason = 2 [default = NETWORK_DISCONNECT_INVALID];
    */
   reason?: ENetworkDisconnectionReason;
 
-  constructor(data?: PartialMessage<CNETMsg_Disconnect>) {
+  constructor(data?: PartialMessage<CNETMsg_Disconnect_Legacy>) {
     super();
     proto2.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CNETMsg_Disconnect";
+  static readonly typeName = "CNETMsg_Disconnect_Legacy";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 2, name: "reason", kind: "enum", T: proto2.getEnumType(ENetworkDisconnectionReason), opt: true, default: ENetworkDisconnectionReason.NETWORK_DISCONNECT_INVALID },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CNETMsg_Disconnect {
-    return new CNETMsg_Disconnect().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CNETMsg_Disconnect_Legacy {
+    return new CNETMsg_Disconnect_Legacy().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CNETMsg_Disconnect {
-    return new CNETMsg_Disconnect().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CNETMsg_Disconnect_Legacy {
+    return new CNETMsg_Disconnect_Legacy().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CNETMsg_Disconnect {
-    return new CNETMsg_Disconnect().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CNETMsg_Disconnect_Legacy {
+    return new CNETMsg_Disconnect_Legacy().fromJsonString(jsonString, options);
   }
 
-  static equals(a: CNETMsg_Disconnect | PlainMessage<CNETMsg_Disconnect> | undefined, b: CNETMsg_Disconnect | PlainMessage<CNETMsg_Disconnect> | undefined): boolean {
-    return proto2.util.equals(CNETMsg_Disconnect, a, b);
+  static equals(a: CNETMsg_Disconnect_Legacy | PlainMessage<CNETMsg_Disconnect_Legacy> | undefined, b: CNETMsg_Disconnect_Legacy | PlainMessage<CNETMsg_Disconnect_Legacy> | undefined): boolean {
+    return proto2.util.equals(CNETMsg_Disconnect_Legacy, a, b);
   }
 }
 

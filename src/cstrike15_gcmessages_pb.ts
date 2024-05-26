@@ -6298,6 +6298,11 @@ export class CEconItemPreviewDataBlock extends Message<CEconItemPreviewDataBlock
    */
   entindex?: number;
 
+  /**
+   * @generated from field: optional uint32 petindex = 19;
+   */
+  petindex?: number;
+
   constructor(data?: PartialMessage<CEconItemPreviewDataBlock>) {
     super();
     proto2.util.initPartial(data, this);
@@ -6324,6 +6329,7 @@ export class CEconItemPreviewDataBlock extends Message<CEconItemPreviewDataBlock
     { no: 16, name: "dropreason", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 17, name: "musicindex", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 18, name: "entindex", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 19, name: "petindex", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CEconItemPreviewDataBlock {
