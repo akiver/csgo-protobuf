@@ -270,6 +270,11 @@ export enum SVC_Messages {
    * @generated from enum value: svc_HltvFixupOperatorStatus = 75;
    */
   svc_HltvFixupOperatorStatus = 75,
+
+  /**
+   * @generated from enum value: svc_UserCmds = 76;
+   */
+  svc_UserCmds = 76,
 }
 // Retrieve enum metadata with: proto2.getEnumType(SVC_Messages)
 proto2.util.setEnumType(SVC_Messages, "SVC_Messages", [
@@ -303,6 +308,7 @@ proto2.util.setEnumType(SVC_Messages, "SVC_Messages", [
   { no: 73, name: "svc_HltvReplay" },
   { no: 74, name: "svc_Broadcast_Command" },
   { no: 75, name: "svc_HltvFixupOperatorStatus" },
+  { no: 76, name: "svc_UserCmds" },
 ]);
 
 /**
@@ -4454,6 +4460,98 @@ export class CSVCMsg_HltvFixupOperatorStatus extends Message<CSVCMsg_HltvFixupOp
 
   static equals(a: CSVCMsg_HltvFixupOperatorStatus | PlainMessage<CSVCMsg_HltvFixupOperatorStatus> | undefined, b: CSVCMsg_HltvFixupOperatorStatus | PlainMessage<CSVCMsg_HltvFixupOperatorStatus> | undefined): boolean {
     return proto2.util.equals(CSVCMsg_HltvFixupOperatorStatus, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgServerUserCmd
+ */
+export class CMsgServerUserCmd extends Message<CMsgServerUserCmd> {
+  /**
+   * @generated from field: optional bytes data = 1;
+   */
+  data?: Uint8Array;
+
+  /**
+   * @generated from field: optional int32 cmd_number = 2;
+   */
+  cmdNumber?: number;
+
+  /**
+   * @generated from field: optional int32 player_slot = 3 [default = -1];
+   */
+  playerSlot?: number;
+
+  /**
+   * @generated from field: optional int32 server_tick_executed = 4;
+   */
+  serverTickExecuted?: number;
+
+  constructor(data?: PartialMessage<CMsgServerUserCmd>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgServerUserCmd";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
+    { no: 2, name: "cmd_number", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 3, name: "player_slot", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true, default: -1 },
+    { no: 4, name: "server_tick_executed", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgServerUserCmd {
+    return new CMsgServerUserCmd().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgServerUserCmd {
+    return new CMsgServerUserCmd().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgServerUserCmd {
+    return new CMsgServerUserCmd().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgServerUserCmd | PlainMessage<CMsgServerUserCmd> | undefined, b: CMsgServerUserCmd | PlainMessage<CMsgServerUserCmd> | undefined): boolean {
+    return proto2.util.equals(CMsgServerUserCmd, a, b);
+  }
+}
+
+/**
+ * @generated from message CSVCMsg_UserCommands
+ */
+export class CSVCMsg_UserCommands extends Message<CSVCMsg_UserCommands> {
+  /**
+   * @generated from field: repeated CMsgServerUserCmd commands = 1;
+   */
+  commands: CMsgServerUserCmd[] = [];
+
+  constructor(data?: PartialMessage<CSVCMsg_UserCommands>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CSVCMsg_UserCommands";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "commands", kind: "message", T: CMsgServerUserCmd, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSVCMsg_UserCommands {
+    return new CSVCMsg_UserCommands().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSVCMsg_UserCommands {
+    return new CSVCMsg_UserCommands().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSVCMsg_UserCommands {
+    return new CSVCMsg_UserCommands().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CSVCMsg_UserCommands | PlainMessage<CSVCMsg_UserCommands> | undefined, b: CSVCMsg_UserCommands | PlainMessage<CSVCMsg_UserCommands> | undefined): boolean {
+    return proto2.util.equals(CSVCMsg_UserCommands, a, b);
   }
 }
 
