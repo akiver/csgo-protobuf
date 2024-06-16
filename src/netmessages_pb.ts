@@ -95,6 +95,11 @@ export enum CLC_Messages {
    * @generated from enum value: clc_HltvReplay = 36;
    */
   clc_HltvReplay = 36,
+
+  /**
+   * @generated from enum value: clc_Diagnostic = 37;
+   */
+  clc_Diagnostic = 37,
 }
 // Retrieve enum metadata with: proto2.getEnumType(CLC_Messages)
 proto2.util.setEnumType(CLC_Messages, "CLC_Messages", [
@@ -115,6 +120,7 @@ proto2.util.setEnumType(CLC_Messages, "CLC_Messages", [
   { no: 34, name: "clc_CmdKeyValues" },
   { no: 35, name: "clc_RconServerDetails" },
   { no: 36, name: "clc_HltvReplay" },
+  { no: 37, name: "clc_Diagnostic" },
 ]);
 
 /**
@@ -636,14 +642,9 @@ export class CCLCMsg_Move extends Message<CCLCMsg_Move> {
   data?: Uint8Array;
 
   /**
-   * @generated from field: optional uint32 command_number = 4;
+   * @generated from field: optional uint32 last_command_number = 4;
    */
-  commandNumber?: number;
-
-  /**
-   * @generated from field: optional uint32 num_commands = 5;
-   */
-  numCommands?: number;
+  lastCommandNumber?: number;
 
   constructor(data?: PartialMessage<CCLCMsg_Move>) {
     super();
@@ -654,8 +655,7 @@ export class CCLCMsg_Move extends Message<CCLCMsg_Move> {
   static readonly typeName = "CCLCMsg_Move";
   static readonly fields: FieldList = proto2.util.newFieldList(() => [
     { no: 3, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-    { no: 4, name: "command_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 5, name: "num_commands", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 4, name: "last_command_number", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCLCMsg_Move {
@@ -1310,6 +1310,408 @@ export class CCLCMsg_RconServerDetails extends Message<CCLCMsg_RconServerDetails
 
   static equals(a: CCLCMsg_RconServerDetails | PlainMessage<CCLCMsg_RconServerDetails> | undefined, b: CCLCMsg_RconServerDetails | PlainMessage<CCLCMsg_RconServerDetails> | undefined): boolean {
     return proto2.util.equals(CCLCMsg_RconServerDetails, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgSource2SystemSpecs
+ */
+export class CMsgSource2SystemSpecs extends Message<CMsgSource2SystemSpecs> {
+  /**
+   * @generated from field: optional string cpu_id = 1;
+   */
+  cpuId?: string;
+
+  /**
+   * @generated from field: optional string cpu_brand = 2;
+   */
+  cpuBrand?: string;
+
+  /**
+   * @generated from field: optional uint32 cpu_model = 3;
+   */
+  cpuModel?: number;
+
+  /**
+   * @generated from field: optional uint32 cpu_num_physical = 4;
+   */
+  cpuNumPhysical?: number;
+
+  /**
+   * @generated from field: optional uint32 ram_physical_total_mb = 21;
+   */
+  ramPhysicalTotalMb?: number;
+
+  /**
+   * @generated from field: optional string gpu_rendersystem_dll_name = 41;
+   */
+  gpuRendersystemDllName?: string;
+
+  /**
+   * @generated from field: optional uint32 gpu_vendor_id = 42;
+   */
+  gpuVendorId?: number;
+
+  /**
+   * @generated from field: optional string gpu_driver_name = 43;
+   */
+  gpuDriverName?: string;
+
+  /**
+   * @generated from field: optional uint32 gpu_driver_version_high = 44;
+   */
+  gpuDriverVersionHigh?: number;
+
+  /**
+   * @generated from field: optional uint32 gpu_driver_version_low = 45;
+   */
+  gpuDriverVersionLow?: number;
+
+  /**
+   * @generated from field: optional uint32 gpu_dx_support_level = 46;
+   */
+  gpuDxSupportLevel?: number;
+
+  /**
+   * @generated from field: optional uint32 gpu_texture_memory_size_mb = 47;
+   */
+  gpuTextureMemorySizeMb?: number;
+
+  constructor(data?: PartialMessage<CMsgSource2SystemSpecs>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgSource2SystemSpecs";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "cpu_id", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "cpu_brand", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "cpu_model", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 4, name: "cpu_num_physical", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 21, name: "ram_physical_total_mb", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 41, name: "gpu_rendersystem_dll_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 42, name: "gpu_vendor_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 43, name: "gpu_driver_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 44, name: "gpu_driver_version_high", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 45, name: "gpu_driver_version_low", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 46, name: "gpu_dx_support_level", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 47, name: "gpu_texture_memory_size_mb", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgSource2SystemSpecs {
+    return new CMsgSource2SystemSpecs().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgSource2SystemSpecs {
+    return new CMsgSource2SystemSpecs().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgSource2SystemSpecs {
+    return new CMsgSource2SystemSpecs().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgSource2SystemSpecs | PlainMessage<CMsgSource2SystemSpecs> | undefined, b: CMsgSource2SystemSpecs | PlainMessage<CMsgSource2SystemSpecs> | undefined): boolean {
+    return proto2.util.equals(CMsgSource2SystemSpecs, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgSource2VProfLiteReportItem
+ */
+export class CMsgSource2VProfLiteReportItem extends Message<CMsgSource2VProfLiteReportItem> {
+  /**
+   * @generated from field: optional string name = 1;
+   */
+  name?: string;
+
+  /**
+   * @generated from field: optional uint32 active_samples = 2;
+   */
+  activeSamples?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_max = 3;
+   */
+  usecMax?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_avg_active = 11;
+   */
+  usecAvgActive?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_p50_active = 12;
+   */
+  usecP50Active?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_p99_active = 13;
+   */
+  usecP99Active?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_avg_all = 21;
+   */
+  usecAvgAll?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_p50_all = 22;
+   */
+  usecP50All?: number;
+
+  /**
+   * @generated from field: optional uint32 usec_p99_all = 23;
+   */
+  usecP99All?: number;
+
+  constructor(data?: PartialMessage<CMsgSource2VProfLiteReportItem>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgSource2VProfLiteReportItem";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 2, name: "active_samples", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 3, name: "usec_max", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 11, name: "usec_avg_active", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 12, name: "usec_p50_active", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 13, name: "usec_p99_active", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 21, name: "usec_avg_all", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 22, name: "usec_p50_all", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 23, name: "usec_p99_all", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgSource2VProfLiteReportItem {
+    return new CMsgSource2VProfLiteReportItem().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgSource2VProfLiteReportItem {
+    return new CMsgSource2VProfLiteReportItem().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgSource2VProfLiteReportItem {
+    return new CMsgSource2VProfLiteReportItem().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgSource2VProfLiteReportItem | PlainMessage<CMsgSource2VProfLiteReportItem> | undefined, b: CMsgSource2VProfLiteReportItem | PlainMessage<CMsgSource2VProfLiteReportItem> | undefined): boolean {
+    return proto2.util.equals(CMsgSource2VProfLiteReportItem, a, b);
+  }
+}
+
+/**
+ * @generated from message CMsgSource2VProfLiteReport
+ */
+export class CMsgSource2VProfLiteReport extends Message<CMsgSource2VProfLiteReport> {
+  /**
+   * @generated from field: optional CMsgSource2VProfLiteReportItem total = 1;
+   */
+  total?: CMsgSource2VProfLiteReportItem;
+
+  /**
+   * @generated from field: repeated CMsgSource2VProfLiteReportItem items = 2;
+   */
+  items: CMsgSource2VProfLiteReportItem[] = [];
+
+  /**
+   * @generated from field: optional uint32 discarded_frames = 3;
+   */
+  discardedFrames?: number;
+
+  constructor(data?: PartialMessage<CMsgSource2VProfLiteReport>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CMsgSource2VProfLiteReport";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "total", kind: "message", T: CMsgSource2VProfLiteReportItem, opt: true },
+    { no: 2, name: "items", kind: "message", T: CMsgSource2VProfLiteReportItem, repeated: true },
+    { no: 3, name: "discarded_frames", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgSource2VProfLiteReport {
+    return new CMsgSource2VProfLiteReport().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CMsgSource2VProfLiteReport {
+    return new CMsgSource2VProfLiteReport().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CMsgSource2VProfLiteReport {
+    return new CMsgSource2VProfLiteReport().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CMsgSource2VProfLiteReport | PlainMessage<CMsgSource2VProfLiteReport> | undefined, b: CMsgSource2VProfLiteReport | PlainMessage<CMsgSource2VProfLiteReport> | undefined): boolean {
+    return proto2.util.equals(CMsgSource2VProfLiteReport, a, b);
+  }
+}
+
+/**
+ * @generated from message CCLCMsg_Diagnostic
+ */
+export class CCLCMsg_Diagnostic extends Message<CCLCMsg_Diagnostic> {
+  /**
+   * @generated from field: optional CMsgSource2SystemSpecs system_specs = 1;
+   */
+  systemSpecs?: CMsgSource2SystemSpecs;
+
+  /**
+   * @generated from field: optional CMsgSource2VProfLiteReport vprof_report = 2;
+   */
+  vprofReport?: CMsgSource2VProfLiteReport;
+
+  constructor(data?: PartialMessage<CCLCMsg_Diagnostic>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CCLCMsg_Diagnostic";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "system_specs", kind: "message", T: CMsgSource2SystemSpecs, opt: true },
+    { no: 2, name: "vprof_report", kind: "message", T: CMsgSource2VProfLiteReport, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCLCMsg_Diagnostic {
+    return new CCLCMsg_Diagnostic().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCLCMsg_Diagnostic {
+    return new CCLCMsg_Diagnostic().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCLCMsg_Diagnostic {
+    return new CCLCMsg_Diagnostic().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CCLCMsg_Diagnostic | PlainMessage<CCLCMsg_Diagnostic> | undefined, b: CCLCMsg_Diagnostic | PlainMessage<CCLCMsg_Diagnostic> | undefined): boolean {
+    return proto2.util.equals(CCLCMsg_Diagnostic, a, b);
+  }
+}
+
+/**
+ * @generated from message CSource2Metrics_MatchPerfSummary_Notification
+ */
+export class CSource2Metrics_MatchPerfSummary_Notification extends Message<CSource2Metrics_MatchPerfSummary_Notification> {
+  /**
+   * @generated from field: optional uint32 appid = 1;
+   */
+  appid?: number;
+
+  /**
+   * @generated from field: optional string game_mode = 2;
+   */
+  gameMode?: string;
+
+  /**
+   * @generated from field: optional uint32 server_build_id = 3;
+   */
+  serverBuildId?: number;
+
+  /**
+   * @generated from field: optional CMsgSource2VProfLiteReport server_profile = 10;
+   */
+  serverProfile?: CMsgSource2VProfLiteReport;
+
+  /**
+   * @generated from field: repeated CSource2Metrics_MatchPerfSummary_Notification.Client clients = 11;
+   */
+  clients: CSource2Metrics_MatchPerfSummary_Notification_Client[] = [];
+
+  /**
+   * @generated from field: optional string map = 20;
+   */
+  map?: string;
+
+  constructor(data?: PartialMessage<CSource2Metrics_MatchPerfSummary_Notification>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CSource2Metrics_MatchPerfSummary_Notification";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "appid", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "game_mode", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+    { no: 3, name: "server_build_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 10, name: "server_profile", kind: "message", T: CMsgSource2VProfLiteReport, opt: true },
+    { no: 11, name: "clients", kind: "message", T: CSource2Metrics_MatchPerfSummary_Notification_Client, repeated: true },
+    { no: 20, name: "map", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSource2Metrics_MatchPerfSummary_Notification {
+    return new CSource2Metrics_MatchPerfSummary_Notification().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSource2Metrics_MatchPerfSummary_Notification {
+    return new CSource2Metrics_MatchPerfSummary_Notification().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSource2Metrics_MatchPerfSummary_Notification {
+    return new CSource2Metrics_MatchPerfSummary_Notification().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CSource2Metrics_MatchPerfSummary_Notification | PlainMessage<CSource2Metrics_MatchPerfSummary_Notification> | undefined, b: CSource2Metrics_MatchPerfSummary_Notification | PlainMessage<CSource2Metrics_MatchPerfSummary_Notification> | undefined): boolean {
+    return proto2.util.equals(CSource2Metrics_MatchPerfSummary_Notification, a, b);
+  }
+}
+
+/**
+ * @generated from message CSource2Metrics_MatchPerfSummary_Notification.Client
+ */
+export class CSource2Metrics_MatchPerfSummary_Notification_Client extends Message<CSource2Metrics_MatchPerfSummary_Notification_Client> {
+  /**
+   * @generated from field: optional CMsgSource2SystemSpecs system_specs = 1;
+   */
+  systemSpecs?: CMsgSource2SystemSpecs;
+
+  /**
+   * @generated from field: optional CMsgSource2VProfLiteReport profile = 2;
+   */
+  profile?: CMsgSource2VProfLiteReport;
+
+  /**
+   * @generated from field: optional uint32 build_id = 3;
+   */
+  buildId?: number;
+
+  /**
+   * @generated from field: optional fixed64 steamid = 10;
+   */
+  steamid?: bigint;
+
+  constructor(data?: PartialMessage<CSource2Metrics_MatchPerfSummary_Notification_Client>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CSource2Metrics_MatchPerfSummary_Notification.Client";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "system_specs", kind: "message", T: CMsgSource2SystemSpecs, opt: true },
+    { no: 2, name: "profile", kind: "message", T: CMsgSource2VProfLiteReport, opt: true },
+    { no: 3, name: "build_id", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 10, name: "steamid", kind: "scalar", T: 6 /* ScalarType.FIXED64 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CSource2Metrics_MatchPerfSummary_Notification_Client {
+    return new CSource2Metrics_MatchPerfSummary_Notification_Client().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CSource2Metrics_MatchPerfSummary_Notification_Client {
+    return new CSource2Metrics_MatchPerfSummary_Notification_Client().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CSource2Metrics_MatchPerfSummary_Notification_Client {
+    return new CSource2Metrics_MatchPerfSummary_Notification_Client().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CSource2Metrics_MatchPerfSummary_Notification_Client | PlainMessage<CSource2Metrics_MatchPerfSummary_Notification_Client> | undefined, b: CSource2Metrics_MatchPerfSummary_Notification_Client | PlainMessage<CSource2Metrics_MatchPerfSummary_Notification_Client> | undefined): boolean {
+    return proto2.util.equals(CSource2Metrics_MatchPerfSummary_Notification_Client, a, b);
   }
 }
 
@@ -2602,9 +3004,9 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
   hasPvsVisBits?: number;
 
   /**
-   * @generated from field: optional uint32 last_cmd_recv_margin = 18;
+   * @generated from field: repeated sint32 cmd_recv_status = 22 [packed = true];
    */
-  lastCmdRecvMargin?: number;
+  cmdRecvStatus: number[] = [];
 
   /**
    * @generated from field: optional CSVCMsg_PacketEntities.non_transmitted_entities_t non_transmitted_entities = 19;
@@ -2650,7 +3052,7 @@ export class CSVCMsg_PacketEntities extends Message<CSVCMsg_PacketEntities> {
     { no: 13, name: "serialized_entities", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 15, name: "alternate_baselines", kind: "message", T: CSVCMsg_PacketEntities_alternate_baseline_t, repeated: true },
     { no: 16, name: "has_pvs_vis_bits", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
-    { no: 18, name: "last_cmd_recv_margin", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 22, name: "cmd_recv_status", kind: "scalar", T: 17 /* ScalarType.SINT32 */, repeated: true, packed: true },
     { no: 19, name: "non_transmitted_entities", kind: "message", T: CSVCMsg_PacketEntities_non_transmitted_entities_t, opt: true },
     { no: 20, name: "cq_starved_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 21, name: "cq_discarded_command_ticks", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
