@@ -582,6 +582,11 @@ export enum PARTICLE_MESSAGE {
    * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM = 33;
    */
   GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM = 33,
+
+  /**
+   * @generated from enum value: GAME_PARTICLE_MANAGER_EVENT_SET_VDATA = 34;
+   */
+  GAME_PARTICLE_MANAGER_EVENT_SET_VDATA = 34,
 }
 // Retrieve enum metadata with: proto2.getEnumType(PARTICLE_MESSAGE)
 proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
@@ -619,6 +624,7 @@ proto2.util.setEnumType(PARTICLE_MESSAGE, "PARTICLE_MESSAGE", [
   { no: 31, name: "GAME_PARTICLE_MANAGER_EVENT_CLEAR_MODELLIST_OVERRIDE" },
   { no: 32, name: "GAME_PARTICLE_MANAGER_EVENT_CREATE_PHYSICS_SIM" },
   { no: 33, name: "GAME_PARTICLE_MANAGER_EVENT_DESTROY_PHYSICS_SIM" },
+  { no: 34, name: "GAME_PARTICLE_MANAGER_EVENT_SET_VDATA" },
 ]);
 
 /**
@@ -2633,6 +2639,11 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
    */
   destroyPhysicsSim?: CUserMsg_ParticleManager_DestroyPhysicsSim;
 
+  /**
+   * @generated from field: optional CUserMsg_ParticleManager.SetVData set_vdata = 37;
+   */
+  setVdata?: CUserMsg_ParticleManager_SetVData;
+
   constructor(data?: PartialMessage<CUserMsg_ParticleManager>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2676,6 +2687,7 @@ export class CUserMsg_ParticleManager extends Message<CUserMsg_ParticleManager> 
     { no: 34, name: "clear_modellist_override", kind: "message", T: CUserMsg_ParticleManager_ClearModellistOverride, opt: true },
     { no: 35, name: "create_physics_sim", kind: "message", T: CUserMsg_ParticleManager_CreatePhysicsSim, opt: true },
     { no: 36, name: "destroy_physics_sim", kind: "message", T: CUserMsg_ParticleManager_DestroyPhysicsSim, opt: true },
+    { no: 37, name: "set_vdata", kind: "message", T: CUserMsg_ParticleManager_SetVData, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager {
@@ -4367,6 +4379,43 @@ export class CUserMsg_ParticleManager_DestroyPhysicsSim extends Message<CUserMsg
 
   static equals(a: CUserMsg_ParticleManager_DestroyPhysicsSim | PlainMessage<CUserMsg_ParticleManager_DestroyPhysicsSim> | undefined, b: CUserMsg_ParticleManager_DestroyPhysicsSim | PlainMessage<CUserMsg_ParticleManager_DestroyPhysicsSim> | undefined): boolean {
     return proto2.util.equals(CUserMsg_ParticleManager_DestroyPhysicsSim, a, b);
+  }
+}
+
+/**
+ * @generated from message CUserMsg_ParticleManager.SetVData
+ */
+export class CUserMsg_ParticleManager_SetVData extends Message<CUserMsg_ParticleManager_SetVData> {
+  /**
+   * @generated from field: optional string vdata_name = 1;
+   */
+  vdataName?: string;
+
+  constructor(data?: PartialMessage<CUserMsg_ParticleManager_SetVData>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CUserMsg_ParticleManager.SetVData";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "vdata_name", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CUserMsg_ParticleManager_SetVData {
+    return new CUserMsg_ParticleManager_SetVData().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_SetVData {
+    return new CUserMsg_ParticleManager_SetVData().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CUserMsg_ParticleManager_SetVData {
+    return new CUserMsg_ParticleManager_SetVData().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CUserMsg_ParticleManager_SetVData | PlainMessage<CUserMsg_ParticleManager_SetVData> | undefined, b: CUserMsg_ParticleManager_SetVData | PlainMessage<CUserMsg_ParticleManager_SetVData> | undefined): boolean {
+    return proto2.util.equals(CUserMsg_ParticleManager_SetVData, a, b);
   }
 }
 
