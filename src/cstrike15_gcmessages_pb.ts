@@ -2751,6 +2751,11 @@ export class CMsgGC_ServerQuestUpdateData extends Message<CMsgGC_ServerQuestUpda
    */
   missionlbsdata?: ScoreLeaderboardData;
 
+  /**
+   * @generated from field: optional uint32 flags = 5;
+   */
+  flags?: number;
+
   constructor(data?: PartialMessage<CMsgGC_ServerQuestUpdateData>) {
     super();
     proto2.util.initPartial(data, this);
@@ -2763,6 +2768,7 @@ export class CMsgGC_ServerQuestUpdateData extends Message<CMsgGC_ServerQuestUpda
     { no: 2, name: "binary_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
     { no: 3, name: "mm_game_mode", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 4, name: "missionlbsdata", kind: "message", T: ScoreLeaderboardData, opt: true },
+    { no: 5, name: "flags", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgGC_ServerQuestUpdateData {
