@@ -6309,6 +6309,11 @@ export class CEconItemPreviewDataBlock extends Message<CEconItemPreviewDataBlock
    */
   petindex?: number;
 
+  /**
+   * @generated from field: repeated CEconItemPreviewDataBlock.Sticker keychains = 20;
+   */
+  keychains: CEconItemPreviewDataBlock_Sticker[] = [];
+
   constructor(data?: PartialMessage<CEconItemPreviewDataBlock>) {
     super();
     proto2.util.initPartial(data, this);
@@ -6336,6 +6341,7 @@ export class CEconItemPreviewDataBlock extends Message<CEconItemPreviewDataBlock
     { no: 17, name: "musicindex", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
     { no: 18, name: "entindex", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 19, name: "petindex", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 20, name: "keychains", kind: "message", T: CEconItemPreviewDataBlock_Sticker, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CEconItemPreviewDataBlock {

@@ -32,11 +32,6 @@ export enum CLC_Messages {
   clc_BaselineAck = 23,
 
   /**
-   * @generated from enum value: clc_ListenEvents = 24;
-   */
-  clc_ListenEvents = 24,
-
-  /**
    * @generated from enum value: clc_RespondCvarValue = 25;
    */
   clc_RespondCvarValue = 25,
@@ -57,11 +52,6 @@ export enum CLC_Messages {
   clc_SplitPlayerConnect = 28,
 
   /**
-   * @generated from enum value: clc_ClientMessage = 29;
-   */
-  clc_ClientMessage = 29,
-
-  /**
    * @generated from enum value: clc_SplitPlayerDisconnect = 30;
    */
   clc_SplitPlayerDisconnect = 30,
@@ -70,11 +60,6 @@ export enum CLC_Messages {
    * @generated from enum value: clc_ServerStatus = 31;
    */
   clc_ServerStatus = 31,
-
-  /**
-   * @generated from enum value: clc_ServerPing = 32;
-   */
-  clc_ServerPing = 32,
 
   /**
    * @generated from enum value: clc_RequestPause = 33;
@@ -107,15 +92,12 @@ proto2.util.setEnumType(CLC_Messages, "CLC_Messages", [
   { no: 21, name: "clc_Move" },
   { no: 22, name: "clc_VoiceData" },
   { no: 23, name: "clc_BaselineAck" },
-  { no: 24, name: "clc_ListenEvents" },
   { no: 25, name: "clc_RespondCvarValue" },
   { no: 26, name: "clc_FileCRCCheck" },
   { no: 27, name: "clc_LoadingProgress" },
   { no: 28, name: "clc_SplitPlayerConnect" },
-  { no: 29, name: "clc_ClientMessage" },
   { no: 30, name: "clc_SplitPlayerDisconnect" },
   { no: 31, name: "clc_ServerStatus" },
-  { no: 32, name: "clc_ServerPing" },
   { no: 33, name: "clc_RequestPause" },
   { no: 34, name: "clc_CmdKeyValues" },
   { no: 35, name: "clc_RconServerDetails" },
@@ -263,11 +245,6 @@ export enum SVC_Messages {
   svc_UserMessage = 72,
 
   /**
-   * @generated from enum value: svc_HltvReplay = 73;
-   */
-  svc_HltvReplay = 73,
-
-  /**
    * @generated from enum value: svc_Broadcast_Command = 74;
    */
   svc_Broadcast_Command = 74,
@@ -311,7 +288,6 @@ proto2.util.setEnumType(SVC_Messages, "SVC_Messages", [
   { no: 70, name: "svc_FullFrameSplit" },
   { no: 71, name: "svc_RconServerDetails" },
   { no: 72, name: "svc_UserMessage" },
-  { no: 73, name: "svc_HltvReplay" },
   { no: 74, name: "svc_Broadcast_Command" },
   { no: 75, name: "svc_HltvFixupOperatorStatus" },
   { no: 76, name: "svc_UserCmds" },
@@ -1076,49 +1052,6 @@ export class CCLCMsg_SplitPlayerConnect extends Message<CCLCMsg_SplitPlayerConne
 
   static equals(a: CCLCMsg_SplitPlayerConnect | PlainMessage<CCLCMsg_SplitPlayerConnect> | undefined, b: CCLCMsg_SplitPlayerConnect | PlainMessage<CCLCMsg_SplitPlayerConnect> | undefined): boolean {
     return proto2.util.equals(CCLCMsg_SplitPlayerConnect, a, b);
-  }
-}
-
-/**
- * @generated from message CCLCMsg_ClientMessage
- */
-export class CCLCMsg_ClientMessage extends Message<CCLCMsg_ClientMessage> {
-  /**
-   * @generated from field: optional int32 msg_type = 1;
-   */
-  msgType?: number;
-
-  /**
-   * @generated from field: optional bytes data = 2;
-   */
-  data?: Uint8Array;
-
-  constructor(data?: PartialMessage<CCLCMsg_ClientMessage>) {
-    super();
-    proto2.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto2 = proto2;
-  static readonly typeName = "CCLCMsg_ClientMessage";
-  static readonly fields: FieldList = proto2.util.newFieldList(() => [
-    { no: 1, name: "msg_type", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
-    { no: 2, name: "data", kind: "scalar", T: 12 /* ScalarType.BYTES */, opt: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCLCMsg_ClientMessage {
-    return new CCLCMsg_ClientMessage().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCLCMsg_ClientMessage {
-    return new CCLCMsg_ClientMessage().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCLCMsg_ClientMessage {
-    return new CCLCMsg_ClientMessage().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: CCLCMsg_ClientMessage | PlainMessage<CCLCMsg_ClientMessage> | undefined, b: CCLCMsg_ClientMessage | PlainMessage<CCLCMsg_ClientMessage> | undefined): boolean {
-    return proto2.util.equals(CCLCMsg_ClientMessage, a, b);
   }
 }
 
