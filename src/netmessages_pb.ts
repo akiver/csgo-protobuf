@@ -4822,6 +4822,11 @@ export class CMsgServerUserCmd extends Message<CMsgServerUserCmd> {
    */
   serverTickExecuted?: number;
 
+  /**
+   * @generated from field: optional int32 client_tick = 5;
+   */
+  clientTick?: number;
+
   constructor(data?: PartialMessage<CMsgServerUserCmd>) {
     super();
     proto2.util.initPartial(data, this);
@@ -4834,6 +4839,7 @@ export class CMsgServerUserCmd extends Message<CMsgServerUserCmd> {
     { no: 2, name: "cmd_number", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
     { no: 3, name: "player_slot", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true, default: -1 },
     { no: 4, name: "server_tick_executed", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
+    { no: 5, name: "client_tick", kind: "scalar", T: 5 /* ScalarType.INT32 */, opt: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CMsgServerUserCmd {

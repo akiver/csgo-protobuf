@@ -386,6 +386,11 @@ export enum ECstrike15UserMessages {
    * @generated from enum value: CS_UM_ShootInfo = 383;
    */
   CS_UM_ShootInfo = 383,
+
+  /**
+   * @generated from enum value: CS_UM_SnapTapStats = 384;
+   */
+  CS_UM_SnapTapStats = 384,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ECstrike15UserMessages)
 proto2.util.setEnumType(ECstrike15UserMessages, "ECstrike15UserMessages", [
@@ -464,6 +469,7 @@ proto2.util.setEnumType(ECstrike15UserMessages, "ECstrike15UserMessages", [
   { no: 380, name: "CS_UM_CurrentRoundOdds" },
   { no: 381, name: "CS_UM_DeepStats" },
   { no: 383, name: "CS_UM_ShootInfo" },
+  { no: 384, name: "CS_UM_SnapTapStats" },
 ]);
 
 /**
@@ -4661,6 +4667,61 @@ export class CCSUsrMsgPreMatchSayText extends Message<CCSUsrMsgPreMatchSayText> 
 
   static equals(a: CCSUsrMsgPreMatchSayText | PlainMessage<CCSUsrMsgPreMatchSayText> | undefined, b: CCSUsrMsgPreMatchSayText | PlainMessage<CCSUsrMsgPreMatchSayText> | undefined): boolean {
     return proto2.util.equals(CCSUsrMsgPreMatchSayText, a, b);
+  }
+}
+
+/**
+ * @generated from message CCSUsrMsg_SnapTapStats
+ */
+export class CCSUsrMsg_SnapTapStats extends Message<CCSUsrMsg_SnapTapStats> {
+  /**
+   * @generated from field: optional uint32 perfect_bucket = 1;
+   */
+  perfectBucket?: number;
+
+  /**
+   * @generated from field: repeated uint32 overlap_bucket = 2;
+   */
+  overlapBucket: number[] = [];
+
+  /**
+   * @generated from field: repeated uint32 underlap_bucket = 3;
+   */
+  underlapBucket: number[] = [];
+
+  /**
+   * @generated from field: optional uint32 max_success_in_20 = 4;
+   */
+  maxSuccessIn20?: number;
+
+  constructor(data?: PartialMessage<CCSUsrMsg_SnapTapStats>) {
+    super();
+    proto2.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto2 = proto2;
+  static readonly typeName = "CCSUsrMsg_SnapTapStats";
+  static readonly fields: FieldList = proto2.util.newFieldList(() => [
+    { no: 1, name: "perfect_bucket", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+    { no: 2, name: "overlap_bucket", kind: "scalar", T: 13 /* ScalarType.UINT32 */, repeated: true },
+    { no: 3, name: "underlap_bucket", kind: "scalar", T: 13 /* ScalarType.UINT32 */, repeated: true },
+    { no: 4, name: "max_success_in_20", kind: "scalar", T: 13 /* ScalarType.UINT32 */, opt: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CCSUsrMsg_SnapTapStats {
+    return new CCSUsrMsg_SnapTapStats().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CCSUsrMsg_SnapTapStats {
+    return new CCSUsrMsg_SnapTapStats().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CCSUsrMsg_SnapTapStats {
+    return new CCSUsrMsg_SnapTapStats().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: CCSUsrMsg_SnapTapStats | PlainMessage<CCSUsrMsg_SnapTapStats> | undefined, b: CCSUsrMsg_SnapTapStats | PlainMessage<CCSUsrMsg_SnapTapStats> | undefined): boolean {
+    return proto2.util.equals(CCSUsrMsg_SnapTapStats, a, b);
   }
 }
 
