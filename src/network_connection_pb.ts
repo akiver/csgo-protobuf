@@ -599,6 +599,11 @@ export enum ENetworkDisconnectionReason {
    * @generated from enum value: NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET = 161;
    */
   NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET = 161,
+
+  /**
+   * @generated from enum value: NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION = 162;
+   */
+  NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION = 162,
 }
 // Retrieve enum metadata with: proto2.getEnumType(ENetworkDisconnectionReason)
 proto2.util.setEnumType(ENetworkDisconnectionReason, "ENetworkDisconnectionReason", [
@@ -720,6 +725,7 @@ proto2.util.setEnumType(ENetworkDisconnectionReason, "ENetworkDisconnectionReaso
   { no: 159, name: "NETWORK_DISCONNECT_KICKED_SUICIDE" },
   { no: 160, name: "NETWORK_DISCONNECT_KICKED_NOSTEAMLOGIN" },
   { no: 161, name: "NETWORK_DISCONNECT_KICKED_NOSTEAMTICKET" },
+  { no: 162, name: "NETWORK_DISCONNECT_KICKED_INPUTAUTOMATION" },
 ]);
 
 /**
@@ -729,5 +735,14 @@ export const network_connection_token = proto2.makeExtension<EnumValueOptions, s
   "network_connection_token", 
   EnumValueOptions, 
   { no: 50500, kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+);
+
+/**
+ * @generated from extension: optional string network_connection_detail_token = 50501;
+ */
+export const network_connection_detail_token = proto2.makeExtension<EnumValueOptions, string>(
+  "network_connection_detail_token", 
+  EnumValueOptions, 
+  { no: 50501, kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
 );
 
