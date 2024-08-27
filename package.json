@@ -1,7 +1,7 @@
 {
   "name": "csgo-protobuf",
   "version": "2.1.37",
-  "license": "GPL-2.0",
+  "license": "MIT",
   "repository": "https://github.com/akiver/csgo-protobuf",
   "author": "AkiVer",
   "main": "./dist/commonjs/index.js",
@@ -15,14 +15,14 @@
     "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts google/protobuf/descriptor.proto usermessages.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto gcsdk_gcmessages.proto demo.proto networkbasetypes.proto network_connection.proto engine_gcmessages.proto gameevents.proto netmessages.proto steammessages.proto"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "1.8.0"
+    "@bufbuild/protobuf": "2.0.0"
   },
   "devDependencies": {
-    "@bufbuild/protoc-gen-es": "1.8.0",
+    "@bufbuild/protoc-gen-es": "2.0.0",
     "@protobuf-ts/protoc": "2.9.4",
-    "typescript": "5.4.2"
+    "typescript": "5.5.4"
   },
   "config": {
-    "protocVersion": "26.0"
+    "protocVersion": "27.0"
   }
 }
