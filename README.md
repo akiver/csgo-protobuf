@@ -9,8 +9,8 @@ CS2 protobuf messages for JavaScript.
 ### Example
 
 ```js
-import fs from "fs";
-import { fromBinary, CDataGCCStrike15_v2_MatchInfo } from "csgo-protobuf";
+import fs from "node:fs";
+import { fromBinary, CDataGCCStrike15_v2_MatchInfoSchema } from "csgo-protobuf";
 
 // Read a CDataGCCStrike15_v2_MatchInfo protobuf message from a CS2 ".info" file.
 fs.readFile("./sample.info", (error, bytes) => {
@@ -19,7 +19,7 @@ fs.readFile("./sample.info", (error, bytes) => {
     return;
   }
 
-  const matchInfo = fromBinary(CDataGCCStrike15_v2_MatchInfo, bytes);
+  const matchInfo = fromBinary(CDataGCCStrike15_v2_MatchInfoSchema, bytes);
   console.log(matchInfo);
 });
 ```

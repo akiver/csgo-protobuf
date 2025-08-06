@@ -6,6 +6,10 @@ on:
     # Once a week
     - cron: "0 0 * * 0"
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -41,7 +45,7 @@ jobs:
       - name: Check for modified files
         id: git-check
         run: |
-          echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+          echo "modified=$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)" >> $GITHUB_OUTPUT
 
       - name: Publish new version
         if: steps.git-check.outputs.modified == 'true'
@@ -54,5 +58,3 @@ jobs:
           npm version patch
           git push --follow-tags
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

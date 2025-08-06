@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "esnext",
     "outDir": "dist",
-    "target": "ES2018",
-    "lib": ["es2018", "dom"]
+    "declaration": true
   },
   "include": ["src"]
 }
