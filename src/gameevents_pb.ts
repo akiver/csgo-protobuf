@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file gameevents.proto.
  */
 export const file_gameevents: GenFile = /*@__PURE__*/
-  fileDesc("ChBnYW1lZXZlbnRzLnByb3RvIkcKHENNc2dWRGVidWdHYW1lU2Vzc2lvbklERXZlbnQSEAoIY2xpZW50aWQYASABKAUSFQoNZ2FtZXNlc3Npb25pZBgCIAEoCSLOAgoTQ01zZ1BsYWNlRGVjYWxFdmVudBIdCghwb3NpdGlvbhgBIAEoCzILLkNNc2dWZWN0b3ISGwoGbm9ybWFsGAIgASgLMgsuQ01zZ1ZlY3RvchIaCgVzYXhpcxgDIAEoCzILLkNNc2dWZWN0b3ISGgoSZGVjYWxtYXRlcmlhbGluZGV4GAQgASgNEg0KBWZsYWdzGAUgASgNEg0KBWNvbG9yGAYgASgHEg0KBXdpZHRoGAcgASgCEg4KBmhlaWdodBgIIAEoAhINCgVkZXB0aBgJIAEoAhIZChFlbnRpdHloYW5kbGVpbmRleBgKIAEoDRIcChRza2VsZXRvbmluc3RhbmNlaGFzaBgLIAEoBxIRCglib25laW5kZXgYDCABKAUSFgoOdHJhbnNsdWNlbnRoaXQYDSABKAgSEwoLaXNfYWRqYWNlbnQYDiABKAgiMQoZQ01zZ0NsZWFyV29ybGREZWNhbHNFdmVudBIUCgxmbGFnc3RvY2xlYXIYASABKA0iMgoaQ01zZ0NsZWFyRW50aXR5RGVjYWxzRXZlbnQSFAoMZmxhZ3N0b2NsZWFyGAEgASgNIngKJ0NNc2dDbGVhckRlY2Fsc0ZvclNrZWxldG9uSW5zdGFuY2VFdmVudBIUCgxmbGFnc3RvY2xlYXIYASABKA0SGQoRZW50aXR5aGFuZGxlaW5kZXgYAiABKA0SHAoUc2tlbGV0b25pbnN0YW5jZWhhc2gYAyABKA0i7AEKHkNNc2dTb3VyY2UxTGVnYWN5R2FtZUV2ZW50TGlzdBJBCgtkZXNjcmlwdG9ycxgBIAMoCzIsLkNNc2dTb3VyY2UxTGVnYWN5R2FtZUV2ZW50TGlzdC5kZXNjcmlwdG9yX3QaIwoFa2V5X3QSDAoEdHlwZRgBIAEoBRIMCgRuYW1lGAIgASgJGmIKDGRlc2NyaXB0b3JfdBIPCgdldmVudGlkGAEgASgFEgwKBG5hbWUYAiABKAkSMwoEa2V5cxgDIAMoCzIlLkNNc2dTb3VyY2UxTGVnYWN5R2FtZUV2ZW50TGlzdC5rZXlfdCJLCh1DTXNnU291cmNlMUxlZ2FjeUxpc3RlbkV2ZW50cxISCgpwbGF5ZXJzbG90GAEgASgFEhYKDmV2ZW50YXJyYXliaXRzGAIgAygNIrgCChpDTXNnU291cmNlMUxlZ2FjeUdhbWVFdmVudBISCgpldmVudF9uYW1lGAEgASgJEg8KB2V2ZW50aWQYAiABKAUSLwoEa2V5cxgDIAMoCzIhLkNNc2dTb3VyY2UxTGVnYWN5R2FtZUV2ZW50LmtleV90EhMKC3NlcnZlcl90aWNrGAQgASgFEhMKC3Bhc3N0aHJvdWdoGAUgASgFGpkBCgVrZXlfdBIMCgR0eXBlGAEgASgFEhIKCnZhbF9zdHJpbmcYAiABKAkSEQoJdmFsX2Zsb2F0GAMgASgCEhAKCHZhbF9sb25nGAQgASgFEhEKCXZhbF9zaG9ydBgFIAEoBRIQCgh2YWxfYnl0ZRgGIAEoBRIQCgh2YWxfYm9vbBgHIAEoCBISCgp2YWxfdWludDY0GAggASgEIqQBChZDTXNnU29zU3RhcnRTb3VuZEV2ZW50EhcKD3NvdW5kZXZlbnRfZ3VpZBgBIAEoBRIXCg9zb3VuZGV2ZW50X2hhc2gYAiABKAcSHwoTc291cmNlX2VudGl0eV9pbmRleBgDIAEoBToCLTESDAoEc2VlZBgEIAEoBRIVCg1wYWNrZWRfcGFyYW1zGAUgASgMEhIKCnN0YXJ0X3RpbWUYBiABKAIiMAoVQ01zZ1Nvc1N0b3BTb3VuZEV2ZW50EhcKD3NvdW5kZXZlbnRfZ3VpZBgBIAEoBSJVChlDTXNnU29zU3RvcFNvdW5kRXZlbnRIYXNoEhcKD3NvdW5kZXZlbnRfaGFzaBgBIAEoBxIfChNzb3VyY2VfZW50aXR5X2luZGV4GAIgASgFOgItMSJMChpDTXNnU29zU2V0U291bmRFdmVudFBhcmFtcxIXCg9zb3VuZGV2ZW50X2d1aWQYASABKAUSFQoNcGFja2VkX3BhcmFtcxgFIAEoDCJJChxDTXNnU29zU2V0TGlicmFyeVN0YWNrRmllbGRzEhIKCnN0YWNrX2hhc2gYASABKAcSFQoNcGFja2VkX2ZpZWxkcxgFIAEoDCq3AwoPRUJhc2VHYW1lRXZlbnRzEiAKG0dFX1ZEZWJ1Z0dhbWVTZXNzaW9uSURFdmVudBDIARIXChJHRV9QbGFjZURlY2FsRXZlbnQQyQESHQoYR0VfQ2xlYXJXb3JsZERlY2Fsc0V2ZW50EMoBEh4KGUdFX0NsZWFyRW50aXR5RGVjYWxzRXZlbnQQywESKwomR0VfQ2xlYXJEZWNhbHNGb3JTa2VsZXRvbkluc3RhbmNlRXZlbnQQzAESIgodR0VfU291cmNlMUxlZ2FjeUdhbWVFdmVudExpc3QQzQESIQocR0VfU291cmNlMUxlZ2FjeUxpc3RlbkV2ZW50cxDOARIeChlHRV9Tb3VyY2UxTGVnYWN5R2FtZUV2ZW50EM8BEhoKFUdFX1Nvc1N0YXJ0U291bmRFdmVudBDQARIZChRHRV9Tb3NTdG9wU291bmRFdmVudBDRARIeChlHRV9Tb3NTZXRTb3VuZEV2ZW50UGFyYW1zENIBEiAKG0dFX1Nvc1NldExpYnJhcnlTdGFja0ZpZWxkcxDTARIdChhHRV9Tb3NTdG9wU291bmRFdmVudEhhc2gQ1AE", [file_networkbasetypes]);
+  fileDesc("ChBnYW1lZXZlbnRzLnByb3RvIkcKHENNc2dWRGVidWdHYW1lU2Vzc2lvbklERXZlbnQSEAoIY2xpZW50aWQYASABKAUSFQoNZ2FtZXNlc3Npb25pZBgCIAEoCSKwAgoTQ01zZ1BsYWNlRGVjYWxFdmVudBIdCghwb3NpdGlvbhgBIAEoCzILLkNNc2dWZWN0b3ISGwoGbm9ybWFsGAIgASgLMgsuQ01zZ1ZlY3RvchIaCgVzYXhpcxgDIAEoCzILLkNNc2dWZWN0b3ISEQoJYm9uZWluZGV4GAQgASgFEg0KBWZsYWdzGAUgASgNEg0KBWNvbG9yGAYgASgHEhMKC3JhbmRvbV9zZWVkGAcgASgFEhgKEGRlY2FsX2dyb3VwX25hbWUYCCABKA0SFQoNc2l6ZV9vdmVycmlkZRgJIAEoAhIeCgxlbnRpdHloYW5kbGUYCiABKA06CDE2Nzc3MjE1EhMKC21hdGVyaWFsX2lkGAsgASgEEhUKDXNlcXVlbmNlX25hbWUYDCABKA0iMQoZQ01zZ0NsZWFyV29ybGREZWNhbHNFdmVudBIUCgxmbGFnc3RvY2xlYXIYASABKA0iMgoaQ01zZ0NsZWFyRW50aXR5RGVjYWxzRXZlbnQSFAoMZmxhZ3N0b2NsZWFyGAEgASgNIlUKHUNNc2dDbGVhckRlY2Fsc0ZvckVudGl0eUV2ZW50EhQKDGZsYWdzdG9jbGVhchgBIAEoDRIeCgxlbnRpdHloYW5kbGUYAiABKA06CDE2Nzc3MjE1IuwBCh5DTXNnU291cmNlMUxlZ2FjeUdhbWVFdmVudExpc3QSQQoLZGVzY3JpcHRvcnMYASADKAsyLC5DTXNnU291cmNlMUxlZ2FjeUdhbWVFdmVudExpc3QuZGVzY3JpcHRvcl90GiMKBWtleV90EgwKBHR5cGUYASABKAUSDAoEbmFtZRgCIAEoCRpiCgxkZXNjcmlwdG9yX3QSDwoHZXZlbnRpZBgBIAEoBRIMCgRuYW1lGAIgASgJEjMKBGtleXMYAyADKAsyJS5DTXNnU291cmNlMUxlZ2FjeUdhbWVFdmVudExpc3Qua2V5X3QiSwodQ01zZ1NvdXJjZTFMZWdhY3lMaXN0ZW5FdmVudHMSEgoKcGxheWVyc2xvdBgBIAEoBRIWCg5ldmVudGFycmF5Yml0cxgCIAMoDSK4AgoaQ01zZ1NvdXJjZTFMZWdhY3lHYW1lRXZlbnQSEgoKZXZlbnRfbmFtZRgBIAEoCRIPCgdldmVudGlkGAIgASgFEi8KBGtleXMYAyADKAsyIS5DTXNnU291cmNlMUxlZ2FjeUdhbWVFdmVudC5rZXlfdBITCgtzZXJ2ZXJfdGljaxgEIAEoBRITCgtwYXNzdGhyb3VnaBgFIAEoBRqZAQoFa2V5X3QSDAoEdHlwZRgBIAEoBRISCgp2YWxfc3RyaW5nGAIgASgJEhEKCXZhbF9mbG9hdBgDIAEoAhIQCgh2YWxfbG9uZxgEIAEoBRIRCgl2YWxfc2hvcnQYBSABKAUSEAoIdmFsX2J5dGUYBiABKAUSEAoIdmFsX2Jvb2wYByABKAgSEgoKdmFsX3VpbnQ2NBgIIAEoBCKkAQoWQ01zZ1Nvc1N0YXJ0U291bmRFdmVudBIXCg9zb3VuZGV2ZW50X2d1aWQYASABKAUSFwoPc291bmRldmVudF9oYXNoGAIgASgHEh8KE3NvdXJjZV9lbnRpdHlfaW5kZXgYAyABKAU6Ai0xEgwKBHNlZWQYBCABKAUSFQoNcGFja2VkX3BhcmFtcxgFIAEoDBISCgpzdGFydF90aW1lGAYgASgCIjAKFUNNc2dTb3NTdG9wU291bmRFdmVudBIXCg9zb3VuZGV2ZW50X2d1aWQYASABKAUiVQoZQ01zZ1Nvc1N0b3BTb3VuZEV2ZW50SGFzaBIXCg9zb3VuZGV2ZW50X2hhc2gYASABKAcSHwoTc291cmNlX2VudGl0eV9pbmRleBgCIAEoBToCLTEiTAoaQ01zZ1Nvc1NldFNvdW5kRXZlbnRQYXJhbXMSFwoPc291bmRldmVudF9ndWlkGAEgASgFEhUKDXBhY2tlZF9wYXJhbXMYBSABKAwiSQocQ01zZ1Nvc1NldExpYnJhcnlTdGFja0ZpZWxkcxISCgpzdGFja19oYXNoGAEgASgHEhUKDXBhY2tlZF9maWVsZHMYBSABKAwqrQMKD0VCYXNlR2FtZUV2ZW50cxIgChtHRV9WRGVidWdHYW1lU2Vzc2lvbklERXZlbnQQyAESFwoSR0VfUGxhY2VEZWNhbEV2ZW50EMkBEh0KGEdFX0NsZWFyV29ybGREZWNhbHNFdmVudBDKARIeChlHRV9DbGVhckVudGl0eURlY2Fsc0V2ZW50EMsBEiEKHEdFX0NsZWFyRGVjYWxzRm9yRW50aXR5RXZlbnQQzAESIgodR0VfU291cmNlMUxlZ2FjeUdhbWVFdmVudExpc3QQzQESIQocR0VfU291cmNlMUxlZ2FjeUxpc3RlbkV2ZW50cxDOARIeChlHRV9Tb3VyY2UxTGVnYWN5R2FtZUV2ZW50EM8BEhoKFUdFX1Nvc1N0YXJ0U291bmRFdmVudBDQARIZChRHRV9Tb3NTdG9wU291bmRFdmVudBDRARIeChlHRV9Tb3NTZXRTb3VuZEV2ZW50UGFyYW1zENIBEiAKG0dFX1Nvc1NldExpYnJhcnlTdGFja0ZpZWxkcxDTARIdChhHRV9Tb3NTdG9wU291bmRFdmVudEhhc2gQ1AE", [file_networkbasetypes]);
 
 /**
  * @generated from message CMsgVDebugGameSessionIDEvent
@@ -56,9 +56,9 @@ export type CMsgPlaceDecalEvent = Message<"CMsgPlaceDecalEvent"> & {
   saxis?: CMsgVector;
 
   /**
-   * @generated from field: optional uint32 decalmaterialindex = 4;
+   * @generated from field: optional int32 boneindex = 4;
    */
-  decalmaterialindex: number;
+  boneindex: number;
 
   /**
    * @generated from field: optional uint32 flags = 5;
@@ -71,44 +71,34 @@ export type CMsgPlaceDecalEvent = Message<"CMsgPlaceDecalEvent"> & {
   color: number;
 
   /**
-   * @generated from field: optional float width = 7;
+   * @generated from field: optional int32 random_seed = 7;
    */
-  width: number;
+  randomSeed: number;
 
   /**
-   * @generated from field: optional float height = 8;
+   * @generated from field: optional uint32 decal_group_name = 8;
    */
-  height: number;
+  decalGroupName: number;
 
   /**
-   * @generated from field: optional float depth = 9;
+   * @generated from field: optional float size_override = 9;
    */
-  depth: number;
+  sizeOverride: number;
 
   /**
-   * @generated from field: optional uint32 entityhandleindex = 10;
+   * @generated from field: optional uint32 entityhandle = 10 [default = 16777215];
    */
-  entityhandleindex: number;
+  entityhandle: number;
 
   /**
-   * @generated from field: optional fixed32 skeletoninstancehash = 11;
+   * @generated from field: optional uint64 material_id = 11;
    */
-  skeletoninstancehash: number;
+  materialId: bigint;
 
   /**
-   * @generated from field: optional int32 boneindex = 12;
+   * @generated from field: optional uint32 sequence_name = 12;
    */
-  boneindex: number;
-
-  /**
-   * @generated from field: optional bool translucenthit = 13;
-   */
-  translucenthit: boolean;
-
-  /**
-   * @generated from field: optional bool is_adjacent = 14;
-   */
-  isAdjacent: boolean;
+  sequenceName: number;
 };
 
 /**
@@ -153,30 +143,25 @@ export const CMsgClearEntityDecalsEventSchema: GenMessage<CMsgClearEntityDecalsE
   messageDesc(file_gameevents, 3);
 
 /**
- * @generated from message CMsgClearDecalsForSkeletonInstanceEvent
+ * @generated from message CMsgClearDecalsForEntityEvent
  */
-export type CMsgClearDecalsForSkeletonInstanceEvent = Message<"CMsgClearDecalsForSkeletonInstanceEvent"> & {
+export type CMsgClearDecalsForEntityEvent = Message<"CMsgClearDecalsForEntityEvent"> & {
   /**
    * @generated from field: optional uint32 flagstoclear = 1;
    */
   flagstoclear: number;
 
   /**
-   * @generated from field: optional uint32 entityhandleindex = 2;
+   * @generated from field: optional uint32 entityhandle = 2 [default = 16777215];
    */
-  entityhandleindex: number;
-
-  /**
-   * @generated from field: optional uint32 skeletoninstancehash = 3;
-   */
-  skeletoninstancehash: number;
+  entityhandle: number;
 };
 
 /**
- * Describes the message CMsgClearDecalsForSkeletonInstanceEvent.
- * Use `create(CMsgClearDecalsForSkeletonInstanceEventSchema)` to create a new message.
+ * Describes the message CMsgClearDecalsForEntityEvent.
+ * Use `create(CMsgClearDecalsForEntityEventSchema)` to create a new message.
  */
-export const CMsgClearDecalsForSkeletonInstanceEventSchema: GenMessage<CMsgClearDecalsForSkeletonInstanceEvent> = /*@__PURE__*/
+export const CMsgClearDecalsForEntityEventSchema: GenMessage<CMsgClearDecalsForEntityEvent> = /*@__PURE__*/
   messageDesc(file_gameevents, 4);
 
 /**
@@ -506,9 +491,9 @@ export enum EBaseGameEvents {
   GE_ClearEntityDecalsEvent = 203,
 
   /**
-   * @generated from enum value: GE_ClearDecalsForSkeletonInstanceEvent = 204;
+   * @generated from enum value: GE_ClearDecalsForEntityEvent = 204;
    */
-  GE_ClearDecalsForSkeletonInstanceEvent = 204,
+  GE_ClearDecalsForEntityEvent = 204,
 
   /**
    * @generated from enum value: GE_Source1LegacyGameEventList = 205;
