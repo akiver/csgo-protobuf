@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts,import_extension=js google/protobuf/descriptor.proto usermessages.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto gcsdk_gcmessages.proto demo.proto networkbasetypes.proto network_connection.proto engine_gcmessages.proto gameevents.proto netmessages.proto steammessages.proto"
+    "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts,import_extension=js google/protobuf/descriptor.proto usermessages.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto gcsdk_gcmessages.proto demo.proto networkbasetypes.proto network_connection.proto engine_gcmessages.proto gameevents.proto netmessages.proto steammessages.proto source2_steam_stats.proto"
   },
   "dependencies": {
     "@bufbuild/protobuf": "2.6.3"
