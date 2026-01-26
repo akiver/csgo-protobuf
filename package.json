@@ -14,14 +14,14 @@
     "generate": "protoc -I protobuf --es_out ./src --es_opt=target=ts,import_extension=js google/protobuf/descriptor.proto usermessages.proto cstrike15_gcmessages.proto cstrike15_usermessages.proto gcsdk_gcmessages.proto demo.proto networkbasetypes.proto network_connection.proto engine_gcmessages.proto gameevents.proto netmessages.proto steammessages.proto source2_steam_stats.proto"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "2.6.3"
+    "@bufbuild/protobuf": "2.11.0"
   },
   "devDependencies": {
-    "@bufbuild/protoc-gen-es": "2.6.3",
+    "@bufbuild/protoc-gen-es": "2.11.0",
     "@protobuf-ts/protoc": "2.11.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "config": {
-    "protocVersion": "27.0"
+    "protocVersion": "33.4"
   }
 }
