@@ -2,15 +2,15 @@
 // @generated from file source2_steam_stats.proto (syntax proto2)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file source2_steam_stats.proto.
  */
 export const file_source2_steam_stats: GenFile = /*@__PURE__*/
-  fileDesc("Chlzb3VyY2UyX3N0ZWFtX3N0YXRzLnByb3RvIpIDChZDTXNnU291cmNlMlN5c3RlbVNwZWNzEg4KBmNwdV9pZBgBIAEoCRIRCgljcHVfYnJhbmQYAiABKAkSEQoJY3B1X21vZGVsGAMgASgNEhgKEGNwdV9udW1fcGh5c2ljYWwYBCABKA0SHQoVcmFtX3BoeXNpY2FsX3RvdGFsX21iGBUgASgNEiEKGWdwdV9yZW5kZXJzeXN0ZW1fZGxsX25hbWUYKSABKAkSFQoNZ3B1X3ZlbmRvcl9pZBgqIAEoDRIXCg9ncHVfZHJpdmVyX25hbWUYKyABKAkSHwoXZ3B1X2RyaXZlcl92ZXJzaW9uX2hpZ2gYLCABKA0SHgoWZ3B1X2RyaXZlcl92ZXJzaW9uX2xvdxgtIAEoDRIcChRncHVfZHhfc3VwcG9ydF9sZXZlbBguIAEoDRIiChpncHVfdGV4dHVyZV9tZW1vcnlfc2l6ZV9tYhgvIAEoDRIYChBiYWNrYnVmZmVyX3dpZHRoGDMgASgNEhkKEWJhY2tidWZmZXJfaGVpZ2h0GDQgASgNIoEECh5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydEl0ZW0SDAoEbmFtZRgBIAEoCRIWCg5hY3RpdmVfc2FtcGxlcxgCIAEoDRIeChZhY3RpdmVfc2FtcGxlc18xc2VjbWF4GAQgASgNEhAKCHVzZWNfbWF4GAMgASgNEhcKD3VzZWNfYXZnX2FjdGl2ZRgLIAEoDRIXCg91c2VjX3A1MF9hY3RpdmUYDCABKA0SFwoPdXNlY19wOTlfYWN0aXZlGA0gASgNEhQKDHVzZWNfYXZnX2FsbBgVIAEoDRIUCgx1c2VjX3A1MF9hbGwYFiABKA0SFAoMdXNlY19wOTlfYWxsGBcgASgNEh8KF3VzZWNfMXNlY21heF9hdmdfYWN0aXZlGB8gASgNEh8KF3VzZWNfMXNlY21heF9wNTBfYWN0aXZlGCAgASgNEh8KF3VzZWNfMXNlY21heF9wOTVfYWN0aXZlGCEgASgNEh8KF3VzZWNfMXNlY21heF9wOTlfYWN0aXZlGCIgASgNEhwKFHVzZWNfMXNlY21heF9hdmdfYWxsGCkgASgNEhwKFHVzZWNfMXNlY21heF9wNTBfYWxsGCogASgNEhwKFHVzZWNfMXNlY21heF9wOTVfYWxsGCsgASgNEhwKFHVzZWNfMXNlY21heF9wOTlfYWxsGCwgASgNIpYBChpDTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBIuCgV0b3RhbBgBIAEoCzIfLkNNc2dTb3VyY2UyVlByb2ZMaXRlUmVwb3J0SXRlbRIuCgVpdGVtcxgCIAMoCzIfLkNNc2dTb3VyY2UyVlByb2ZMaXRlUmVwb3J0SXRlbRIYChBkaXNjYXJkZWRfZnJhbWVzGAMgASgNIvAJCh1DTXNnU291cmNlMk5ldHdvcmtGbG93UXVhbGl0eRIQCghkdXJhdGlvbhgBIAEoDRITCgtieXRlc190b3RhbBgFIAEoBBIcChRieXRlc190b3RhbF9yZWxpYWJsZRgGIAEoBBIZChFieXRlc190b3RhbF92b2ljZRgHIAEoBBIVCg1ieXRlc19zZWNfcDk1GAogASgNEhUKDWJ5dGVzX3NlY19wOTkYCyABKA0SGAoQZW5naW5lbXNnc190b3RhbBgUIAEoDRIaChJlbmdpbmVtc2dzX3NlY19wOTUYFSABKA0SGgoSZW5naW5lbXNnc19zZWNfcDk5GBYgASgNEhcKD25ldGZyYW1lc190b3RhbBgeIAEoDRIZChFuZXRmcmFtZXNfZHJvcHBlZBgfIAEoDRIcChRuZXRmcmFtZXNfb3V0b2ZvcmRlchggIAEoDRIiChpuZXRmcmFtZXNfc2l6ZV9leGNlZWRzX210dRgiIAEoDRIaChJuZXRmcmFtZXNfc2l6ZV9wOTUYIyABKA0SGgoSbmV0ZnJhbWVzX3NpemVfcDk5GCQgASgNEhMKC3RpY2tzX3RvdGFsGCggASgNEhIKCnRpY2tzX2dvb2QYKSABKA0SHgoWdGlja3NfZ29vZF9hbG1vc3RfbGF0ZRgqIAEoDRIbChN0aWNrc19maXhlZF9kcm9wcGVkGCsgASgNEhgKEHRpY2tzX2ZpeGVkX2xhdGUYLCABKA0SGQoRdGlja3NfYmFkX2Ryb3BwZWQYLSABKA0SFgoOdGlja3NfYmFkX2xhdGUYLiABKA0SFwoPdGlja3NfYmFkX290aGVyGC8gASgNEiMKG3RpY2tfbWlzc3JhdGVfc2FtcGxlc190b3RhbBgyIAEoDRIlCh10aWNrX21pc3NyYXRlX3NhbXBsZXNfcGVyZmVjdBgzIAEoDRIoCiB0aWNrX21pc3NyYXRlX3NhbXBsZXNfcGVyZmVjdG5ldBg0IAEoDRIgChh0aWNrX21pc3NyYXRlbmV0X3A3NV94MTAYNSABKA0SIAoYdGlja19taXNzcmF0ZW5ldF9wOTVfeDEwGDYgASgNEiAKGHRpY2tfbWlzc3JhdGVuZXRfcDk5X3gxMBg3IAEoDRIVCg1yZWN2bWFyZ2luX3AxGD0gASgREhUKDXJlY3ZtYXJnaW5fcDUYPiABKBESFgoOcmVjdm1hcmdpbl9wMjUYPyABKBESFgoOcmVjdm1hcmdpbl9wNTAYQCABKBESFgoOcmVjdm1hcmdpbl9wNzUYQSABKBESFgoOcmVjdm1hcmdpbl9wOTUYQiABKBESGwoTbmV0ZnJhbWVfaml0dGVyX3A1MBhGIAEoDRIbChNuZXRmcmFtZV9qaXR0ZXJfcDk5GEcgASgNEh8KF2ludGVydmFsX3BlYWtqaXR0ZXJfcDUwGEggASgNEh8KF2ludGVydmFsX3BlYWtqaXR0ZXJfcDk1GEkgASgNEiYKHnBhY2tldF9taXNkZWxpdmVyeV9yYXRlX3A1MF94NBhKIAEoDRImCh5wYWNrZXRfbWlzZGVsaXZlcnlfcmF0ZV9wOTVfeDQYSyABKA0SEwoLbmV0X3BpbmdfcDUYUCABKA0SFAoMbmV0X3BpbmdfcDUwGFEgASgNEhQKDG5ldF9waW5nX3A5NRhSIAEoDSL7AQodQ01zZ1NvdXJjZTJQZXJmSW50ZXJ2YWxTYW1wbGUSGQoRZnJhbWVfdGltZV9tYXhfbXMYASABKAISGQoRZnJhbWVfdGltZV9hdmdfbXMYAiABKAISGQoRZnJhbWVfdGltZV9taW5fbXMYAyABKAISEwoLZnJhbWVfY291bnQYBCABKAUSGwoTZnJhbWVfdGltZV90b3RhbF9tcxgFIAEoAhIwCgR0YWdzGAYgAygLMiIuQ01zZ1NvdXJjZTJQZXJmSW50ZXJ2YWxTYW1wbGUuVGFnGiUKA1RhZxILCgN0YWcYASABKAkSEQoJbWF4X3ZhbHVlGAIgASgNIrsECi1DU291cmNlMk1ldHJpY3NfTWF0Y2hQZXJmU3VtbWFyeV9Ob3RpZmljYXRpb24SDQoFYXBwaWQYASABKA0SEQoJZ2FtZV9tb2RlGAIgASgJEhcKD3NlcnZlcl9idWlsZF9pZBgDIAEoDRIUCgxzZXJ2ZXJfcG9waWQYBCABKAcSMwoOc2VydmVyX3Byb2ZpbGUYCiABKAsyGy5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBJGCgdjbGllbnRzGAsgAygLMjUuQ1NvdXJjZTJNZXRyaWNzX01hdGNoUGVyZlN1bW1hcnlfTm90aWZpY2F0aW9uLkNsaWVudBILCgNtYXAYFCABKAkargIKBkNsaWVudBItCgxzeXN0ZW1fc3BlY3MYASABKAsyFy5DTXNnU291cmNlMlN5c3RlbVNwZWNzEiwKB3Byb2ZpbGUYAiABKAsyGy5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBIQCghidWlsZF9pZBgDIAEoDRI3Cg9kb3duc3RyZWFtX2Zsb3cYBCABKAsyHi5DTXNnU291cmNlMk5ldHdvcmtGbG93UXVhbGl0eRI1Cg11cHN0cmVhbV9mbG93GAUgASgLMh4uQ01zZ1NvdXJjZTJOZXR3b3JrRmxvd1F1YWxpdHkSDwoHc3RlYW1pZBgKIAEoBhI0CgxwZXJmX3NhbXBsZXMYCyADKAsyHi5DTXNnU291cmNlMlBlcmZJbnRlcnZhbFNhbXBsZQ");
+  fileDesc("Chlzb3VyY2UyX3N0ZWFtX3N0YXRzLnByb3RvIpIDChZDTXNnU291cmNlMlN5c3RlbVNwZWNzEg4KBmNwdV9pZBgBIAEoCRIRCgljcHVfYnJhbmQYAiABKAkSEQoJY3B1X21vZGVsGAMgASgNEhgKEGNwdV9udW1fcGh5c2ljYWwYBCABKA0SHQoVcmFtX3BoeXNpY2FsX3RvdGFsX21iGBUgASgNEiEKGWdwdV9yZW5kZXJzeXN0ZW1fZGxsX25hbWUYKSABKAkSFQoNZ3B1X3ZlbmRvcl9pZBgqIAEoDRIXCg9ncHVfZHJpdmVyX25hbWUYKyABKAkSHwoXZ3B1X2RyaXZlcl92ZXJzaW9uX2hpZ2gYLCABKA0SHgoWZ3B1X2RyaXZlcl92ZXJzaW9uX2xvdxgtIAEoDRIcChRncHVfZHhfc3VwcG9ydF9sZXZlbBguIAEoDRIiChpncHVfdGV4dHVyZV9tZW1vcnlfc2l6ZV9tYhgvIAEoDRIYChBiYWNrYnVmZmVyX3dpZHRoGDMgASgNEhkKEWJhY2tidWZmZXJfaGVpZ2h0GDQgASgNIoEECh5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydEl0ZW0SDAoEbmFtZRgBIAEoCRIWCg5hY3RpdmVfc2FtcGxlcxgCIAEoDRIeChZhY3RpdmVfc2FtcGxlc18xc2VjbWF4GAQgASgNEhAKCHVzZWNfbWF4GAMgASgNEhcKD3VzZWNfYXZnX2FjdGl2ZRgLIAEoDRIXCg91c2VjX3A1MF9hY3RpdmUYDCABKA0SFwoPdXNlY19wOTlfYWN0aXZlGA0gASgNEhQKDHVzZWNfYXZnX2FsbBgVIAEoDRIUCgx1c2VjX3A1MF9hbGwYFiABKA0SFAoMdXNlY19wOTlfYWxsGBcgASgNEh8KF3VzZWNfMXNlY21heF9hdmdfYWN0aXZlGB8gASgNEh8KF3VzZWNfMXNlY21heF9wNTBfYWN0aXZlGCAgASgNEh8KF3VzZWNfMXNlY21heF9wOTVfYWN0aXZlGCEgASgNEh8KF3VzZWNfMXNlY21heF9wOTlfYWN0aXZlGCIgASgNEhwKFHVzZWNfMXNlY21heF9hdmdfYWxsGCkgASgNEhwKFHVzZWNfMXNlY21heF9wNTBfYWxsGCogASgNEhwKFHVzZWNfMXNlY21heF9wOTVfYWxsGCsgASgNEhwKFHVzZWNfMXNlY21heF9wOTlfYWxsGCwgASgNIpYBChpDTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBIuCgV0b3RhbBgBIAEoCzIfLkNNc2dTb3VyY2UyVlByb2ZMaXRlUmVwb3J0SXRlbRIuCgVpdGVtcxgCIAMoCzIfLkNNc2dTb3VyY2UyVlByb2ZMaXRlUmVwb3J0SXRlbRIYChBkaXNjYXJkZWRfZnJhbWVzGAMgASgNIvAJCh1DTXNnU291cmNlMk5ldHdvcmtGbG93UXVhbGl0eRIQCghkdXJhdGlvbhgBIAEoDRITCgtieXRlc190b3RhbBgFIAEoBBIcChRieXRlc190b3RhbF9yZWxpYWJsZRgGIAEoBBIZChFieXRlc190b3RhbF92b2ljZRgHIAEoBBIVCg1ieXRlc19zZWNfcDk1GAogASgNEhUKDWJ5dGVzX3NlY19wOTkYCyABKA0SGAoQZW5naW5lbXNnc190b3RhbBgUIAEoDRIaChJlbmdpbmVtc2dzX3NlY19wOTUYFSABKA0SGgoSZW5naW5lbXNnc19zZWNfcDk5GBYgASgNEhcKD25ldGZyYW1lc190b3RhbBgeIAEoDRIZChFuZXRmcmFtZXNfZHJvcHBlZBgfIAEoDRIcChRuZXRmcmFtZXNfb3V0b2ZvcmRlchggIAEoDRIiChpuZXRmcmFtZXNfc2l6ZV9leGNlZWRzX210dRgiIAEoDRIaChJuZXRmcmFtZXNfc2l6ZV9wOTUYIyABKA0SGgoSbmV0ZnJhbWVzX3NpemVfcDk5GCQgASgNEhMKC3RpY2tzX3RvdGFsGCggASgNEhIKCnRpY2tzX2dvb2QYKSABKA0SHgoWdGlja3NfZ29vZF9hbG1vc3RfbGF0ZRgqIAEoDRIbChN0aWNrc19maXhlZF9kcm9wcGVkGCsgASgNEhgKEHRpY2tzX2ZpeGVkX2xhdGUYLCABKA0SGQoRdGlja3NfYmFkX2Ryb3BwZWQYLSABKA0SFgoOdGlja3NfYmFkX2xhdGUYLiABKA0SFwoPdGlja3NfYmFkX290aGVyGC8gASgNEiMKG3RpY2tfbWlzc3JhdGVfc2FtcGxlc190b3RhbBgyIAEoDRIlCh10aWNrX21pc3NyYXRlX3NhbXBsZXNfcGVyZmVjdBgzIAEoDRIoCiB0aWNrX21pc3NyYXRlX3NhbXBsZXNfcGVyZmVjdG5ldBg0IAEoDRIgChh0aWNrX21pc3NyYXRlbmV0X3A3NV94MTAYNSABKA0SIAoYdGlja19taXNzcmF0ZW5ldF9wOTVfeDEwGDYgASgNEiAKGHRpY2tfbWlzc3JhdGVuZXRfcDk5X3gxMBg3IAEoDRIVCg1yZWN2bWFyZ2luX3AxGD0gASgREhUKDXJlY3ZtYXJnaW5fcDUYPiABKBESFgoOcmVjdm1hcmdpbl9wMjUYPyABKBESFgoOcmVjdm1hcmdpbl9wNTAYQCABKBESFgoOcmVjdm1hcmdpbl9wNzUYQSABKBESFgoOcmVjdm1hcmdpbl9wOTUYQiABKBESGwoTbmV0ZnJhbWVfaml0dGVyX3A1MBhGIAEoDRIbChNuZXRmcmFtZV9qaXR0ZXJfcDk5GEcgASgNEh8KF2ludGVydmFsX3BlYWtqaXR0ZXJfcDUwGEggASgNEh8KF2ludGVydmFsX3BlYWtqaXR0ZXJfcDk1GEkgASgNEiYKHnBhY2tldF9taXNkZWxpdmVyeV9yYXRlX3A1MF94NBhKIAEoDRImCh5wYWNrZXRfbWlzZGVsaXZlcnlfcmF0ZV9wOTVfeDQYSyABKA0SEwoLbmV0X3BpbmdfcDUYUCABKA0SFAoMbmV0X3BpbmdfcDUwGFEgASgNEhQKDG5ldF9waW5nX3A5NRhSIAEoDSL7AQodQ01zZ1NvdXJjZTJQZXJmSW50ZXJ2YWxTYW1wbGUSGQoRZnJhbWVfdGltZV9tYXhfbXMYASABKAISGQoRZnJhbWVfdGltZV9hdmdfbXMYAiABKAISGQoRZnJhbWVfdGltZV9taW5fbXMYAyABKAISEwoLZnJhbWVfY291bnQYBCABKAUSGwoTZnJhbWVfdGltZV90b3RhbF9tcxgFIAEoAhIwCgR0YWdzGAYgAygLMiIuQ01zZ1NvdXJjZTJQZXJmSW50ZXJ2YWxTYW1wbGUuVGFnGiUKA1RhZxILCgN0YWcYASABKAkSEQoJbWF4X3ZhbHVlGAIgASgNIrsECi1DU291cmNlMk1ldHJpY3NfTWF0Y2hQZXJmU3VtbWFyeV9Ob3RpZmljYXRpb24SDQoFYXBwaWQYASABKA0SEQoJZ2FtZV9tb2RlGAIgASgJEhcKD3NlcnZlcl9idWlsZF9pZBgDIAEoDRIUCgxzZXJ2ZXJfcG9waWQYBCABKAcSMwoOc2VydmVyX3Byb2ZpbGUYCiABKAsyGy5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBJGCgdjbGllbnRzGAsgAygLMjUuQ1NvdXJjZTJNZXRyaWNzX01hdGNoUGVyZlN1bW1hcnlfTm90aWZpY2F0aW9uLkNsaWVudBILCgNtYXAYFCABKAkargIKBkNsaWVudBItCgxzeXN0ZW1fc3BlY3MYASABKAsyFy5DTXNnU291cmNlMlN5c3RlbVNwZWNzEiwKB3Byb2ZpbGUYAiABKAsyGy5DTXNnU291cmNlMlZQcm9mTGl0ZVJlcG9ydBIQCghidWlsZF9pZBgDIAEoDRI3Cg9kb3duc3RyZWFtX2Zsb3cYBCABKAsyHi5DTXNnU291cmNlMk5ldHdvcmtGbG93UXVhbGl0eRI1Cg11cHN0cmVhbV9mbG93GAUgASgLMh4uQ01zZ1NvdXJjZTJOZXR3b3JrRmxvd1F1YWxpdHkSDwoHc3RlYW1pZBgKIAEoBhI0CgxwZXJmX3NhbXBsZXMYCyADKAsyHi5DTXNnU291cmNlMlBlcmZJbnRlcnZhbFNhbXBsZSLlBAokQ01zZ1NvdXJjZTJQbGF5U3RhdHNQYWNrZWRSZWNvcmRMaXN0EhMKC3JlY29yZF9uYW1lGAEgASgJEkIKCmZpZWxkX2RlZnMYAiADKAsyLi5DTXNnU291cmNlMlBsYXlTdGF0c1BhY2tlZFJlY29yZExpc3QuRmllbGREZWYSFAoMcmVjb3JkX2NvdW50GAMgASgNEhcKC3VpbnQ2NF92YWxzGAQgAygEQgIQARIXCgt1aW50MzJfdmFscxgFIAMoDUICEAESFwoLdWludDE2X3ZhbHMYBiADKA1CAhABEhYKCnVpbnQ4X3ZhbHMYByADKA1CAhABEhYKCmludDY0X3ZhbHMYCCADKANCAhABEhYKCmludDMyX3ZhbHMYCSADKAVCAhABEhYKCmludDE2X3ZhbHMYCiADKAVCAhABEhUKCWludDhfdmFscxgLIAMoBUICEAESGAoMZmxvYXQ2NF92YWxzGAwgAygBQgIQARIYCgxmbG9hdDMyX3ZhbHMYDSADKAJCAhABEhUKCWJvb2xfdmFscxgOIAMoCEICEAESEwoLc3RyaW5nX3ZhbHMYDyADKAkSIwobbG93X2NhcmRpbmFsaXR5X3N0cmluZ192YWxzGBAgAygJEhwKEHV0Y2RhdGV0aW1lX3ZhbHMYESADKAdCAhABGmkKCEZpZWxkRGVmEhIKCmZpZWxkX25hbWUYASABKAkSSQoKZmllbGRfdHlwZRgCIAEoDjIbLkVTb3VyY2UyUGxheVN0YXRzRmllbGRUeXBlOhhTb3VyY2UyUGxheVN0YXRzX0ludmFsaWQiegosQ1NvdXJjZTJNZXRyaWNzX1JlY29yZFBsYXlTdGF0c19Ob3RpZmljYXRpb24SOwoMcmVjb3JkX3R5cGVzGAEgAygLMiUuQ01zZ1NvdXJjZTJQbGF5U3RhdHNQYWNrZWRSZWNvcmRMaXN0Eg0KBWFwcGlkGAIgASgNKt0DChpFU291cmNlMlBsYXlTdGF0c0ZpZWxkVHlwZRIcChhTb3VyY2UyUGxheVN0YXRzX0ludmFsaWQQABIbChdTb3VyY2UyUGxheVN0YXRzX1VJbnQ2NBABEhsKF1NvdXJjZTJQbGF5U3RhdHNfVUludDMyEAISGwoXU291cmNlMlBsYXlTdGF0c19VSW50MTYQAxIaChZTb3VyY2UyUGxheVN0YXRzX1VJbnQ4EAQSGgoWU291cmNlMlBsYXlTdGF0c19JbnQ2NBAFEhoKFlNvdXJjZTJQbGF5U3RhdHNfSW50MzIQBhIaChZTb3VyY2UyUGxheVN0YXRzX0ludDE2EAcSGQoVU291cmNlMlBsYXlTdGF0c19JbnQ4EAgSHAoYU291cmNlMlBsYXlTdGF0c19GbG9hdDY0EAkSHAoYU291cmNlMlBsYXlTdGF0c19GbG9hdDMyEAoSGQoVU291cmNlMlBsYXlTdGF0c19Cb29sEAsSGwoXU291cmNlMlBsYXlTdGF0c19TdHJpbmcQDBIpCiVTb3VyY2UyUGxheVN0YXRzX0xvd0NhcmRpbmFsaXR5U3RyaW5nEA0SIAocU291cmNlMlBsYXlTdGF0c19VVENEYXRlVGltZRAO");
 
 /**
  * @generated from message CMsgSource2SystemSpecs
@@ -612,4 +612,231 @@ export type CSource2Metrics_MatchPerfSummary_Notification_Client = Message<"CSou
  */
 export const CSource2Metrics_MatchPerfSummary_Notification_ClientSchema: GenMessage<CSource2Metrics_MatchPerfSummary_Notification_Client> = /*@__PURE__*/
   messageDesc(file_source2_steam_stats, 5, 0);
+
+/**
+ * @generated from message CMsgSource2PlayStatsPackedRecordList
+ */
+export type CMsgSource2PlayStatsPackedRecordList = Message<"CMsgSource2PlayStatsPackedRecordList"> & {
+  /**
+   * @generated from field: optional string record_name = 1;
+   */
+  recordName: string;
+
+  /**
+   * @generated from field: repeated CMsgSource2PlayStatsPackedRecordList.FieldDef field_defs = 2;
+   */
+  fieldDefs: CMsgSource2PlayStatsPackedRecordList_FieldDef[];
+
+  /**
+   * @generated from field: optional uint32 record_count = 3;
+   */
+  recordCount: number;
+
+  /**
+   * @generated from field: repeated uint64 uint64_vals = 4 [packed = true];
+   */
+  uint64Vals: bigint[];
+
+  /**
+   * @generated from field: repeated uint32 uint32_vals = 5 [packed = true];
+   */
+  uint32Vals: number[];
+
+  /**
+   * @generated from field: repeated uint32 uint16_vals = 6 [packed = true];
+   */
+  uint16Vals: number[];
+
+  /**
+   * @generated from field: repeated uint32 uint8_vals = 7 [packed = true];
+   */
+  uint8Vals: number[];
+
+  /**
+   * @generated from field: repeated int64 int64_vals = 8 [packed = true];
+   */
+  int64Vals: bigint[];
+
+  /**
+   * @generated from field: repeated int32 int32_vals = 9 [packed = true];
+   */
+  int32Vals: number[];
+
+  /**
+   * @generated from field: repeated int32 int16_vals = 10 [packed = true];
+   */
+  int16Vals: number[];
+
+  /**
+   * @generated from field: repeated int32 int8_vals = 11 [packed = true];
+   */
+  int8Vals: number[];
+
+  /**
+   * @generated from field: repeated double float64_vals = 12 [packed = true];
+   */
+  float64Vals: number[];
+
+  /**
+   * @generated from field: repeated float float32_vals = 13 [packed = true];
+   */
+  float32Vals: number[];
+
+  /**
+   * @generated from field: repeated bool bool_vals = 14 [packed = true];
+   */
+  boolVals: boolean[];
+
+  /**
+   * @generated from field: repeated string string_vals = 15;
+   */
+  stringVals: string[];
+
+  /**
+   * @generated from field: repeated string low_cardinality_string_vals = 16;
+   */
+  lowCardinalityStringVals: string[];
+
+  /**
+   * @generated from field: repeated fixed32 utcdatetime_vals = 17 [packed = true];
+   */
+  utcdatetimeVals: number[];
+};
+
+/**
+ * Describes the message CMsgSource2PlayStatsPackedRecordList.
+ * Use `create(CMsgSource2PlayStatsPackedRecordListSchema)` to create a new message.
+ */
+export const CMsgSource2PlayStatsPackedRecordListSchema: GenMessage<CMsgSource2PlayStatsPackedRecordList> = /*@__PURE__*/
+  messageDesc(file_source2_steam_stats, 6);
+
+/**
+ * @generated from message CMsgSource2PlayStatsPackedRecordList.FieldDef
+ */
+export type CMsgSource2PlayStatsPackedRecordList_FieldDef = Message<"CMsgSource2PlayStatsPackedRecordList.FieldDef"> & {
+  /**
+   * @generated from field: optional string field_name = 1;
+   */
+  fieldName: string;
+
+  /**
+   * @generated from field: optional ESource2PlayStatsFieldType field_type = 2 [default = Source2PlayStats_Invalid];
+   */
+  fieldType: ESource2PlayStatsFieldType;
+};
+
+/**
+ * Describes the message CMsgSource2PlayStatsPackedRecordList.FieldDef.
+ * Use `create(CMsgSource2PlayStatsPackedRecordList_FieldDefSchema)` to create a new message.
+ */
+export const CMsgSource2PlayStatsPackedRecordList_FieldDefSchema: GenMessage<CMsgSource2PlayStatsPackedRecordList_FieldDef> = /*@__PURE__*/
+  messageDesc(file_source2_steam_stats, 6, 0);
+
+/**
+ * @generated from message CSource2Metrics_RecordPlayStats_Notification
+ */
+export type CSource2Metrics_RecordPlayStats_Notification = Message<"CSource2Metrics_RecordPlayStats_Notification"> & {
+  /**
+   * @generated from field: repeated CMsgSource2PlayStatsPackedRecordList record_types = 1;
+   */
+  recordTypes: CMsgSource2PlayStatsPackedRecordList[];
+
+  /**
+   * @generated from field: optional uint32 appid = 2;
+   */
+  appid: number;
+};
+
+/**
+ * Describes the message CSource2Metrics_RecordPlayStats_Notification.
+ * Use `create(CSource2Metrics_RecordPlayStats_NotificationSchema)` to create a new message.
+ */
+export const CSource2Metrics_RecordPlayStats_NotificationSchema: GenMessage<CSource2Metrics_RecordPlayStats_Notification> = /*@__PURE__*/
+  messageDesc(file_source2_steam_stats, 7);
+
+/**
+ * @generated from enum ESource2PlayStatsFieldType
+ */
+export enum ESource2PlayStatsFieldType {
+  /**
+   * @generated from enum value: Source2PlayStats_Invalid = 0;
+   */
+  Source2PlayStats_Invalid = 0,
+
+  /**
+   * @generated from enum value: Source2PlayStats_UInt64 = 1;
+   */
+  Source2PlayStats_UInt64 = 1,
+
+  /**
+   * @generated from enum value: Source2PlayStats_UInt32 = 2;
+   */
+  Source2PlayStats_UInt32 = 2,
+
+  /**
+   * @generated from enum value: Source2PlayStats_UInt16 = 3;
+   */
+  Source2PlayStats_UInt16 = 3,
+
+  /**
+   * @generated from enum value: Source2PlayStats_UInt8 = 4;
+   */
+  Source2PlayStats_UInt8 = 4,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Int64 = 5;
+   */
+  Source2PlayStats_Int64 = 5,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Int32 = 6;
+   */
+  Source2PlayStats_Int32 = 6,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Int16 = 7;
+   */
+  Source2PlayStats_Int16 = 7,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Int8 = 8;
+   */
+  Source2PlayStats_Int8 = 8,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Float64 = 9;
+   */
+  Source2PlayStats_Float64 = 9,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Float32 = 10;
+   */
+  Source2PlayStats_Float32 = 10,
+
+  /**
+   * @generated from enum value: Source2PlayStats_Bool = 11;
+   */
+  Source2PlayStats_Bool = 11,
+
+  /**
+   * @generated from enum value: Source2PlayStats_String = 12;
+   */
+  Source2PlayStats_String = 12,
+
+  /**
+   * @generated from enum value: Source2PlayStats_LowCardinalityString = 13;
+   */
+  Source2PlayStats_LowCardinalityString = 13,
+
+  /**
+   * @generated from enum value: Source2PlayStats_UTCDateTime = 14;
+   */
+  Source2PlayStats_UTCDateTime = 14,
+}
+
+/**
+ * Describes the enum ESource2PlayStatsFieldType.
+ */
+export const ESource2PlayStatsFieldTypeSchema: GenEnum<ESource2PlayStatsFieldType> = /*@__PURE__*/
+  enumDesc(file_source2_steam_stats, 0);
 
