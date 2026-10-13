@@ -19,11 +19,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Clone SteamDatabase/Protobufs
+      - name: Clone SteamTracking/GameTracking-CS2
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          repository: SteamDatabase/Protobufs
-          path: SteamDatabaseProtobufs
+          repository: SteamTracking/GameTracking-CS2
+          path: GameTrackingCS2
+          sparse-checkout: Protobufs
 
       - name: Setup pnpm
         uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
@@ -41,10 +42,10 @@ jobs:
       - name: Compile protobuf files to TypeScript
         run: |
           rm protobuf/*.proto
-          cp SteamDatabaseProtobufs/csgo/*.proto protobuf
+          cp GameTrackingCS2/Protobufs/*.proto protobuf
           chmod -R a-x protobuf/*.proto
           pnpm run generate
-          rm -rf SteamDatabaseProtobufs
+          rm -rf GameTrackingCS2
 
       - name: Check for modified files
         id: git-check
